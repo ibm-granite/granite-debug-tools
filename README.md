@@ -27,8 +27,8 @@ STaD breaks down complex multi-step questions into scaffolded variations where i
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/IBM/STaD.git
-cd STaD
+git clone https://github.com/ibm-granite/scaffolded-task-design.git
+cd scaffolded-task-design
 ```
 ### 2. Install Dependencies
 
