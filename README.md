@@ -298,12 +298,11 @@ If you use STaD in your research, please cite:
 @inproceedings{an2026stad,
   title     = {STaD: Scaffolded Task Design for Identifying Compositional Skill Gaps in LLMs},
   author    = {An, Sungeun and Kadhe, Swanand Ravindra and Thakur, Shailja and DeLuca, Chad and Patel, Hima},
-  booktitle = {Findings of the Association for Computational Linguistics: ACL 2026},
   year      = {2026},
   eprint    = {2604.18177},
   archivePrefix = {arXiv},
   primaryClass  = {cs.CL},
-  doi       = {10.48550/arXiv.2604.18177}
+  url={https://arxiv.org/abs/2604.18177}
 }
 
 ```
