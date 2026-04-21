@@ -4,7 +4,7 @@ TL;DR: Scaffolding step by step reveals reasoning gaps in LLMs that aggregate be
 
 **STaD** (Scaffolded Task Design) is a framework for generating scaffolded variations of multi-step reasoning tasks to enable systematic LLM debugging, evaluation, and training.
 
-[**Code**](https://github.com/ibm-granite/scaffolded-task-design) | [**Dataset**](https://huggingface.co/datasets/ibm-research/STaD) | **Paper:** (TBD)
+[**Code**](https://github.com/ibm-granite/scaffolded-task-design) | [**Dataset**](https://huggingface.co/datasets/ibm-research/STaD) | [**Paper**](https://arxiv.org/pdf/2604.18177)
 
 ## News
 
@@ -294,8 +294,16 @@ If the teacher model is weak on the chosen benchmark, generated scaffolding may 
 
 If you use STaD in your research, please cite:
 
-TBD
-
 ```bibtex
+@inproceedings{an2026stad,
+  title     = {STaD: Scaffolded Task Design for Identifying Compositional Skill Gaps in LLMs},
+  author    = {An, Sungeun and Kadhe, Swanand Ravindra and Thakur, Shailja and DeLuca, Chad and Patel, Hima},
+  booktitle = {Findings of the Association for Computational Linguistics: ACL 2026},
+  year      = {2026},
+  eprint    = {2604.18177},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  doi       = {10.48550/arXiv.2604.18177}
+}
 
 ```
