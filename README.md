@@ -1,4 +1,30 @@
-# Granite Debug Tools
+# Granite.Debug Tools
+
+**Granite.Debug** is a suite of self-service debugging tools for Large Language Models (LLMs) that streamline issue detection, analysis, and resolution across diverse LLM workflows.
+
+These tools help identify, evaluate, and resolve issues across fine-tuning workflows, benchmark analysis, and agent-based LLM interactions.
+
+## Available Tools
+
+### Selecting the Right Tool
+
+| If I need to... | Then I should use... |
+| ---------------- | -------------------- |
+| Design scaffolded tasks to diagnose which skill-level capability is missing | [**STaD**](./STaD/) |
+
+### STaD - Scaffolded Task Design
+
+[STaD](./STaD/) is a framework for generating scaffolded variations of multi-step reasoning tasks to enable systematic LLM debugging, evaluation, and training.
+
+Use STaD when you need to design scaffolded tasks to diagnose which skill-level capability is missing in your model.
+
+## Coming Soon
+
+Additional debugging tools are being prepared for open-source release. Stay tuned!
+
+## Contributing
+
+We welcome contributions! If you'd like to contribute to any of the tools in this repository, please open an issue or submit a pull request.
 
 # Notice
 

@@ -4,7 +4,7 @@ TL;DR: Scaffolding step by step reveals reasoning gaps in LLMs that aggregate be
 
 **STaD** (Scaffolded Task Design) is a framework for generating scaffolded variations of multi-step reasoning tasks to enable systematic LLM debugging, evaluation, and training.
 
-[**Code**](https://github.com/ibm-granite/scaffolded-task-design) | [**Dataset**](https://huggingface.co/datasets/ibm-research/STaD) | [**Paper**](https://arxiv.org/pdf/2604.18177)
+[**Code**](https://github.com/ibm-granite/granite.debug-tools/tree/main/STaD) | [**Dataset**](https://huggingface.co/datasets/ibm-research/STaD) | [**Paper**](https://arxiv.org/pdf/2604.18177)
 
 ## News
 
@@ -27,8 +27,8 @@ STaD breaks down complex multi-step questions into scaffolded variations where i
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/ibm-granite/scaffolded-task-design.git
-cd scaffolded-task-design
+git clone https://github.com/ibm-granite/granite.debug-tools.git
+cd granite.debug-tools/STaD/
 ```
 ### 2. Install Dependencies
 
