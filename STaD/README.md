@@ -75,23 +75,6 @@ Or create a `.env` file:
 OPENAI_API_KEY=your-openai-key
 GEMINI_API_KEY=your-gemini-key
 ```
-### Paper Version (ACL Findings 2026)
-
-The results in the paper correspond to the following immutable snapshot:
-
-- **Commit:** `XXXXX`
-- **Tag:** `v1.0-paper`
-- **Branch state:** `main` at time of release
-
-**To reproduce paper results:**
-
-```bash
-git checkout v1.0-paper
-```
-or
-```bash
-git checkout a1b2c3d4
-```
 
 ## Quick Start
 
