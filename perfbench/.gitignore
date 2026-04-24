@@ -1,0 +1,6 @@
+results_*/
+artifacts/
+crash.log
+__pycache__/
+*.egg-info/
+.venv/

@@ -11,12 +11,19 @@ These tools help identify, evaluate, and resolve issues across fine-tuning workf
 | If I need to... | Then I should use... |
 | ---------------- | -------------------- |
 | Design scaffolded tasks to diagnose which skill-level capability is missing | [**STaD**](./STaD/) |
+| Benchmark LLM serving endpoints and local inference with an MCP-based tool | [**granite.debug.perfbench**](./perfbench/) |
 
 ### STaD - Scaffolded Task Design
 
 [STaD](./STaD/) is a framework for generating scaffolded variations of multi-step reasoning tasks to enable systematic LLM debugging, evaluation, and training.
 
 Use STaD when you need to design scaffolded tasks to diagnose which skill-level capability is missing in your model.
+
+### granite.debug.perfbench - MCP server for Granite benchmarking
+
+[granite.debug.perfbench](./perfbench/) is an MCP server that manages LLM benchmark runs as asynchronous subprocesses, wrapping five benchmark runners (vLLM, AIPerf, GuideLLM, llama-bench, Ollama) behind a unified tool interface.
+
+Use granite.debug.perfbench when you need to benchmark LLM serving endpoints or local inference and want an agent-driven workflow via the Model Context Protocol.
 
 ## Coming Soon
 
