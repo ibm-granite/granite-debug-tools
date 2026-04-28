@@ -1,9 +1,9 @@
-# granite.debug.validation-framework
+# granite.debug.runtimes-validator
 
 Unified validation framework for running model checks across inference engines
 (vLLM, llama.cpp, Ollama).
 
-[**Code**](https://github.com/ibm-granite/granite.debug-tools/tree/main/validation-framework)
+[**Code**](https://github.com/ibm-granite/granite.debug-tools/tree/main/runtimes-validator)
 
 ## Installation
 
@@ -11,7 +11,7 @@ Unified validation framework for running model checks across inference engines
 
 ```bash
 git clone https://github.com/ibm-granite/granite.debug-tools.git
-cd granite.debug-tools/validation-framework/
+cd granite.debug-tools/runtimes-validator/
 ```
 
 ### 2. Install Dependencies

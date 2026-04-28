@@ -11,7 +11,7 @@ These tools help identify, evaluate, and resolve issues across fine-tuning workf
 | If I need to... | Then I should use... |
 | ---------------- | -------------------- |
 | Design scaffolded tasks to diagnose which skill-level capability is missing | [**STaD**](./STaD/) |
-| Validate model behavior across inference engines (vLLM, llama.cpp, Ollama) | [**validation-framework**](./validation-framework/) |
+| Validate model behavior across inference engines (vLLM, llama.cpp, Ollama) | [**runtimes-validator**](./runtimes-validator/) |
 
 ### STaD - Scaffolded Task Design
 
@@ -19,11 +19,11 @@ These tools help identify, evaluate, and resolve issues across fine-tuning workf
 
 Use STaD when you need to design scaffolded tasks to diagnose which skill-level capability is missing in your model.
 
-### granite.debug.validation-framework
+### granite.debug.runtimes-validator
 
-[granite.debug.validation-framework](./validation-framework/) is a unified validation framework for running model checks across inference engines (vLLM, llama.cpp, Ollama). It provides a CLI (`granite-validate`) to run automated validation tests against Granite models deployed on different backends, supporting both managed (framework starts/stops the engine) and external (connect to a running engine) execution modes.
+[granite.debug.runtimes-validator](./runtimes-validator/) is a unified validation framework for running model checks across inference engines (vLLM, llama.cpp, Ollama). It provides a CLI (`granite-validate`) to run automated validation tests against Granite models deployed on different backends, supporting both managed (framework starts/stops the engine) and external (connect to a running engine) execution modes.
 
-Use granite.debug.validation-framework when you need to validate that a Granite model behaves correctly across different inference engines.
+Use granite.debug.runtimes-validator when you need to validate that a Granite model behaves correctly across different inference engines.
 
 ## Coming Soon
 
