@@ -202,27 +202,6 @@ def test_health_check_hits_correct_url(mock_get: MagicMock):
     assert url == "http://myhost:8080/health"
 
 
-# --- start/stop raise NotImplementedError (llamacpp only in external mode) ---
-
-
-def test_start_raises():
-    engine = VllmEngine(EngineConfig())
-    try:
-        engine.start("model")
-        assert False, "Expected NotImplementedError"
-    except NotImplementedError:
-        pass
-
-
-def test_stop_raises():
-    engine = VllmEngine(EngineConfig())
-    try:
-        engine.stop()
-        assert False, "Expected NotImplementedError"
-    except NotImplementedError:
-        pass
-
-
 def test_vllm_start_rejects_external_mode():
     engine = VllmEngine(EngineConfig(mode="external"))
     try:
