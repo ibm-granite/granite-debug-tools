@@ -1,4 +1,4 @@
-# granite.debug.runtimes-validator
+# runtimes-validator
 
 Unified validation framework for running model checks across inference engines
 (vLLM, llama.cpp, Ollama).
