@@ -64,8 +64,8 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          uv run hf download ibm-granite/granite-4.1-3b --local-dir models/granite-4.1-3b --include "*.gguf"
-          uv run hf download ibm-granite/granite-4.1-8b --local-dir models/granite-4.1-8b --include "*Q4_K_M.gguf"
+          uv run hf download ibm-granite/granite-4.1-3b-GGUF --local-dir models/granite-4.1-3b --include "granite-4.1-3b-Q4_K_M.gguf"
+          uv run hf download ibm-granite/granite-4.1-8b-GGUF --local-dir models/granite-4.1-8b --include "granite-4.1-8b-Q4_K_M.gguf"
 
       - name: Create CI matrix config
         run: |
@@ -77,10 +77,10 @@ jobs:
           mode = "managed"
 
           [models.granite-4_1-3b]
-          llamacpp = "models/granite-4.1-3b/granite-4.1-3b-instruct.gguf"
+          llamacpp = "models/granite-4.1-3b/granite-4.1-3b-Q4_K_M.gguf"
 
           [models.granite-4_1-8b]
-          llamacpp = "models/granite-4.1-8b/granite-4.1-8b-instruct-Q4_K_M.gguf"
+          llamacpp = "models/granite-4.1-8b/granite-4.1-8b-Q4_K_M.gguf"
           EOF
 
       - name: Run weekly validation
