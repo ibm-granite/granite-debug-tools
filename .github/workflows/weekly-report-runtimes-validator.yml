@@ -44,6 +44,8 @@ jobs:
           curl -fsSL -L -o llama.tar.gz "$ASSET_URL"
           tar -xzf llama.tar.gz
           sudo mv llama-*/llama-server /usr/local/bin/
+          sudo mv llama-*/*.so* /usr/local/lib/
+          sudo ldconfig
           rm -rf llama.tar.gz llama-*/
         working-directory: .
 
