@@ -21,6 +21,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from runtimes_validator.cli import main as validate_main
+
 SCRIPT_DIR = Path(__file__).resolve().parent
 DEFAULT_CONFIG = SCRIPT_DIR / "weekly_matrix.toml"
 RESULTS_BASE = SCRIPT_DIR / "results" / "weekly"
@@ -98,8 +100,6 @@ def run_combination(
     extra: dict[str, Any] | None = None,
     headers: list[str] | None = None,
 ) -> int:
-    from runtimes_validator.cli import main as validate_main
-
     argv = [
         "--engine",
         engine_id,
