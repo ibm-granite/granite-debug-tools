@@ -64,8 +64,8 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          uv run hf download ibm-granite/granite-4.1-3b-instruct --local-dir models/granite-4.1-3b --include "*.gguf"
-          uv run hf download ibm-granite/granite-4.1-8b-instruct --local-dir models/granite-4.1-8b --include "*Q4_K_M.gguf"
+          uv run hf download ibm-granite/granite-4.1-3b --local-dir models/granite-4.1-3b --include "*.gguf"
+          uv run hf download ibm-granite/granite-4.1-8b --local-dir models/granite-4.1-8b --include "*Q4_K_M.gguf"
 
       - name: Create CI matrix config
         run: |
