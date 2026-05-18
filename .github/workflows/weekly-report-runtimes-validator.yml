@@ -90,6 +90,10 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.COS_SECRET_ACCESS_KEY }}
         run: |
           DATE=$(date -u +%Y-%m-%d)
+          if [ ! -d "results/weekly/$DATE" ]; then
+            echo "No results directory found, skipping upload."
+            exit 0
+          fi
           aws s3 sync \
             results/weekly/$DATE/ \
             s3://${{ secrets.COS_BUCKET }}/weekly/$DATE/ \
