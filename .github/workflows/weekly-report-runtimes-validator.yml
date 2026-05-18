@@ -19,17 +19,30 @@ jobs:
         with:
           version: "latest"
 
+      - name: Parse Ollama version from config
+        id: ollama-version
+        run: |
+          VERSION=$(python3 -c "import tomllib; print(tomllib.load(open('weekly_matrix.toml','rb'))['engines']['ollama']['version'])")
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
       - name: Install Ollama
-        run: curl -fsSL https://ollama.com/install.sh | sh
+        run: curl -fsSL https://ollama.com/install.sh | OLLAMA_VERSION=${{ steps.ollama-version.outputs.version }} sh
         working-directory: .
+
+      - name: Parse llama.cpp version from config
+        id: llamacpp-version
+        run: |
+          VERSION=$(python3 -c "import tomllib; print(tomllib.load(open('weekly_matrix.toml','rb'))['engines']['llamacpp']['version'])")
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Install llama.cpp
         run: |
-          curl -fsSL -o llama-server.tar.gz \
-            https://github.com/ggml-org/llama.cpp/releases/latest/download/llama-server-linux-x86_64.tar.gz
-          tar -xzf llama-server.tar.gz
-          sudo mv build/bin/llama-server /usr/local/bin/
-          rm -rf llama-server.tar.gz build/
+          VERSION="${{ steps.llamacpp-version.outputs.version }}"
+          ASSET_URL=$(gh release view "$VERSION" --repo ggml-org/llama.cpp --json assets --jq '.assets[] | select(.name | test("bin-ubuntu-x64\\.tar\\.gz$")) | .url')
+          curl -fsSL -L -o llama.tar.gz "$ASSET_URL"
+          tar -xzf llama.tar.gz
+          sudo mv llama-*/llama-server /usr/local/bin/
+          rm -rf llama.tar.gz llama-*/
         working-directory: .
 
       - name: Install dependencies
