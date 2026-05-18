@@ -56,13 +56,13 @@ jobs:
           ollama pull granite4.1:3b
           ollama pull granite4.1:8b
 
-      - name: Install huggingface-cli
-        run: uv pip install huggingface-hub
+      - name: Install huggingface-hub
+        run: uv pip install huggingface-hub[hf_xet]
 
       - name: Download llama.cpp models
         run: |
-          uv run huggingface-cli download ibm-granite/granite-4.1-3b-instruct --local-dir models/granite-4.1-3b --include "*.gguf"
-          uv run huggingface-cli download ibm-granite/granite-4.1-8b-instruct --local-dir models/granite-4.1-8b --include "*Q4_K_M.gguf"
+          uv run hf download ibm-granite/granite-4.1-3b-instruct --local-dir models/granite-4.1-3b --include "*.gguf"
+          uv run hf download ibm-granite/granite-4.1-8b-instruct --local-dir models/granite-4.1-8b --include "*Q4_K_M.gguf"
 
       - name: Create CI matrix config
         run: |
