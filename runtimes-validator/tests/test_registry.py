@@ -12,6 +12,7 @@ COMMON_IDS = {
     "concurrent_requests",
     "multi_turn",
     "tool_calling",
+    "multi_tool_calling",
     "system_message_behavior",
     "long_input",
     "special_token_leakage",
