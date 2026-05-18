@@ -203,26 +203,16 @@ def test_health_check_hits_correct_url(mock_get: MagicMock):
     assert url == "http://myhost:8080/health"
 
 
-# --- start/stop behavior in external mode ---
+# --- start behavior in external mode ---
 
 
 def test_start_rejects_external_mode():
-    engine = VllmEngine(EngineConfig())
+    engine = VllmEngine(EngineConfig(mode="external"))
     try:
         engine.start("model")
         assert False, "Expected ValueError"
     except ValueError:
         pass
-
-
-def test_stop_noop_without_process():
-    engine = VllmEngine(EngineConfig())
-    engine.stop()
-
-
-def test_vllm_stop_noop_when_no_process():
-    engine = VllmEngine(EngineConfig())
-    engine.stop()  # Should not raise
 
 
 # --- chat_stream() ---

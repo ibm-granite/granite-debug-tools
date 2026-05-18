@@ -2,12 +2,11 @@ from __future__ import annotations
 
 import time
 
-import requests
-
 from runtimes_validator.domain.models import CheckResult, TestResult
 from runtimes_validator.engines.base import AbstractEngine
 from runtimes_validator.engines.vllm import VllmEngine
 from runtimes_validator.tests.base import AbstractValidationTest
+from runtimes_validator.tests.engine_specific._vllm_helpers import check_model_listed
 from runtimes_validator.tests.registry import register_test
 
 _KNOWN_QUANTIZATIONS = {"awq", "gptq", "fp8", "squeezellm", "marlin", "gptq_marlin"}
@@ -32,7 +31,7 @@ class QuantizationTest(AbstractValidationTest):
         start = time.time()
 
         if self._check_quantization_config(engine, checks):
-            self._check_model_listed(engine, checks)
+            check_model_listed(engine, checks, "quantized_model_listed")
             self._check_generation(engine, model, checks)
 
         return TestResult(
@@ -82,38 +81,6 @@ class QuantizationTest(AbstractValidationTest):
             )
 
         return True
-
-    def _check_model_listed(
-        self,
-        engine: VllmEngine,
-        checks: list[CheckResult],
-    ) -> None:
-        try:
-            resp = requests.get(
-                f"{engine._base_url}/v1/models",
-                headers=engine._headers or None,
-                timeout=engine._http_timeout,
-            )
-            resp.raise_for_status()
-            models = resp.json().get("data", [])
-        except Exception as e:
-            checks.append(
-                CheckResult(
-                    name="quantized_model_listed",
-                    passed=False,
-                    detail=str(e),
-                )
-            )
-            return
-
-        checks.append(
-            CheckResult(
-                name="quantized_model_listed",
-                passed=len(models) > 0,
-                expected=">= 1 model",
-                actual=len(models),
-            )
-        )
 
     def _check_generation(
         self,

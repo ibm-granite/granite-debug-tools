@@ -2,12 +2,11 @@ from __future__ import annotations
 
 import time
 
-import requests
-
 from runtimes_validator.domain.models import CheckResult, TestResult
 from runtimes_validator.engines.base import AbstractEngine
 from runtimes_validator.engines.vllm import VllmEngine
 from runtimes_validator.tests.base import AbstractValidationTest
+from runtimes_validator.tests.engine_specific._vllm_helpers import check_model_listed
 from runtimes_validator.tests.registry import register_test
 
 
@@ -31,7 +30,7 @@ class TensorParallelTest(AbstractValidationTest):
 
         if self._check_tp_config(engine, checks):
             self._check_tp_health(engine, checks)
-            self._check_tp_model_listed(engine, checks)
+            check_model_listed(engine, checks, "tp_model_listed")
             self._check_tp_generation(engine, model, checks)
 
         return TestResult(
@@ -96,38 +95,6 @@ class TensorParallelTest(AbstractValidationTest):
                 passed=healthy,
                 expected=True,
                 actual=healthy,
-            )
-        )
-
-    def _check_tp_model_listed(
-        self,
-        engine: VllmEngine,
-        checks: list[CheckResult],
-    ) -> None:
-        try:
-            resp = requests.get(
-                f"{engine._base_url}/v1/models",
-                headers=engine._headers or None,
-                timeout=engine._http_timeout,
-            )
-            resp.raise_for_status()
-            models = resp.json().get("data", [])
-        except Exception as e:
-            checks.append(
-                CheckResult(
-                    name="tp_model_listed",
-                    passed=False,
-                    detail=str(e),
-                )
-            )
-            return
-
-        checks.append(
-            CheckResult(
-                name="tp_model_listed",
-                passed=len(models) > 0,
-                expected=">= 1 model",
-                actual=len(models),
             )
         )
 

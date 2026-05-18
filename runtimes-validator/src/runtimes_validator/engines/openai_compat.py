@@ -159,6 +159,15 @@ class OpenAICompatibleEngine(AbstractEngine):
         except requests.RequestException:
             return False
 
+    def list_models(self) -> list[dict[str, Any]]:
+        resp = requests.get(
+            f"{self._base_url}/v1/models",
+            headers=self._headers or None,
+            timeout=self._http_timeout,
+        )
+        resp.raise_for_status()
+        return resp.json().get("data", [])
+
     def get_info(self) -> EngineInfo:
         return EngineInfo(
             engine_id=self.engine_id(),
