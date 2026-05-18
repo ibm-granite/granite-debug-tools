@@ -52,11 +52,9 @@ jobs:
 
       - name: Pull Ollama models
         run: |
-          ollama serve &
           until curl -sf http://localhost:11434/ >/dev/null; do sleep 1; done
           ollama pull granite4.1:3b
           ollama pull granite4.1:8b
-          pkill ollama
 
       - name: Install huggingface-cli
         run: uv pip install huggingface-hub
