@@ -36,6 +36,8 @@ jobs:
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Install llama.cpp
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           VERSION="${{ steps.llamacpp-version.outputs.version }}"
           ASSET_URL=$(gh release view "$VERSION" --repo ggml-org/llama.cpp --json assets --jq '.assets[] | select(.name | test("bin-ubuntu-x64\\.tar\\.gz$")) | .url')
