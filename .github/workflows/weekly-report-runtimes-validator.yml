@@ -78,6 +78,7 @@ jobs:
 
           [engines.llamacpp]
           mode = "managed"
+          extra = { ctx_size = 8192 }
 
           [models.granite-4_1-3b]
           llamacpp = "models/granite-4.1-3b/granite-4.1-3b-Q4_K_M.gguf"
