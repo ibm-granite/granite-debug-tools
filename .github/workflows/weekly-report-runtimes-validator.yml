@@ -43,10 +43,11 @@ jobs:
           ASSET_URL=$(gh release view "$VERSION" --repo ggml-org/llama.cpp --json assets --jq '.assets[] | select(.name | test("bin-ubuntu-x64\\.tar\\.gz$")) | .url')
           curl -fsSL -L -o llama.tar.gz "$ASSET_URL"
           tar -xzf llama.tar.gz
-          sudo mv llama-*/llama-server /usr/local/bin/
-          sudo mv llama-*/*.so* /usr/local/lib/
+          sudo mv llama-*/ /opt/llama-cpp/
+          sudo ln -sf /opt/llama-cpp/llama-server /usr/local/bin/llama-server
+          echo "/opt/llama-cpp" | sudo tee /etc/ld.so.conf.d/llama.conf
           sudo ldconfig
-          rm -rf llama.tar.gz llama-*/
+          rm -f llama.tar.gz
         working-directory: .
 
       - name: Install dependencies
