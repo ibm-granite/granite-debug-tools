@@ -2,12 +2,12 @@
 description = "Weekly Granite 4.1 validation matrix"
 
 [engines.ollama]
-version = "0.22.0"
+version = "0.24.0"
 mode = "external"
 extra = { skip_pull = false }
 
 [engines.llamacpp]
-version = "b8680"
+version = "b9245"
 mode = "managed"
 # extra.n_gpu_layers = 99   # uncomment for GPU
 
