@@ -91,7 +91,7 @@ jobs:
         run: uv run python weekly_report.py
 
       - name: Upload results to IBM COS
-        if: always()
+        if: always() && vars.COS_ENABLED == 'true'
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.COS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.COS_SECRET_ACCESS_KEY }}
