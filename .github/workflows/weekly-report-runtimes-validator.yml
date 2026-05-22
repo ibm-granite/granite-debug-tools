@@ -24,12 +24,20 @@ jobs:
         working-directory: .
 
       - name: Install llama.cpp
+        id: llamacpp
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          curl -fsSL -o llama-server.tar.gz \
-            https://github.com/ggml-org/llama.cpp/releases/latest/download/llama-server-linux-x86_64.tar.gz
-          tar -xzf llama-server.tar.gz
-          sudo mv build/bin/llama-server /usr/local/bin/
-          rm -rf llama-server.tar.gz build/
+          TAG=$(gh release view --repo ggml-org/llama.cpp --json tagName --jq '.tagName')
+          ASSET_URL=$(gh release view --repo ggml-org/llama.cpp --json assets --jq '.assets[] | select(.name | test("bin-ubuntu-x64\\.tar\\.gz$")) | .url')
+          curl -fsSL -L -o llama.tar.gz "$ASSET_URL"
+          tar -xzf llama.tar.gz
+          sudo mv llama-*/ /opt/llama-cpp/
+          sudo ln -sf /opt/llama-cpp/llama-server /usr/local/bin/llama-server
+          echo "/opt/llama-cpp" | sudo tee /etc/ld.so.conf.d/llama.conf
+          sudo ldconfig
+          rm -f llama.tar.gz
+          echo "version=$TAG" >> "$GITHUB_OUTPUT"
         working-directory: .
 
       - name: Install dependencies
@@ -41,42 +49,52 @@ jobs:
           until curl -sf http://localhost:11434/ >/dev/null; do sleep 1; done
           ollama pull granite4.1:3b
           ollama pull granite4.1:8b
-          pkill ollama
 
-      - name: Install huggingface-cli
-        run: uv pip install huggingface-hub
+      - name: Install huggingface-hub
+        run: uv pip install huggingface-hub[hf_xet]
 
       - name: Download llama.cpp models
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          uv run huggingface-cli download ibm-granite/granite-4.1-3b-instruct --local-dir models/granite-4.1-3b --include "*.gguf"
-          uv run huggingface-cli download ibm-granite/granite-4.1-8b-instruct --local-dir models/granite-4.1-8b --include "*Q4_K_M.gguf"
+          uv run hf download ibm-granite/granite-4.1-3b-GGUF --local-dir models/granite-4.1-3b --include "granite-4.1-3b-Q4_K_M.gguf"
+          uv run hf download ibm-granite/granite-4.1-8b-GGUF --local-dir models/granite-4.1-8b --include "granite-4.1-8b-Q4_K_M.gguf"
 
       - name: Create CI matrix config
         run: |
-          cat > weekly_matrix.local.toml << 'EOF'
+          OLLAMA_VERSION=$(ollama --version | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
+          LLAMACPP_VERSION="${{ steps.llamacpp.outputs.version }}"
+          cat > weekly_matrix.local.toml << EOF
           [engines.ollama]
+          version = "$OLLAMA_VERSION"
           mode = "managed"
 
           [engines.llamacpp]
+          version = "$LLAMACPP_VERSION"
           mode = "managed"
+          extra = { ctx_size = 8192 }
 
           [models.granite-4_1-3b]
-          llamacpp = "models/granite-4.1-3b/granite-4.1-3b-instruct.gguf"
+          llamacpp = "models/granite-4.1-3b/granite-4.1-3b-Q4_K_M.gguf"
 
           [models.granite-4_1-8b]
-          llamacpp = "models/granite-4.1-8b/granite-4.1-8b-instruct-Q4_K_M.gguf"
+          llamacpp = "models/granite-4.1-8b/granite-4.1-8b-Q4_K_M.gguf"
           EOF
 
       - name: Run weekly validation
         run: uv run python weekly_report.py
 
       - name: Upload results to IBM COS
-        if: always()
+        if: always() && vars.COS_ENABLED == 'true'
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.COS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.COS_SECRET_ACCESS_KEY }}
         run: |
           DATE=$(date -u +%Y-%m-%d)
+          if [ ! -d "results/weekly/$DATE" ]; then
+            echo "No results directory found, skipping upload."
+            exit 0
+          fi
           aws s3 sync \
             results/weekly/$DATE/ \
             s3://${{ secrets.COS_BUCKET }}/weekly/$DATE/ \
