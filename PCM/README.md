@@ -208,12 +208,12 @@ Conversations follow the standard `{role, content}` format:
 
 ## 📚 Read More
 
-If you are interesed in how we used PCM so far, you can read more in our papers:
+If you are interesed in how we used PCM so far, you can read more in our paper:
 
-- Sungeun An and Anna Lisa Gentile. **Personal Agents and Conversational Memory**. In *Trust, Autonomy and Accountability in PKG-Based Agentic AI Workshop at ESWC 2026*, CEUR Workshop Proceedings, 2026. [[PDF](TAAPAAI26_paper_6.pdf)]
+Sungeun An and Anna Lisa Gentile. **Personal Agents and Conversational Memory**. In *Trust, Autonomy and Accountability in PKG-Based Agentic AI Workshop at ESWC 2026*, CEUR Workshop Proceedings, 2026. [[PDF](TAAPAAI26_paper_6.pdf)]
 
 ```bibtex
-@inproceedings{An2025,
+@inproceedings{An2026,
   author       = {Sungeun An and
                   Anna Lisa Gentile},
   editor       = {John Domingue, Aidan Hogan, Sabrina Kirrane, and Oshani Seneviratne},
@@ -223,7 +223,7 @@ If you are interesed in how we used PCM so far, you can read more in our papers:
   pages        = {to appear},
   publisher    = {CEUR-WS.org},
   year         = {2026},
-  url          = {https://ceur-ws.org/Vol}
+  url          = {to appear}
 }
 ```
 
