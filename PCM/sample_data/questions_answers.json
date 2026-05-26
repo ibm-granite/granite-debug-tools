@@ -1,0 +1,74 @@
+[
+  {
+    "conversation_id": "sample_01",
+    "question": "How many of Emma's recipes have I tried out?",
+    "answer": "3",
+    "question_type": "knowledge-update"
+  },
+  {
+    "conversation_id": "sample_02",
+    "question": "Where did I go on my most recent family trip?",
+    "answer": "Paris",
+    "question_type": "knowledge-update"
+  },
+  {
+    "conversation_id": "sample_03",
+    "question": "How much more did I spend on accommodations per night in Hawaii compared to Tokyo?",
+    "answer": "$270",
+    "question_type": "multi-session"
+  },
+  {
+    "conversation_id": "sample_04",
+    "question": "Did I receive a higher percentage discount on my first order from HelloFresh, compared to my first UberEats order?",
+    "answer": "Yes.",
+    "question_type": "multi-session"
+  },
+  {
+    "conversation_id": "sample_05",
+    "question": "I'm planning to visit the Vatican again and I was wondering if you could remind me of the name of that famous deli near the Vatican that serves the best cured meats and cheeses?",
+    "answer": "Roscioli",
+    "question_type": "single-session-assistant"
+  },
+  {
+    "conversation_id": "sample_06",
+    "question": "I was going through our previous chat and I was wondering, what was Andy wearing in the script you wrote for the comedy movie scene?",
+    "answer": "Andy was wearing an untidy, stained white shirt.",
+    "question_type": "single-session-assistant"
+  },
+  {
+    "conversation_id": "sample_07",
+    "question": "Can you suggest a hotel for my upcoming trip to Miami?",
+    "answer": "The user would prefer suggestions of hotels in Miami that offer great views, possibly of the ocean or the city skyline, and have unique features such as a rooftop pool or a hot tub on the balcony. They may not prefer suggestions of basic or budget hotels without these features.",
+    "question_type": "single-session-preference"
+  },
+  {
+    "conversation_id": "sample_08",
+    "question": "I'm thinking of inviting my colleagues over for a small gathering. Any tips on what to bake?",
+    "answer": "The user would prefer baking suggestions that take into account their previous success with the lemon poppyseed cake, such as variations of that recipe or other desserts that share similar qualities. They might prefer suggestions that balance impressiveness with manageability, considering their previous experience. The user may not prefer overly complex or unfamiliar recipes, or suggestions that do not build upon their existing baking experience.",
+    "question_type": "single-session-preference"
+  },
+  {
+    "conversation_id": "sample_09",
+    "question": "Where did I attend the Imagine Dragons concert?",
+    "answer": "Xfinity Center",
+    "question_type": "single-session-user"
+  },
+  {
+    "conversation_id": "sample_10",
+    "question": "Where did I meet Sophia?",
+    "answer": "a coffee shop in the city",
+    "question_type": "single-session-user"
+  },
+  {
+    "conversation_id": "sample_11",
+    "question": "Who did I meet first, the woman selling jam at the farmer's market or the tourist from Australia?",
+    "answer": "the woman selling jam at the farmer's market",
+    "question_type": "temporal-reasoning"
+  },
+  {
+    "conversation_id": "sample_12",
+    "question": "What was the first issue I had with my new car after its first service?",
+    "answer": "GPS system not functioning correctly",
+    "question_type": "temporal-reasoning"
+  }
+]

@@ -1,0 +1,1350 @@
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema:   <http://schema.org/> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+@prefix prov:     <http://www.w3.org/ns/prov#> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix ob:       <https://w3id.org/ontobio#> .
+@prefix rel:      <http://purl.org/vocab/relationship/> .
+@prefix bio:      <http://purl.org/vocab/bio/0.1/> .
+@prefix cv:       <http://rdfs.org/resume-rdf/cv.rdfs#> .
+@prefix opencare: <https://w3id.org/opencare#> .
+@prefix dct:      <http://purl.org/dc/terms/> .
+@prefix dc:       <http://purl.org/dc/elements/1.1/> .
+@prefix pcm:      <https://w3id.org/pcm/> .
+@prefix sioc:     <http://rdfs.org/sioc/ns#> .
+
+# =============================================================================
+# PCM — The Personal Conversational Memory Ontology
+#
+# Self-contained ontology for extracting personal knowledge graphs
+# from conversational text.  Formally declares every class and property
+# used by the extraction pipeline, drawing from standard vocabularies.
+# =============================================================================
+
+<https://w3id.org/pcm/ontology/pcm-ontology.owl> a owl:Ontology ;
+    rdfs:label "The Personal Conversational Memory Ontology"@en ;
+    dc:title "The Personal Conversational Memory Ontology"@en ;
+    rdfs:comment "Schema for personal knowledge graph extraction from conversational text. Reuses Schema.org, OntoBio, FOAF, PROV-O, SKOS, Relationship vocab, BIO, OpenCare, and CV/ResumeRDF."@en ;
+    dct:created "2016/04/30" ;
+    dct:lastModified "2026/03/10" ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dc:description <https://w3id.org/pcm/images/pcm-ontology-diagram.png> ;
+    dc:creator <https://w3id.org/scholarlydata/person/anna-lisa-gentile> ;
+    owl:versionInfo "1.0" .
+
+# =============================================================================
+# 1. PERSON & IDENTITY
+# =============================================================================
+
+foaf:Agent a owl:Class ;
+    rdfs:label "Agent"@en .
+
+foaf:Person a owl:Class ;
+    rdfs:subClassOf foaf:Agent ;
+    rdfs:label "Person"@en .
+
+schema:Person a owl:Class ;
+    rdfs:label "Person"@en ;
+    owl:equivalentClass foaf:Person .
+
+ob:Man a owl:Class ;
+    rdfs:subClassOf foaf:Person ;
+    rdfs:label "Man"@en .
+
+ob:Woman a owl:Class ;
+    rdfs:subClassOf foaf:Person ;
+    rdfs:label "Woman"@en .
+
+schema:GenderType a owl:Class ;
+    rdfs:label "Gender Type"@en .
+
+schema:Language a owl:Class ;
+    rdfs:label "Language"@en .
+
+ob:EthnicGroup a owl:Class ;
+    rdfs:label "Ethnic Group"@en .
+
+ob:Religion a owl:Class ;
+    rdfs:label "Religion"@en .
+
+# --- Person properties ---
+
+foaf:name a owl:DatatypeProperty ;
+    rdfs:label "name"@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range xsd:string .
+
+foaf:firstName a owl:DatatypeProperty ;
+    rdfs:label "first name"@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range xsd:string .
+
+foaf:family_name a owl:DatatypeProperty ;
+    rdfs:label "family name"@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range xsd:string .
+
+foaf:nick a owl:DatatypeProperty ;
+    rdfs:label "nickname"@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range xsd:string .
+
+schema:name a rdf:Property ;
+    rdfs:label "name"@en .
+
+schema:description a rdf:Property ;
+    rdfs:label "description"@en .
+
+schema:alternateName a rdf:Property ;
+    rdfs:label "alternate name"@en .
+
+schema:identifier a rdf:Property ;
+    rdfs:label "identifier"@en ;
+    rdfs:comment "Any kind of identifier (e.g. social media handle, ISBN, account ID)."@en .
+
+schema:gender a owl:ObjectProperty ;
+    rdfs:label "gender"@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range schema:GenderType .
+
+schema:knowsLanguage a rdf:Property ;
+    rdfs:label "knows language"@en ;
+    rdfs:domain foaf:Person .
+
+ob:hasEthnicity a owl:ObjectProperty ;
+    rdfs:label "has ethnicity"@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range ob:EthnicGroup .
+
+ob:followsReligion a owl:ObjectProperty ;
+    rdfs:label "follows religion"@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range ob:Religion .
+
+ob:hasGoal a owl:DatatypeProperty ;
+    rdfs:label "has goal"@en ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range xsd:string .
+
+bio:biography a owl:DatatypeProperty ;
+    rdfs:label "biography"@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range xsd:string .
+
+foaf:interest a owl:ObjectProperty ;
+    rdfs:label "interest"@en ;
+    rdfs:domain foaf:Person .
+
+# =============================================================================
+# 2. FAMILY RELATIONSHIPS (OntoBio)
+# =============================================================================
+
+ob:hasFamilyRelation a owl:ObjectProperty ;
+    rdfs:label "has family relation"@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range foaf:Person .
+
+ob:hasParent a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasFamilyRelation ;
+    rdfs:label "has parent"@en .
+
+ob:isParentOf a owl:ObjectProperty ;
+    owl:inverseOf ob:hasParent ;
+    rdfs:label "is parent of"@en .
+
+ob:hasFather a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasParent ;
+    rdfs:label "has father"@en ;
+    rdfs:range ob:Man .
+
+ob:hasMother a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasParent ;
+    rdfs:label "has mother"@en ;
+    rdfs:range ob:Woman .
+
+ob:hasChild a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasFamilyRelation ;
+    rdfs:label "has child"@en .
+
+ob:hasSon a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasChild ;
+    rdfs:label "has son"@en ;
+    rdfs:range ob:Man .
+
+ob:hasDaughter a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasChild ;
+    rdfs:label "has daughter"@en ;
+    rdfs:range ob:Woman .
+
+ob:hasSibling a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasFamilyRelation ;
+    rdfs:label "has sibling"@en ;
+    a owl:SymmetricProperty .
+
+ob:hasBrother a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasSibling ;
+    rdfs:label "has brother"@en ;
+    rdfs:range ob:Man .
+
+ob:hasSister a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasSibling ;
+    rdfs:label "has sister"@en ;
+    rdfs:range ob:Woman .
+
+ob:hasSpouse a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasFamilyRelation ;
+    rdfs:label "has spouse"@en ;
+    a owl:SymmetricProperty .
+
+ob:hasHusband a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasSpouse ;
+    rdfs:label "has husband"@en ;
+    rdfs:range ob:Man .
+
+ob:hasWife a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasSpouse ;
+    rdfs:label "has wife"@en ;
+    rdfs:range ob:Woman .
+
+ob:hasGrandParent a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasFamilyRelation ;
+    rdfs:label "has grandparent"@en .
+
+ob:hasUncle a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasFamilyRelation ;
+    rdfs:label "has uncle"@en .
+
+ob:hasAunt a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasFamilyRelation ;
+    rdfs:label "has aunt"@en .
+
+ob:hasCousin a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasFamilyRelation ;
+    rdfs:label "has cousin"@en ;
+    a owl:SymmetricProperty .
+
+ob:hasNephew a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasFamilyRelation ;
+    rdfs:label "has nephew"@en .
+
+ob:hasNiece a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasFamilyRelation ;
+    rdfs:label "has niece"@en .
+
+ob:hasInLaw a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasFamilyRelation ;
+    rdfs:label "has in-law"@en .
+
+# =============================================================================
+# 3. SOCIAL RELATIONSHIPS (Relationship vocab)
+# =============================================================================
+
+ob:socialRelationOf a owl:ObjectProperty ;
+    rdfs:label "social relation of"@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range foaf:Person .
+
+rel:friendOf a owl:ObjectProperty, owl:SymmetricProperty ;
+    rdfs:subPropertyOf ob:socialRelationOf ;
+    rdfs:label "friend of"@en .
+
+rel:closeFriendOf a owl:ObjectProperty, owl:SymmetricProperty ;
+    rdfs:subPropertyOf rel:friendOf ;
+    rdfs:label "close friend of"@en .
+
+rel:acquaintanceOf a owl:ObjectProperty, owl:SymmetricProperty ;
+    rdfs:subPropertyOf ob:socialRelationOf ;
+    rdfs:label "acquaintance of"@en .
+
+rel:colleagueOf a owl:ObjectProperty, owl:SymmetricProperty ;
+    rdfs:subPropertyOf ob:socialRelationOf ;
+    rdfs:label "colleague of"@en .
+
+rel:worksWith a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:socialRelationOf ;
+    rdfs:label "works with"@en .
+
+rel:neighborOf a owl:ObjectProperty, owl:SymmetricProperty ;
+    rdfs:subPropertyOf ob:socialRelationOf ;
+    rdfs:label "neighbor of"@en .
+
+rel:mentorOf a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:socialRelationOf ;
+    rdfs:label "mentor of"@en .
+
+rel:apprenticeTo a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:socialRelationOf ;
+    rdfs:label "apprentice to"@en .
+
+rel:engagedTo a owl:ObjectProperty, owl:SymmetricProperty ;
+    rdfs:subPropertyOf ob:socialRelationOf ;
+    rdfs:label "engaged to"@en .
+
+# =============================================================================
+# 4. ACTIONS (Schema.org)
+# =============================================================================
+
+schema:Action a owl:Class ;
+    rdfs:label "Action"@en .
+
+schema:CreateAction a owl:Class ;
+    rdfs:subClassOf schema:Action ;
+    rdfs:label "Create Action"@en .
+
+schema:UpdateAction a owl:Class ;
+    rdfs:subClassOf schema:Action ;
+    rdfs:label "Update Action"@en .
+
+schema:DeleteAction a owl:Class ;
+    rdfs:subClassOf schema:Action ;
+    rdfs:label "Delete Action"@en .
+
+schema:ReadAction a owl:Class ;
+    rdfs:subClassOf schema:Action ;
+    rdfs:label "Read Action"@en .
+
+schema:WriteAction a owl:Class ;
+    rdfs:subClassOf schema:Action ;
+    rdfs:label "Write Action"@en .
+
+schema:SearchAction a owl:Class ;
+    rdfs:subClassOf schema:Action ;
+    rdfs:label "Search Action"@en .
+
+schema:CommunicateAction a owl:Class ;
+    rdfs:subClassOf schema:Action ;
+    rdfs:label "Communicate Action"@en .
+
+schema:AchieveAction a owl:Class ;
+    rdfs:subClassOf schema:Action ;
+    rdfs:label "Achieve Action"@en .
+
+schema:AssessAction a owl:Class ;
+    rdfs:subClassOf schema:Action ;
+    rdfs:label "Assess Action"@en .
+
+schema:ConsumeAction a owl:Class ;
+    rdfs:subClassOf schema:Action ;
+    rdfs:label "Consume Action"@en .
+
+schema:InteractAction a owl:Class ;
+    rdfs:subClassOf schema:Action ;
+    rdfs:label "Interact Action"@en .
+
+schema:OrganizeAction a owl:Class ;
+    rdfs:subClassOf schema:Action ;
+    rdfs:label "Organize Action"@en .
+
+schema:PlayAction a owl:Class ;
+    rdfs:subClassOf schema:Action ;
+    rdfs:label "Play Action"@en .
+
+schema:TradeAction a owl:Class ;
+    rdfs:subClassOf schema:Action ;
+    rdfs:label "Trade Action"@en .
+
+schema:TransferAction a owl:Class ;
+    rdfs:subClassOf schema:Action ;
+    rdfs:label "Transfer Action"@en .
+
+schema:BuyAction a owl:Class ;
+    rdfs:subClassOf schema:TradeAction ;
+    rdfs:label "Buy Action"@en .
+
+schema:PayAction a owl:Class ;
+    rdfs:subClassOf schema:TradeAction ;
+    rdfs:label "Pay Action"@en .
+
+schema:RepairAction a owl:Class ;
+    rdfs:subClassOf schema:Action ;
+    rdfs:label "Repair Action"@en .
+
+schema:ReviewAction a owl:Class ;
+    rdfs:subClassOf schema:AssessAction ;
+    rdfs:label "Review Action"@en .
+
+schema:TravelAction a owl:Class ;
+    rdfs:subClassOf schema:MoveAction ;
+    rdfs:label "Travel Action"@en .
+
+schema:UseAction a owl:Class ;
+    rdfs:subClassOf schema:ConsumeAction ;
+    rdfs:label "Use Action"@en .
+
+schema:MoveAction a owl:Class ;
+    rdfs:subClassOf schema:Action ;
+    rdfs:label "Move Action"@en .
+
+# --- Action properties ---
+
+schema:agent a rdf:Property ;
+    rdfs:label "agent"@en .
+
+schema:object a rdf:Property ;
+    rdfs:label "object"@en .
+
+schema:result a rdf:Property ;
+    rdfs:label "result"@en .
+
+schema:location a rdf:Property ;
+    rdfs:label "location"@en .
+
+schema:instrument a rdf:Property ;
+    rdfs:label "instrument"@en .
+
+schema:participant a rdf:Property ;
+    rdfs:label "participant"@en .
+
+schema:startDate a rdf:Property ;
+    rdfs:label "start date"@en .
+
+schema:endDate a rdf:Property ;
+    rdfs:label "end date"@en .
+
+schema:actionStatus a rdf:Property ;
+    rdfs:label "action status"@en .
+
+schema:CompletedActionStatus a schema:ActionStatusType ;
+    rdfs:label "Completed"@en .
+
+schema:ActiveActionStatus a schema:ActionStatusType ;
+    rdfs:label "Active"@en .
+
+schema:PotentialActionStatus a schema:ActionStatusType ;
+    rdfs:label "Potential"@en .
+
+# =============================================================================
+# 5. EVENTS
+# =============================================================================
+
+schema:Event a owl:Class ;
+    rdfs:label "Event"@en .
+
+schema:SocialEvent a owl:Class ;
+    rdfs:subClassOf schema:Event ;
+    rdfs:label "Social Event"@en .
+
+bio:Marriage a owl:Class ;
+    rdfs:label "Marriage"@en .
+
+schema:organizer a rdf:Property ;
+    rdfs:label "organizer"@en .
+
+schema:attendee a rdf:Property ;
+    rdfs:label "attendee"@en .
+
+# =============================================================================
+# 6. TRAVEL (OntoBio)
+# =============================================================================
+
+ob:Travel a owl:Class ;
+    rdfs:label "Travel"@en .
+
+ob:TravelPurpose a owl:Class ;
+    rdfs:label "Travel Purpose"@en .
+
+ob:undertookTravel a owl:ObjectProperty ;
+    rdfs:label "undertook travel"@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range ob:Travel .
+
+ob:travelUndertakenBy a owl:ObjectProperty ;
+    owl:inverseOf ob:undertookTravel ;
+    rdfs:label "travel undertaken by"@en .
+
+ob:travelFrom a owl:ObjectProperty ;
+    rdfs:label "travel from"@en ;
+    rdfs:domain ob:Travel ;
+    rdfs:range schema:Place .
+
+ob:travelTo a owl:ObjectProperty ;
+    rdfs:label "travel to"@en ;
+    rdfs:domain ob:Travel ;
+    rdfs:range schema:Place .
+
+ob:reasonForTravel a owl:ObjectProperty ;
+    rdfs:label "reason for travel"@en ;
+    rdfs:domain ob:Travel ;
+    rdfs:range ob:TravelPurpose .
+
+ob:modeOfTransport a owl:DatatypeProperty ;
+    rdfs:label "mode of transport"@en ;
+    rdfs:domain ob:Travel ;
+    rdfs:range xsd:string .
+
+ob:travelYear a owl:DatatypeProperty ;
+    rdfs:label "travel year"@en ;
+    rdfs:domain ob:Travel ;
+    rdfs:range xsd:gYear .
+
+# =============================================================================
+# 7. HEALTH (OpenCare + OntoBio)
+# =============================================================================
+
+opencare:HealthRecord a owl:Class ;
+    rdfs:label "Health Record"@en .
+
+schema:MedicalCondition a owl:Class ;
+    rdfs:label "Medical Condition"@en .
+
+ob:Injury a owl:Class ;
+    rdfs:subClassOf schema:MedicalCondition ;
+    rdfs:label "Injury"@en .
+
+opencare:Disease a owl:Class ;
+    rdfs:subClassOf schema:MedicalCondition ;
+    rdfs:label "Disease"@en .
+
+opencare:Symptom a owl:Class ;
+    rdfs:label "Symptom"@en .
+
+opencare:TreatmentProcedure a owl:Class ;
+    rdfs:label "Treatment Procedure"@en .
+
+opencare:Surgery a owl:Class ;
+    rdfs:subClassOf opencare:TreatmentProcedure ;
+    rdfs:label "Surgery"@en .
+
+opencare:DentalProcedure a owl:Class ;
+    rdfs:subClassOf opencare:TreatmentProcedure ;
+    rdfs:label "Dental Procedure"@en .
+
+ob:Pharmacotherapy a owl:Class ;
+    rdfs:subClassOf opencare:TreatmentProcedure ;
+    rdfs:label "Pharmacotherapy"@en .
+
+ob:AlternativeMedicine a owl:Class ;
+    rdfs:subClassOf opencare:TreatmentProcedure ;
+    rdfs:label "Alternative Medicine"@en .
+
+opencare:AnatomicalRegion a owl:Class ;
+    rdfs:label "Anatomical Region"@en .
+
+opencare:hasHealthRecord a owl:ObjectProperty ;
+    rdfs:label "has health record"@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range opencare:HealthRecord .
+
+opencare:diagnosedWith a owl:ObjectProperty ;
+    rdfs:label "diagnosed with"@en ;
+    rdfs:range schema:MedicalCondition .
+
+opencare:hasSymptom a owl:ObjectProperty ;
+    rdfs:label "has symptom"@en ;
+    rdfs:range opencare:Symptom .
+
+opencare:hasTreatmentProcedure a owl:ObjectProperty ;
+    rdfs:label "has treatment procedure"@en ;
+    rdfs:range opencare:TreatmentProcedure .
+
+schema:associatedAnatomy a rdf:Property ;
+    rdfs:label "associated anatomy"@en .
+
+ob:treatedBy a owl:ObjectProperty ;
+    rdfs:label "treated by"@en ;
+    rdfs:range foaf:Agent .
+
+opencare:encounterDate a owl:DatatypeProperty ;
+    rdfs:label "encounter date"@en ;
+    rdfs:range xsd:gYear .
+
+# =============================================================================
+# 8. WORK & CAREER
+# =============================================================================
+
+schema:Organization a owl:Class ;
+    rdfs:label "Organization"@en .
+
+schema:EducationalOrganization a owl:Class ;
+    rdfs:subClassOf schema:Organization ;
+    rdfs:label "Educational Organization"@en .
+
+schema:GovernmentOrganization a owl:Class ;
+    rdfs:subClassOf schema:Organization ;
+    rdfs:label "Government Organization"@en .
+
+schema:MedicalOrganization a owl:Class ;
+    rdfs:subClassOf schema:Organization ;
+    rdfs:label "Medical Organization"@en .
+
+ob:CommercialOrganization a owl:Class ;
+    rdfs:subClassOf schema:Organization ;
+    rdfs:label "Commercial Organization"@en .
+
+schema:Occupation a owl:Class ;
+    rdfs:label "Occupation"@en .
+
+bio:Employment a owl:Class ;
+    rdfs:label "Employment"@en .
+
+cv:WorkHistory a owl:Class ;
+    rdfs:label "Work History"@en .
+
+schema:hasOccupation a rdf:Property ;
+    rdfs:label "has occupation"@en ;
+    rdfs:domain foaf:Person .
+
+schema:jobTitle a rdf:Property ;
+    rdfs:label "job title"@en .
+
+schema:affiliation a rdf:Property ;
+    rdfs:label "affiliation"@en ;
+    rdfs:domain foaf:Person .
+
+schema:memberOf a rdf:Property ;
+    rdfs:label "member of"@en .
+
+schema:member a rdf:Property ;
+    rdfs:label "member"@en .
+
+cv:hasWorkHistory a owl:ObjectProperty ;
+    rdfs:label "has work history"@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range cv:WorkHistory .
+
+ob:employedAt a owl:ObjectProperty ;
+    rdfs:label "employed at"@en ;
+    rdfs:domain bio:Employment ;
+    rdfs:range schema:Organization .
+
+ob:hasWorkPlace a owl:ObjectProperty ;
+    rdfs:label "has work place"@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range schema:Organization .
+
+ob:tenureFrom a owl:DatatypeProperty ;
+    rdfs:label "tenure from"@en ;
+    rdfs:domain cv:WorkHistory ;
+    rdfs:range xsd:gYear .
+
+ob:tenureTill a owl:DatatypeProperty ;
+    rdfs:label "tenure till"@en ;
+    rdfs:domain cv:WorkHistory ;
+    rdfs:range xsd:gYear .
+
+schema:estimatedSalary a rdf:Property ;
+    rdfs:label "estimated salary"@en .
+
+# =============================================================================
+# 9. EDUCATION (OntoBio + CV)
+# =============================================================================
+
+cv:Education a owl:Class ;
+    rdfs:label "Education"@en .
+
+ob:BachelorsDegree a owl:Class ;
+    rdfs:subClassOf cv:Education ;
+    rdfs:label "Bachelor's Degree"@en .
+
+ob:MastersDegree a owl:Class ;
+    rdfs:subClassOf cv:Education ;
+    rdfs:label "Master's Degree"@en .
+
+ob:DoctoralDegree a owl:Class ;
+    rdfs:subClassOf cv:Education ;
+    rdfs:label "Doctoral Degree"@en .
+
+ob:HonoraryDegree a owl:Class ;
+    rdfs:subClassOf cv:Education ;
+    rdfs:label "Honorary Degree"@en .
+
+ob:ProfessionalDegree a owl:Class ;
+    rdfs:subClassOf cv:Education ;
+    rdfs:label "Professional Degree"@en .
+
+ob:hasDegree a owl:ObjectProperty ;
+    rdfs:label "has degree"@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range cv:Education .
+
+ob:degreeAwardedBy a owl:ObjectProperty ;
+    rdfs:label "degree awarded by"@en ;
+    rdfs:domain cv:Education ;
+    rdfs:range schema:Organization .
+
+ob:degreeAwardedIn a owl:ObjectProperty ;
+    rdfs:label "degree awarded in"@en ;
+    rdfs:domain cv:Education .
+
+# =============================================================================
+# 10. HABITS & ROUTINES (OntoBio)
+# =============================================================================
+
+ob:Habit a owl:Class ;
+    rdfs:label "Habit"@en .
+
+ob:DailyRoutine a owl:Class ;
+    rdfs:subClassOf ob:Habit ;
+    rdfs:label "Daily Routine"@en .
+
+ob:FoodHabit a owl:Class ;
+    rdfs:subClassOf ob:Habit ;
+    rdfs:label "Food Habit"@en .
+
+ob:DressingHabit a owl:Class ;
+    rdfs:subClassOf ob:Habit ;
+    rdfs:label "Dressing Habit"@en .
+
+ob:hasHabit a owl:ObjectProperty ;
+    rdfs:label "has habit"@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range ob:Habit .
+
+ob:hasRoutine a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasHabit ;
+    rdfs:label "has routine"@en ;
+    rdfs:range ob:DailyRoutine .
+
+ob:hasFoodHabit a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasHabit ;
+    rdfs:label "has food habit"@en ;
+    rdfs:range ob:FoodHabit .
+
+ob:hasDressStyle a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasHabit ;
+    rdfs:label "has dress style"@en ;
+    rdfs:range ob:DressingHabit .
+
+ob:activityDuration a owl:DatatypeProperty ;
+    rdfs:label "activity duration"@en .
+
+# =============================================================================
+# 11. ACTIVITIES (OntoBio)
+# =============================================================================
+
+ob:Activity a owl:Class ;
+    rdfs:label "Activity"@en .
+
+ob:PhysicalActivity a owl:Class ;
+    rdfs:subClassOf ob:Activity ;
+    rdfs:label "Physical Activity"@en .
+
+ob:CreativeActivity a owl:Class ;
+    rdfs:subClassOf ob:Activity ;
+    rdfs:label "Creative Activity"@en .
+
+ob:RecreationalActivity a owl:Class ;
+    rdfs:subClassOf ob:Activity ;
+    rdfs:label "Recreational Activity"@en .
+
+ob:DailyLivingActivity a owl:Class ;
+    rdfs:subClassOf ob:Activity ;
+    rdfs:label "Daily Living Activity"@en .
+
+ob:OccupationalActivity a owl:Class ;
+    rdfs:subClassOf ob:Activity ;
+    rdfs:label "Occupational Activity"@en .
+
+ob:ReligiousActivity a owl:Class ;
+    rdfs:subClassOf ob:Activity ;
+    rdfs:label "Religious Activity"@en .
+
+ob:hasActivity a owl:ObjectProperty ;
+    rdfs:label "has activity"@en ;
+    rdfs:range ob:Activity .
+
+ob:useOf a owl:ObjectProperty ;
+    rdfs:label "use of"@en .
+
+ob:usedIn a owl:ObjectProperty ;
+    owl:inverseOf ob:useOf ;
+    rdfs:label "used in"@en .
+
+# =============================================================================
+# 12. FOOD & MEALS (OntoBio)
+# =============================================================================
+
+ob:Food a owl:Class ;
+    rdfs:label "Food"@en .
+
+ob:FoodItem a owl:Class ;
+    rdfs:subClassOf ob:Food ;
+    rdfs:label "Food Item"@en .
+
+ob:EdibleFood a owl:Class ;
+    rdfs:subClassOf ob:FoodItem ;
+    rdfs:label "Edible Food"@en .
+
+ob:DrinkableFood a owl:Class ;
+    rdfs:subClassOf ob:FoodItem ;
+    rdfs:label "Drinkable Food"@en .
+
+ob:AlcoholicDrink a owl:Class ;
+    rdfs:subClassOf ob:DrinkableFood ;
+    rdfs:label "Alcoholic Drink"@en .
+
+ob:NonAlcoholicDrink a owl:Class ;
+    rdfs:subClassOf ob:DrinkableFood ;
+    rdfs:label "Non-Alcoholic Drink"@en .
+
+ob:Meal a owl:Class ;
+    rdfs:label "Meal"@en .
+
+ob:Breakfast a owl:Class ;
+    rdfs:subClassOf ob:Meal ;
+    rdfs:label "Breakfast"@en .
+
+ob:Lunch a owl:Class ;
+    rdfs:subClassOf ob:Meal ;
+    rdfs:label "Lunch"@en .
+
+ob:Dinner a owl:Class ;
+    rdfs:subClassOf ob:Meal ;
+    rdfs:label "Dinner"@en .
+
+ob:Brunch a owl:Class ;
+    rdfs:subClassOf ob:Meal ;
+    rdfs:label "Brunch"@en .
+
+ob:EveningSnack a owl:Class ;
+    rdfs:subClassOf ob:Meal ;
+    rdfs:label "Evening Snack"@en .
+
+ob:SpecialDish a owl:Class ;
+    rdfs:subClassOf ob:Meal ;
+    rdfs:label "Special Dish"@en .
+
+ob:hasMeal a owl:ObjectProperty ;
+    rdfs:label "has meal"@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range ob:Meal .
+
+ob:hasFoodItem a owl:ObjectProperty ;
+    rdfs:label "has food item"@en ;
+    rdfs:domain ob:Meal ;
+    rdfs:range ob:FoodItem .
+
+ob:mealConsumedIn a owl:ObjectProperty ;
+    rdfs:label "meal consumed in"@en ;
+    rdfs:domain ob:Meal .
+
+# =============================================================================
+# 13. PERSONALITY & TRAITS (OntoBio)
+# =============================================================================
+
+ob:Trait a owl:Class ;
+    rdfs:label "Trait"@en .
+
+ob:PersonalityTrait a owl:Class ;
+    rdfs:subClassOf ob:Trait ;
+    rdfs:label "Personality Trait"@en .
+
+ob:PhysicalAppearance a owl:Class ;
+    rdfs:subClassOf ob:Trait ;
+    rdfs:label "Physical Appearance"@en .
+
+ob:PhysicalTrait a owl:Class ;
+    rdfs:subClassOf ob:Trait ;
+    rdfs:label "Physical Trait"@en .
+
+ob:hasTrait a owl:ObjectProperty ;
+    rdfs:label "has trait"@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range ob:Trait .
+
+ob:hasPersonalityTrait a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasTrait ;
+    rdfs:label "has personality trait"@en ;
+    rdfs:range ob:PersonalityTrait .
+
+ob:hasPhysicalAppearance a owl:ObjectProperty ;
+    rdfs:subPropertyOf ob:hasTrait ;
+    rdfs:label "has physical appearance"@en ;
+    rdfs:range ob:PhysicalAppearance .
+
+ob:hasHeight a owl:DatatypeProperty ;
+    rdfs:label "has height"@en ;
+    rdfs:domain foaf:Person .
+
+ob:hasWeight a owl:DatatypeProperty ;
+    rdfs:label "has weight"@en ;
+    rdfs:domain foaf:Person .
+
+ob:hasEyeColor a owl:ObjectProperty ;
+    rdfs:label "has eye color"@en ;
+    rdfs:domain foaf:Person .
+
+ob:hasHairStyle a owl:ObjectProperty ;
+    rdfs:label "has hair style"@en ;
+    rdfs:domain foaf:Person .
+
+# =============================================================================
+# 14. PLACES & RESIDENCE
+# =============================================================================
+
+schema:Place a owl:Class ;
+    rdfs:label "Place"@en .
+
+schema:City a owl:Class ;
+    rdfs:subClassOf schema:Place ;
+    rdfs:label "City"@en .
+
+schema:Country a owl:Class ;
+    rdfs:subClassOf schema:Place ;
+    rdfs:label "Country"@en .
+
+schema:State a owl:Class ;
+    rdfs:subClassOf schema:Place ;
+    rdfs:label "State"@en .
+
+schema:Continent a owl:Class ;
+    rdfs:subClassOf schema:Place ;
+    rdfs:label "Continent"@en .
+
+schema:TouristAttraction a owl:Class ;
+    rdfs:subClassOf schema:Place ;
+    rdfs:label "Tourist Attraction"@en .
+
+ob:Residence a owl:Class ;
+    rdfs:subClassOf schema:Place ;
+    rdfs:label "Residence"@en .
+
+ob:Locality a owl:Class ;
+    rdfs:subClassOf schema:Place ;
+    rdfs:label "Locality"@en .
+
+ob:Village a owl:Class ;
+    rdfs:subClassOf schema:Place ;
+    rdfs:label "Village"@en .
+
+schema:containedInPlace a rdf:Property ;
+    rdfs:label "contained in place"@en .
+
+schema:containsPlace a rdf:Property ;
+    rdfs:label "contains place"@en .
+
+schema:birthPlace a rdf:Property ;
+    rdfs:label "birth place"@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range schema:Place .
+
+schema:deathPlace a rdf:Property ;
+    rdfs:label "death place"@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range schema:Place .
+
+ob:residedIn a owl:ObjectProperty ;
+    rdfs:label "resided in"@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range ob:Residence .
+
+ob:residedFrom a owl:DatatypeProperty ;
+    rdfs:label "resided from"@en ;
+    rdfs:domain ob:Residence ;
+    rdfs:range xsd:gYear .
+
+ob:residedTill a owl:DatatypeProperty ;
+    rdfs:label "resided till"@en ;
+    rdfs:domain ob:Residence ;
+    rdfs:range xsd:gYear .
+
+schema:streetAddress a rdf:Property ;
+    rdfs:label "street address"@en .
+
+# =============================================================================
+# 15. THINGS & PRODUCTS (Schema.org)
+# =============================================================================
+
+schema:Product a owl:Class ;
+    rdfs:label "Product"@en .
+
+schema:Vehicle a owl:Class ;
+    rdfs:subClassOf schema:Product ;
+    rdfs:label "Vehicle"@en .
+
+schema:CreativeWork a owl:Class ;
+    rdfs:label "Creative Work"@en .
+
+schema:owns a rdf:Property ;
+    rdfs:label "owns"@en .
+
+schema:brand a rdf:Property ;
+    rdfs:label "brand"@en .
+
+schema:model a rdf:Property ;
+    rdfs:label "model"@en .
+
+schema:color a rdf:Property ;
+    rdfs:label "color"@en .
+
+schema:price a rdf:Property ;
+    rdfs:label "price"@en .
+
+schema:priceCurrency a rdf:Property ;
+    rdfs:label "price currency"@en .
+
+# =============================================================================
+# 16. CAUSALITY & SEQUENCING (OntoBio)
+# =============================================================================
+
+ob:CausalType a owl:Class ;
+    rdfs:label "Causal Type"@en .
+
+ob:hasCausality a owl:ObjectProperty ;
+    rdfs:label "has causality"@en ;
+    rdfs:range ob:CausalType .
+
+ob:causalContext a owl:ObjectProperty ;
+    rdfs:label "causal context"@en .
+
+ob:followedBy a owl:ObjectProperty, owl:AsymmetricProperty, owl:IrreflexiveProperty ;
+    rdfs:label "followed by"@en .
+
+ob:precededBy a owl:ObjectProperty, owl:AsymmetricProperty, owl:IrreflexiveProperty ;
+    owl:inverseOf ob:followedBy ;
+    rdfs:label "preceded by"@en .
+
+# =============================================================================
+# 17. PROVENANCE (PROV-O)
+# =============================================================================
+
+prov:Entity a owl:Class ;
+    rdfs:label "Entity"@en .
+
+prov:wasDerivedFrom a owl:ObjectProperty ;
+    rdfs:label "was derived from"@en .
+
+prov:generatedAtTime a owl:DatatypeProperty ;
+    rdfs:label "generated at time"@en ;
+    rdfs:range xsd:dateTime .
+
+prov:wasAttributedTo a owl:ObjectProperty ;
+    rdfs:label "was attributed to"@en .
+
+# =============================================================================
+# 18. CONCEPTS (SKOS)
+# =============================================================================
+
+skos:Concept a owl:Class ;
+    rdfs:label "Concept"@en .
+
+skos:ConceptScheme a owl:Class ;
+    rdfs:label "Concept Scheme"@en .
+
+skos:prefLabel a owl:DatatypeProperty ;
+    rdfs:label "preferred label"@en .
+
+skos:altLabel a owl:DatatypeProperty ;
+    rdfs:label "alternative label"@en .
+
+skos:definition a owl:DatatypeProperty ;
+    rdfs:label "definition"@en .
+
+skos:broader a owl:ObjectProperty ;
+    rdfs:label "broader"@en .
+
+skos:narrower a owl:ObjectProperty ;
+    owl:inverseOf skos:broader ;
+    rdfs:label "narrower"@en .
+
+skos:related a owl:ObjectProperty, owl:SymmetricProperty ;
+    rdfs:label "related"@en .
+
+skos:inScheme a owl:ObjectProperty ;
+    rdfs:label "in scheme"@en ;
+    rdfs:domain skos:Concept ;
+    rdfs:range skos:ConceptScheme .
+
+# =============================================================================
+# 19. PCM CUSTOM EXTENSIONS
+#
+# Concepts not covered by any standard ontology surveyed (Schema.org,
+# OntoBio, FOAF, PROV-O, SKOS, Relationship, BIO, OpenCare, CV).
+# =============================================================================
+
+# --- Preference ---
+
+pcm:Preference a owl:Class ;
+    rdfs:label "Preference"@en ;
+    rdfs:comment "A personal preference expressed by a person."@en .
+
+pcm:hasPreference a owl:ObjectProperty ;
+    rdfs:label "has preference"@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range pcm:Preference .
+
+pcm:preferenceType a owl:DatatypeProperty ;
+    rdfs:label "preference type"@en ;
+    rdfs:comment "Category of preference (e.g. food, music, brand)."@en ;
+    rdfs:domain pcm:Preference ;
+    rdfs:range xsd:string .
+
+pcm:preferenceValue a owl:DatatypeProperty ;
+    rdfs:label "preference value"@en ;
+    rdfs:comment "The value or target of the preference."@en ;
+    rdfs:domain pcm:Preference ;
+    rdfs:range xsd:string .
+
+# --- ProblemEvent ---
+
+pcm:ProblemEvent a owl:Class ;
+    rdfs:subClassOf schema:Event ;
+    rdfs:label "Problem Event"@en ;
+    rdfs:comment "A problem or issue that occurred, affecting an entity."@en .
+
+pcm:problemType a owl:DatatypeProperty ;
+    rdfs:label "problem type"@en ;
+    rdfs:comment "Category of the problem (e.g. mechanical, software, health)."@en ;
+    rdfs:domain pcm:ProblemEvent ;
+    rdfs:range xsd:string .
+
+pcm:affects a owl:ObjectProperty ;
+    rdfs:label "affects"@en ;
+    rdfs:comment "Links a problem event to the entity it impacts."@en ;
+    rdfs:domain pcm:ProblemEvent .
+
+# --- ServiceEvent ---
+
+pcm:ServiceEvent a owl:Class ;
+    rdfs:subClassOf schema:Event ;
+    rdfs:label "Service Event"@en ;
+    rdfs:comment "A service interaction such as repair, maintenance, or professional service."@en .
+
+pcm:serviceType a owl:DatatypeProperty ;
+    rdfs:label "service type"@en ;
+    rdfs:comment "Category of service (e.g. repair, maintenance, cleaning)."@en ;
+    rdfs:domain pcm:ServiceEvent ;
+    rdfs:range xsd:string .
+
+# --- Pet ---
+#
+# Modeled as a subclass of foaf:Agent (pets can be agents in events/actions).
+
+pcm:Pet a owl:Class ;
+    rdfs:subClassOf foaf:Agent ;
+    rdfs:label "Pet"@en ;
+    rdfs:comment "A domestic animal kept for companionship."@en .
+
+pcm:hasPet a owl:ObjectProperty ;
+    rdfs:label "has pet"@en ;
+    rdfs:comment "Links a person to a pet they own or care for."@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range pcm:Pet .
+
+pcm:petSpecies a owl:DatatypeProperty ;
+    rdfs:label "pet species"@en ;
+    rdfs:comment "The species or type of pet (e.g. dog, cat, parrot, fish)."@en ;
+    rdfs:domain pcm:Pet ;
+    rdfs:range xsd:string .
+
+pcm:petBreed a owl:DatatypeProperty ;
+    rdfs:label "pet breed"@en ;
+    rdfs:comment "The breed of the pet, if applicable."@en ;
+    rdfs:domain pcm:Pet ;
+    rdfs:range xsd:string .
+
+# --- SocialMediaAccount ---
+#
+# Modeled as a subclass of sioc:UserAccount.
+
+pcm:SocialMediaAccount a owl:Class ;
+    rdfs:subClassOf sioc:UserAccount ;
+    rdfs:label "Social Media Account"@en ;
+    rdfs:comment "A user account on a social media platform."@en .
+
+pcm:hasSocialAccount a owl:ObjectProperty ;
+    rdfs:label "has social account"@en ;
+    rdfs:comment "Links a person to a social media account they own."@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range pcm:SocialMediaAccount .
+
+pcm:platform a owl:DatatypeProperty ;
+    rdfs:label "platform"@en ;
+    rdfs:comment "The social media platform name (e.g. Instagram, TikTok, YouTube)."@en ;
+    rdfs:domain pcm:SocialMediaAccount ;
+    rdfs:range xsd:string .
+
+pcm:followerCount a owl:DatatypeProperty ;
+    rdfs:label "follower count"@en ;
+    rdfs:comment "The number of followers on the social media account."@en ;
+    rdfs:domain pcm:SocialMediaAccount ;
+    rdfs:range xsd:integer .
+
+# Handle / @username: use schema:identifier (declared in §1 PERSON & IDENTITY).
+# E.g. _:instaAccount schema:identifier "@jessica_poole_jewellery" .
+
+# --- Clothing ---
+#
+# Modeled as a subclass of schema:Product.
+
+pcm:Clothing a owl:Class ;
+    rdfs:subClassOf schema:Product ;
+    rdfs:label "Clothing"@en ;
+    rdfs:comment "A wearable garment or accessory."@en .
+
+pcm:wears a owl:ObjectProperty ;
+    rdfs:label "wears"@en ;
+    rdfs:comment "Links a person to a clothing item they own or wear."@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range pcm:Clothing .
+
+pcm:clothingType a owl:DatatypeProperty ;
+    rdfs:label "clothing type"@en ;
+    rdfs:comment "The type of clothing (e.g. shoes, shirt, jacket, dress)."@en ;
+    rdfs:domain pcm:Clothing ;
+    rdfs:range xsd:string .
+
+# --- Plant ---
+
+pcm:Plant a owl:Class ;
+    rdfs:label "Plant"@en ;
+    rdfs:comment "A plant grown or maintained by a person."@en .
+
+pcm:grows a owl:ObjectProperty ;
+    rdfs:label "grows"@en ;
+    rdfs:comment "Links a person to a plant they grow or tend."@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range pcm:Plant .
+
+pcm:plantSpecies a owl:DatatypeProperty ;
+    rdfs:label "plant species"@en ;
+    rdfs:comment "The species or variety of plant (e.g. tomato, marigold, basil)."@en ;
+    rdfs:domain pcm:Plant ;
+    rdfs:range xsd:string .
+
+# --- Collection ---
+
+pcm:Collection a owl:Class ;
+    rdfs:label "Collection"@en ;
+    rdfs:comment "A personal collection of items (e.g. coins, postcards, autographs)."@en .
+
+pcm:hasCollection a owl:ObjectProperty ;
+    rdfs:label "has collection"@en ;
+    rdfs:comment "Links a person to a collection they maintain."@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range pcm:Collection .
+
+pcm:collectionType a owl:DatatypeProperty ;
+    rdfs:label "collection type"@en ;
+    rdfs:comment "What is collected (e.g. coins, postcards, stamps, autographed baseballs)."@en ;
+    rdfs:domain pcm:Collection ;
+    rdfs:range xsd:string .
+
+pcm:collectionSize a owl:DatatypeProperty ;
+    rdfs:label "collection size"@en ;
+    rdfs:comment "The number of items in the collection."@en ;
+    rdfs:domain pcm:Collection ;
+    rdfs:range xsd:integer .
+
+# --- Schedule & frequency (Schema.org) ---
+#
+# Uses schema:Schedule to model recurrence patterns. A Schedule can be
+# attached to any Habit, Activity, or Event via schema:eventSchedule.
+#
+# schema:repeatFrequency uses ISO 8601 durations: "P1D" (daily),
+# "P1W" (weekly), "P2W" (biweekly), "P1M" (monthly), etc.
+
+schema:Schedule a owl:Class ;
+    rdfs:label "Schedule"@en ;
+    rdfs:comment "A schedule defines the recurrence pattern for events or activities."@en .
+
+schema:DayOfWeek a owl:Class ;
+    rdfs:label "Day of Week"@en .
+
+schema:eventSchedule a rdf:Property ;
+    rdfs:label "event schedule"@en ;
+    rdfs:comment "Associates an Event, Habit, or Activity with a recurring Schedule."@en .
+
+schema:repeatFrequency a rdf:Property ;
+    rdfs:label "repeat frequency"@en ;
+    rdfs:comment "How often the event/activity recurs, as ISO 8601 duration (e.g. P1W = weekly)."@en ;
+    rdfs:domain schema:Schedule .
+
+schema:repeatCount a rdf:Property ;
+    rdfs:label "repeat count"@en ;
+    rdfs:comment "Number of times per period (e.g. 3 for 'three times a week')."@en ;
+    rdfs:domain schema:Schedule .
+
+schema:byDay a rdf:Property ;
+    rdfs:label "by day"@en ;
+    rdfs:comment "Day(s) of the week on which the recurring event takes place."@en ;
+    rdfs:domain schema:Schedule .
+
+schema:byMonth a rdf:Property ;
+    rdfs:label "by month"@en ;
+    rdfs:comment "Month(s) of the year (1-12) on which the recurring event takes place."@en ;
+    rdfs:domain schema:Schedule .
+
+schema:byMonthDay a rdf:Property ;
+    rdfs:label "by month day"@en ;
+    rdfs:comment "Day(s) of the month (1-31) on which the recurring event takes place."@en ;
+    rdfs:domain schema:Schedule .
+
+schema:scheduleTimezone a rdf:Property ;
+    rdfs:label "schedule timezone"@en ;
+    rdfs:comment "Timezone for the schedule (IANA identifier, e.g. America/New_York)."@en ;
+    rdfs:domain schema:Schedule ;
+    rdfs:range xsd:string .
+
+schema:duration a rdf:Property ;
+    rdfs:label "duration"@en ;
+    rdfs:comment "The duration of each occurrence, in ISO 8601 format."@en .
+
+# =============================================================================
+# 20. CONVERSATION STRUCTURE (SIOC)
+#
+# Models conversations as threaded discussions using SIOC.
+# Each message (user or assistant) is a sioc:Post, dual-typed as prov:Entity.
+# =============================================================================
+
+sioc:Forum a owl:Class ;
+    rdfs:label "Forum"@en ;
+    rdfs:comment "A discussion area on which Posts or entries are made."@en .
+
+sioc:Thread a owl:Class ;
+    rdfs:label "Thread"@en ;
+    rdfs:comment "A container for a series of threaded discussion Posts."@en .
+
+sioc:Post a owl:Class ;
+    rdfs:label "Post"@en ;
+    rdfs:comment "An article or message posted to a Forum."@en .
+
+sioc:UserAccount a owl:Class ;
+    rdfs:label "User Account"@en ;
+    rdfs:comment "A user account in an online community."@en .
+
+sioc:has_container a owl:ObjectProperty ;
+    rdfs:label "has container"@en ;
+    rdfs:comment "The Container to which this Item belongs."@en .
+
+sioc:has_creator a owl:ObjectProperty ;
+    rdfs:label "has creator"@en ;
+    rdfs:comment "This is the UserAccount that made this resource."@en ;
+    rdfs:range sioc:UserAccount .
+
+sioc:content a owl:DatatypeProperty ;
+    rdfs:label "content"@en ;
+    rdfs:comment "The content of the Item in plain text format."@en ;
+    rdfs:range xsd:string .
+
+sioc:has_reply a owl:ObjectProperty ;
+    rdfs:label "has reply"@en ;
+    rdfs:comment "Points to an Item or Post that is a reply to this Item."@en .
+
+sioc:reply_of a owl:ObjectProperty ;
+    owl:inverseOf sioc:has_reply ;
+    rdfs:label "reply of"@en ;
+    rdfs:comment "Links to an Item that this Item is a reply to."@en .
+
+sioc:account_of a owl:ObjectProperty ;
+    rdfs:label "account of"@en ;
+    rdfs:comment "Refers to the foaf:Agent or foaf:Person who owns this UserAccount."@en ;
+    rdfs:domain sioc:UserAccount ;
+    rdfs:range foaf:Agent .
+
+# --- PCM conversation extensions ---
+
+pcm:role a owl:DatatypeProperty ;
+    rdfs:label "role"@en ;
+    rdfs:comment "The role of a message sender: user, assistant, or system."@en ;
+    rdfs:domain sioc:Post ;
+    rdfs:range xsd:string .
+
+pcm:turnIndex a owl:DatatypeProperty ;
+    rdfs:label "turn index"@en ;
+    rdfs:comment "The ordinal position of a message within a conversation thread."@en ;
+    rdfs:domain sioc:Post ;
+    rdfs:range xsd:integer .
