@@ -31,7 +31,7 @@
         <dct:modified>2026/03/10</dct:modified>
         <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <dc:description rdf:resource="https://w3id.org/pcm/images/pcm-ontology-diagram.png"/>
-        <dc:creator rdf:resource="https://w3id.org/scholarlydata/person/anna-lisa-gentile"/>
+        <dc:creator rdf:resource="https://www.wikidata.org/wiki/Q54832532"/>
         <owl:versionInfo>1.0</owl:versionInfo>
     </owl:Ontology>
 
