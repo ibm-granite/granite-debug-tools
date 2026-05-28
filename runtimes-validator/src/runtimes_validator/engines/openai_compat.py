@@ -200,6 +200,7 @@ class OpenAICompatibleEngine(AbstractEngine):
         tool_choice: str | None = None,
         temperature: float = 0.0,
         max_tokens: int = 512,
+        extra_body: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
         payload: dict[str, Any] = {
             "messages": messages,
@@ -212,6 +213,8 @@ class OpenAICompatibleEngine(AbstractEngine):
             payload["tools"] = tools
         if tool_choice is not None:
             payload["tool_choice"] = tool_choice
+        if extra_body is not None:
+            payload.update(extra_body)
 
         body = self._post_json("/v1/chat/completions", payload)
 
@@ -234,6 +237,7 @@ class OpenAICompatibleEngine(AbstractEngine):
         tool_choice: str | None = None,
         temperature: float = 0.0,
         max_tokens: int = 512,
+        extra_body: dict[str, Any] | None = None,
     ) -> Iterator[dict[str, Any]]:
         """Stream a chat completion request via SSE.
 
@@ -251,6 +255,8 @@ class OpenAICompatibleEngine(AbstractEngine):
             payload["tools"] = tools
         if tool_choice is not None:
             payload["tool_choice"] = tool_choice
+        if extra_body is not None:
+            payload.update(extra_body)
 
         yield from self._post_stream_sse("/v1/chat/completions", payload)
 

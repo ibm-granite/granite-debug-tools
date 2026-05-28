@@ -523,3 +523,55 @@ def test_chat_without_inspection_logger_does_not_fail(mock_post: MagicMock):
 
     assert result["content"] == "Hello!"
     assert engine._inspection is None
+
+
+# --- extra_body support ---
+
+
+@patch("runtimes_validator.engines.openai_compat.requests.post")
+def test_chat_merges_extra_body_into_payload(mock_post: MagicMock):
+    mock_post.return_value = _fake_chat_response()
+    engine = VllmEngine(EngineConfig(model_id="switch-model"))
+
+    engine.chat(
+        [{"role": "user", "content": "hi"}],
+        extra_body={
+            "documents": [{"doc_id": "1", "text": "context"}],
+            "chat_template_kwargs": {"adapter_name": "answerability"},
+        },
+    )
+
+    payload = mock_post.call_args.kwargs["json"]
+    assert payload["documents"] == [{"doc_id": "1", "text": "context"}]
+    assert payload["chat_template_kwargs"] == {"adapter_name": "answerability"}
+    assert payload["model"] == "switch-model"
+    assert payload["messages"] == [{"role": "user", "content": "hi"}]
+
+
+@patch("runtimes_validator.engines.openai_compat.requests.post")
+def test_chat_extra_body_none_is_noop(mock_post: MagicMock):
+    mock_post.return_value = _fake_chat_response()
+    engine = VllmEngine(EngineConfig(model_id="m"))
+
+    engine.chat([{"role": "user", "content": "hi"}], extra_body=None)
+
+    payload = mock_post.call_args.kwargs["json"]
+    assert "documents" not in payload
+    assert "chat_template_kwargs" not in payload
+
+
+@patch("runtimes_validator.engines.openai_compat.requests.post")
+def test_chat_stream_merges_extra_body_into_payload(mock_post: MagicMock):
+    mock_post.return_value = _fake_stream_response(["data: [DONE]"])
+    engine = VllmEngine(EngineConfig(model_id="m"))
+
+    list(
+        engine.chat_stream(
+            [{"role": "user", "content": "hi"}],
+            extra_body={"chat_template_kwargs": {"adapter_name": "guardian_core"}},
+        )
+    )
+
+    payload = mock_post.call_args.kwargs["json"]
+    assert payload["chat_template_kwargs"] == {"adapter_name": "guardian_core"}
+    assert payload["stream"] is True
