@@ -1,4 +1,4 @@
 rdflib
-mellea
+git+https://github.com/generative-computing/mellea.git
 litellm
 flask
