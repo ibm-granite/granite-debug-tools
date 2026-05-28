@@ -169,9 +169,7 @@ class SwitchAdaptersTest(AbstractValidationTest):
                 extra_body=_switch_extra("requirement-check"),
             )
         except Exception as e:
-            checks.append(
-                CheckResult(name="switch_requirement_check", passed=False, detail=str(e))
-            )
+            checks.append(CheckResult(name="switch_requirement_check", passed=False, detail=str(e)))
             return
 
         content = (resp.get("content") or "").strip()
