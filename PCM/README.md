@@ -90,10 +90,15 @@ source .venv/bin/activate
 pip install -r requirements.txt
 
 # Set your API key
-# Anthropic is the default when no --model is specified (claude-sonnet-4-5)
+# Anthropic is the default when no --model is specified (claude-sonnet-4-6)
 export ANTHROPIC_API_KEY="sk-ant-..."
+# If you are using an internal internal litellm proxy for Anthropic
+export ANTHROPIC_BASE_URL=https://your-litellm-proxy...
+
 # Only needed if using --model gpt-4o or other OpenAI models
 export OPENAI_API_KEY="sk-..."
+
+
 ```
 
 ## 🚀 Run the Extraction on your Data
