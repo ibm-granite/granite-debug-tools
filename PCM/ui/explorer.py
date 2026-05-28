@@ -4,7 +4,7 @@ Visual KG explorer for PCM knowledge graphs.
 Run:
     python -m ui --kg-dir output/ --conversations sample_data/conversations.json
 
-Then open http://localhost:5050 in your browser.
+Then open https://localhost:5050 in your browser.
 """
 
 import json
@@ -741,8 +741,8 @@ def main():
         print(f"Loaded {len(CONVERSATIONS)} conversations from {args.conversations}")
 
     print(f"KG dir: {KG_DIR}")
-    print(f"Open http://localhost:{args.port}")
-    app.run(host="127.0.0.1", port=args.port, debug=False)
+    print(f"Open https://localhost:{args.port}")
+    app.run(host="0.0.0.0", port=args.port, debug=False, ssl_context="adhoc")
 
 
 if __name__ == "__main__":
