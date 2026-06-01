@@ -257,11 +257,12 @@ class SwitchAdaptersTest(AbstractValidationTest):
 
         content = (resp.get("content") or "").strip()
         has_number = any(c.isdigit() for c in content)
+        is_short = len(content) <= 20
         checks.append(
             CheckResult(
                 name="switch_uncertainty",
-                passed=has_number,
-                expected="confidence value containing a number",
+                passed=has_number and is_short,
+                expected="short confidence value containing a number (<=20 chars)",
                 actual=content[:200],
             )
         )
