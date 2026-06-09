@@ -190,13 +190,7 @@ class SwitchAdaptersTest(AbstractValidationTest):
     ) -> None:
         """Repetition detection: clarify_query must return concise JSON, not a runaway list."""
         messages = [
-            {
-                "role": "user",
-                "content": (
-                    "What are the eligibility criteria for the veterans program "
-                    "that provides either health care or disability benefits?"
-                ),
-            },
+            {"role": "user", "content": "Tell me about bank loans."},
         ]
 
         try:
