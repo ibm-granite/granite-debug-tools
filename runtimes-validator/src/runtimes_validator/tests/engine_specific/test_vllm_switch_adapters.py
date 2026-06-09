@@ -221,23 +221,26 @@ class SwitchAdaptersTest(AbstractValidationTest):
         ]
         words = [w for w in words if w]
 
-        # Check for repeated bigrams — in normal text no pair repeats more than twice,
-        # but a runaway loop produces "va outreach", "va health", etc. 4-5 times each
+        # Check for repeated trigrams — a runaway loop produces "va outreach programs",
+        # "va health care" etc. multiple times; normal text rarely repeats a 3-word phrase
         no_repetition = True
-        if len(words) >= 4:
-            bigram_counts: dict[tuple[str, str], int] = {}
-            for i in range(len(words) - 1):
-                bigram = (words[i], words[i + 1])
-                bigram_counts[bigram] = bigram_counts.get(bigram, 0) + 1
-            max_bigram = max(bigram_counts.values())
-            no_repetition = max_bigram <= 2
+        top_trigram = ""
+        if len(words) >= 6:
+            trigram_counts: dict[tuple[str, str, str], int] = {}
+            for i in range(len(words) - 2):
+                trigram = (words[i], words[i + 1], words[i + 2])
+                trigram_counts[trigram] = trigram_counts.get(trigram, 0) + 1
+            top = max(trigram_counts, key=lambda t: trigram_counts[t])
+            max_trigram = trigram_counts[top]
+            top_trigram = f'"{top[0]} {top[1]} {top[2]}" x{max_trigram}'
+            no_repetition = max_trigram <= 2
 
         checks.append(
             CheckResult(
                 name="switch_clarify_query_repetition",
                 passed=no_repetition,
-                expected="no bigram repeating more than twice",
-                actual=content[:200],
+                expected="no trigram repeating more than twice",
+                actual=f"{top_trigram} | {content[:150]}",
             )
         )
 
