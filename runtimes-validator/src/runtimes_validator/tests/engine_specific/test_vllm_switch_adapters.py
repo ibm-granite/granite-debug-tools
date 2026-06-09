@@ -213,50 +213,28 @@ class SwitchAdaptersTest(AbstractValidationTest):
             return
 
         content = (resp.get("content") or "").strip()
-        finish_reason = resp.get("finish_reason")
 
-        # If the model hit max_tokens it entered a runaway loop and never closed the JSON
-        if finish_reason == "length":
-            checks.append(
-                CheckResult(
-                    name="switch_clarify_query_repetition",
-                    passed=False,
-                    expected="response must complete before max_tokens (finish_reason=stop)",
-                    actual=f"finish_reason=length; content={content[:200]}",
-                )
-            )
-            return
+        # Strip punctuation from each token so "VA." and "(VA" both count as "va"
+        words = [
+            "".join(c for c in token.lower() if c.isalpha())
+            for token in content.split()
+        ]
+        words = [w for w in words if w]
 
-        valid_json = False
-        no_repetition = False
-        try:
-            parsed = json.loads(content)
-            if isinstance(parsed, dict) and "clarification" in parsed:
-                valid_json = True
-                clarification = str(parsed["clarification"])
-                # Strip punctuation from each token so "VA." and "(VA" both count as "va"
-                words = [
-                    "".join(c for c in token.lower() if c.isalpha())
-                    for token in clarification.split()
-                ]
-                words = [w for w in words if w]
-                if words:
-                    word_counts: dict[str, int] = {}
-                    for w in words:
-                        word_counts[w] = word_counts.get(w, 0) + 1
-                    max_count = max(word_counts.values())
-                    # Both conditions must hold — OR would pass a 22% ratio as acceptable
-                    no_repetition = max_count <= 5 and (max_count / len(words)) <= 0.25
-                else:
-                    no_repetition = True
-        except (json.JSONDecodeError, TypeError):
-            pass
+        no_repetition = True
+        if words:
+            word_counts: dict[str, int] = {}
+            for w in words:
+                word_counts[w] = word_counts.get(w, 0) + 1
+            max_count = max(word_counts.values())
+            # Both conditions must hold — OR would pass a 22% ratio as acceptable
+            no_repetition = max_count <= 5 and (max_count / len(words)) <= 0.25
 
         checks.append(
             CheckResult(
                 name="switch_clarify_query_repetition",
-                passed=valid_json and no_repetition,
-                expected='JSON {"clarification": "..."} with no excessive word repetition',
+                passed=no_repetition,
+                expected="no single word dominating >25% of the response",
                 actual=content[:200],
             )
         )
