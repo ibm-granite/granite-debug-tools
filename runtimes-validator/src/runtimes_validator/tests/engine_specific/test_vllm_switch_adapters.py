@@ -56,8 +56,10 @@ class SwitchAdaptersTest(AbstractValidationTest):
                 elapsed_seconds=time.time() - start,
             )
 
+        self._check_base_model(engine, checks)
         self._check_answerability(engine, checks)
         self._check_query_rewrite(engine, checks)
+        self._check_clarify_query(engine, checks)
         self._check_requirement_check(engine, checks)
         self._check_guardian_core(engine, checks)
         self._check_uncertainty(engine, checks)
@@ -72,6 +74,51 @@ class SwitchAdaptersTest(AbstractValidationTest):
         )
 
     # -- Individual adapter checks ------------------------------------------
+
+    def _check_base_model(
+        self,
+        engine: VllmEngine,
+        checks: list[CheckResult],
+    ) -> None:
+        """Base model sanity: without any adapter the model must respond as a plain chat model."""
+        messages = [
+            {"role": "user", "content": "What is 2 + 2?"},
+        ]
+
+        try:
+            resp = engine.chat(
+                messages,
+                temperature=0.0,
+                max_tokens=64,
+            )
+        except Exception as e:
+            checks.append(CheckResult(name="switch_base_model", passed=False, detail=str(e)))
+            return
+
+        content = (resp.get("content") or "").strip()
+
+        non_empty = len(content) > 0
+
+        # Verify the switch layer did not activate an adapter by accident
+        looks_like_adapter_json = False
+        try:
+            parsed = json.loads(content)
+            looks_like_adapter_json = isinstance(parsed, dict) and any(
+                k in parsed for k in ("score", "clarification", "answerable")
+            )
+        except (json.JSONDecodeError, TypeError):
+            pass
+
+        contains_answer = "4" in content
+
+        checks.append(
+            CheckResult(
+                name="switch_base_model",
+                passed=non_empty and not looks_like_adapter_json and contains_answer,
+                expected="plain natural-language response containing '4', not adapter JSON",
+                actual=content[:200],
+            )
+        )
 
     def _check_answerability(
         self,
@@ -132,6 +179,84 @@ class SwitchAdaptersTest(AbstractValidationTest):
                 name="switch_query_rewrite",
                 passed=len(content) > 0,
                 expected="non-empty standalone query rewrite",
+                actual=content[:200],
+            )
+        )
+
+    def _check_clarify_query(
+        self,
+        engine: VllmEngine,
+        checks: list[CheckResult],
+    ) -> None:
+        """Repetition detection: clarify_query must return concise JSON, not a runaway list."""
+        messages = [
+            {
+                "role": "user",
+                "content": (
+                    "What are the eligibility criteria for the veterans program "
+                    "that provides either health care or disability benefits?"
+                ),
+            },
+        ]
+
+        try:
+            resp = engine.chat(
+                messages,
+                temperature=0.0,
+                max_tokens=300,
+                extra_body=_switch_extra("clarify_query"),
+            )
+        except Exception as e:
+            checks.append(
+                CheckResult(name="switch_clarify_query_repetition", passed=False, detail=str(e))
+            )
+            return
+
+        content = (resp.get("content") or "").strip()
+        finish_reason = resp.get("finish_reason")
+
+        # If the model hit max_tokens it entered a runaway loop and never closed the JSON
+        if finish_reason == "length":
+            checks.append(
+                CheckResult(
+                    name="switch_clarify_query_repetition",
+                    passed=False,
+                    expected="response must complete before max_tokens (finish_reason=stop)",
+                    actual=f"finish_reason=length; content={content[:200]}",
+                )
+            )
+            return
+
+        valid_json = False
+        no_repetition = False
+        try:
+            parsed = json.loads(content)
+            if isinstance(parsed, dict) and "clarification" in parsed:
+                valid_json = True
+                clarification = str(parsed["clarification"])
+                # Strip punctuation from each token so "VA." and "(VA" both count as "va"
+                words = [
+                    "".join(c for c in token.lower() if c.isalpha())
+                    for token in clarification.split()
+                ]
+                words = [w for w in words if w]
+                if words:
+                    word_counts: dict[str, int] = {}
+                    for w in words:
+                        word_counts[w] = word_counts.get(w, 0) + 1
+                    max_count = max(word_counts.values())
+                    # Both conditions must hold — OR would pass a 22% ratio as acceptable
+                    no_repetition = max_count <= 5 and (max_count / len(words)) <= 0.25
+                else:
+                    no_repetition = True
+        except (json.JSONDecodeError, TypeError):
+            pass
+
+        checks.append(
+            CheckResult(
+                name="switch_clarify_query_repetition",
+                passed=valid_json and no_repetition,
+                expected='JSON {"clarification": "..."} with no excessive word repetition',
                 actual=content[:200],
             )
         )
