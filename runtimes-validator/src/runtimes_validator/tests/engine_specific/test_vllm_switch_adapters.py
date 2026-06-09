@@ -221,20 +221,22 @@ class SwitchAdaptersTest(AbstractValidationTest):
         ]
         words = [w for w in words if w]
 
+        # Check for repeated bigrams — in normal text no pair repeats more than twice,
+        # but a runaway loop produces "va outreach", "va health", etc. 4-5 times each
         no_repetition = True
-        if words:
-            word_counts: dict[str, int] = {}
-            for w in words:
-                word_counts[w] = word_counts.get(w, 0) + 1
-            max_count = max(word_counts.values())
-            # Both conditions must hold — OR would pass a 22% ratio as acceptable
-            no_repetition = max_count <= 5 and (max_count / len(words)) <= 0.25
+        if len(words) >= 4:
+            bigram_counts: dict[tuple[str, str], int] = {}
+            for i in range(len(words) - 1):
+                bigram = (words[i], words[i + 1])
+                bigram_counts[bigram] = bigram_counts.get(bigram, 0) + 1
+            max_bigram = max(bigram_counts.values())
+            no_repetition = max_bigram <= 2
 
         checks.append(
             CheckResult(
                 name="switch_clarify_query_repetition",
                 passed=no_repetition,
-                expected="no single word dominating >25% of the response",
+                expected="no bigram repeating more than twice",
                 actual=content[:200],
             )
         )
