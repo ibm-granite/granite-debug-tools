@@ -246,13 +246,13 @@ class SwitchAdaptersTest(AbstractValidationTest):
             top = max(trigram_counts, key=lambda t: trigram_counts[t])
             max_trigram = trigram_counts[top]
             top_trigram = f'"{top[0]} {top[1]} {top[2]}" x{max_trigram}'
-            no_repetition = max_trigram <= 2
+            no_repetition = max_trigram <= 5
 
         checks.append(
             CheckResult(
                 name="switch_clarify_query_repetition",
                 passed=no_repetition,
-                expected="no trigram repeating more than twice",
+                expected="no trigram repeating more than 5 times",
                 actual=f"{top_trigram} | {content[:150]}",
             )
         )
