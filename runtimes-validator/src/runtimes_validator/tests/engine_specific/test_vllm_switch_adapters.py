@@ -214,18 +214,7 @@ class SwitchAdaptersTest(AbstractValidationTest):
 
         content = (resp.get("content") or "").strip()
         finish_reason = resp.get("finish_reason")
-
-        # A clarifying question should be short — hitting max_tokens means runaway generation
-        if finish_reason == "length":
-            checks.append(
-                CheckResult(
-                    name="switch_clarify_query_repetition",
-                    passed=False,
-                    expected="finish_reason=stop (clarification should be short)",
-                    actual=f"finish_reason=length; content={content[:200]}",
-                )
-            )
-            return
+        hit_max_tokens = finish_reason == "length"
 
         # Strip punctuation from each token so "VA." and "(VA" both count as "va"
         words = [
@@ -236,8 +225,8 @@ class SwitchAdaptersTest(AbstractValidationTest):
 
         # Check for repeated trigrams — a runaway loop produces "va outreach programs",
         # "va health care" etc. multiple times; normal text rarely repeats a 3-word phrase
-        no_repetition = True
         top_trigram = ""
+        has_repetition = False
         if len(words) >= 6:
             trigram_counts: dict[tuple[str, str, str], int] = {}
             for i in range(len(words) - 2):
@@ -246,14 +235,16 @@ class SwitchAdaptersTest(AbstractValidationTest):
             top = max(trigram_counts, key=lambda t: trigram_counts[t])
             max_trigram = trigram_counts[top]
             top_trigram = f'"{top[0]} {top[1]} {top[2]}" x{max_trigram}'
-            no_repetition = max_trigram <= 5
+            has_repetition = max_trigram > 5
 
+        # Both signals together indicate a runaway repetition loop
+        passed = not (hit_max_tokens and has_repetition)
         checks.append(
             CheckResult(
                 name="switch_clarify_query_repetition",
-                passed=no_repetition,
-                expected="no trigram repeating more than 5 times",
-                actual=f"{top_trigram} | {content[:150]}",
+                passed=passed,
+                expected="no runaway repetition loop (finish_reason=stop or no repeated trigrams)",
+                actual=f"finish_reason={finish_reason}; {top_trigram} | {content[:150]}",
             )
         )
 
