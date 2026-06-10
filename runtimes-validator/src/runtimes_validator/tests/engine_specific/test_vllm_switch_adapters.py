@@ -213,6 +213,19 @@ class SwitchAdaptersTest(AbstractValidationTest):
             return
 
         content = (resp.get("content") or "").strip()
+        finish_reason = resp.get("finish_reason")
+
+        # A clarifying question should be short — hitting max_tokens means runaway generation
+        if finish_reason == "length":
+            checks.append(
+                CheckResult(
+                    name="switch_clarify_query_repetition",
+                    passed=False,
+                    expected="finish_reason=stop (clarification should be short)",
+                    actual=f"finish_reason=length; content={content[:200]}",
+                )
+            )
+            return
 
         # Strip punctuation from each token so "VA." and "(VA" both count as "va"
         words = [
