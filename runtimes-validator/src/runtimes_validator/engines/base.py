@@ -45,6 +45,7 @@ class AbstractEngine(ABC):
         tool_choice: str | None = None,
         temperature: float = 0.0,
         max_tokens: int = 512,
+        extra_body: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
         """Send a chat completion request. Returns a normalized response dict.
 

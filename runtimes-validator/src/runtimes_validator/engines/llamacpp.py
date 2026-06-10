@@ -87,6 +87,7 @@ class LlamaCppEngine(OpenAICompatibleEngine):
         tool_choice: str | None = None,
         temperature: float = 0.0,
         max_tokens: int = 512,
+        extra_body: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
         return super().chat(
             [self._rewrite_audio_parts(m) for m in messages],
@@ -94,6 +95,7 @@ class LlamaCppEngine(OpenAICompatibleEngine):
             tool_choice=tool_choice,
             temperature=temperature,
             max_tokens=max_tokens,
+            extra_body=extra_body,
         )
 
     @staticmethod
