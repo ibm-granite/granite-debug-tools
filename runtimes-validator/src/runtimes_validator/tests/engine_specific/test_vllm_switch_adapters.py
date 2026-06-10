@@ -56,8 +56,10 @@ class SwitchAdaptersTest(AbstractValidationTest):
                 elapsed_seconds=time.time() - start,
             )
 
+        self._check_base_model(engine, checks)
         self._check_answerability(engine, checks)
         self._check_query_rewrite(engine, checks)
+        self._check_clarify_query(engine, checks)
         self._check_requirement_check(engine, checks)
         self._check_guardian_core(engine, checks)
         self._check_uncertainty(engine, checks)
@@ -72,6 +74,51 @@ class SwitchAdaptersTest(AbstractValidationTest):
         )
 
     # -- Individual adapter checks ------------------------------------------
+
+    def _check_base_model(
+        self,
+        engine: VllmEngine,
+        checks: list[CheckResult],
+    ) -> None:
+        """Base model sanity: without any adapter the model must respond as a plain chat model."""
+        messages = [
+            {"role": "user", "content": "What is 2 + 2?"},
+        ]
+
+        try:
+            resp = engine.chat(
+                messages,
+                temperature=0.0,
+                max_tokens=64,
+            )
+        except Exception as e:
+            checks.append(CheckResult(name="switch_base_model", passed=False, detail=str(e)))
+            return
+
+        content = (resp.get("content") or "").strip()
+
+        non_empty = len(content) > 0
+
+        # Verify the switch layer did not activate an adapter by accident
+        looks_like_adapter_json = False
+        try:
+            parsed = json.loads(content)
+            looks_like_adapter_json = isinstance(parsed, dict) and any(
+                k in parsed for k in ("score", "clarification", "answerable")
+            )
+        except (json.JSONDecodeError, TypeError):
+            pass
+
+        contains_answer = "4" in content
+
+        checks.append(
+            CheckResult(
+                name="switch_base_model",
+                passed=non_empty and not looks_like_adapter_json and contains_answer,
+                expected="plain natural-language response containing '4', not adapter JSON",
+                actual=content[:200],
+            )
+        )
 
     def _check_answerability(
         self,
@@ -133,6 +180,71 @@ class SwitchAdaptersTest(AbstractValidationTest):
                 passed=len(content) > 0,
                 expected="non-empty standalone query rewrite",
                 actual=content[:200],
+            )
+        )
+
+    def _check_clarify_query(
+        self,
+        engine: VllmEngine,
+        checks: list[CheckResult],
+    ) -> None:
+        """Repetition detection: sends an ambiguous veterans program query to the clarify_query
+        adapter and checks for a runaway repetition loop using trigram analysis. Fails only when
+        both finish_reason=length AND a 3-word sequence repeats more than 5 times — the combination
+        that indicates the model is looping instead of returning a short clarifying question."""
+        messages = [
+            {
+                "role": "user",
+                "content": (
+                    "What are the eligibility criteria for the veterans program "
+                    "that provides either health care or disability benefits?"
+                ),
+            },
+        ]
+
+        try:
+            resp = engine.chat(
+                messages,
+                temperature=0.0,
+                max_tokens=300,
+                extra_body=_switch_extra("clarify_query"),
+            )
+        except Exception as e:
+            checks.append(
+                CheckResult(name="switch_clarify_query_repetition", passed=False, detail=str(e))
+            )
+            return
+
+        content = (resp.get("content") or "").strip()
+        finish_reason = resp.get("finish_reason")
+        hit_max_tokens = finish_reason == "length"
+
+        # Strip punctuation from each token so "VA." and "(VA" both count as "va"
+        words = ["".join(c for c in token.lower() if c.isalpha()) for token in content.split()]
+        words = [w for w in words if w]
+
+        # Check for repeated trigrams — a runaway loop produces "va outreach programs",
+        # "va health care" etc. multiple times; normal text rarely repeats a 3-word phrase
+        top_trigram = ""
+        has_repetition = False
+        if len(words) >= 6:
+            trigram_counts: dict[tuple[str, str, str], int] = {}
+            for i in range(len(words) - 2):
+                trigram = (words[i], words[i + 1], words[i + 2])
+                trigram_counts[trigram] = trigram_counts.get(trigram, 0) + 1
+            top = max(trigram_counts, key=lambda t: trigram_counts[t])
+            max_trigram = trigram_counts[top]
+            top_trigram = f'"{top[0]} {top[1]} {top[2]}" x{max_trigram}'
+            has_repetition = max_trigram > 5
+
+        # Both signals together indicate a runaway repetition loop
+        passed = not (hit_max_tokens and has_repetition)
+        checks.append(
+            CheckResult(
+                name="switch_clarify_query_repetition",
+                passed=passed,
+                expected="no runaway repetition loop (finish_reason=stop or no repeated trigrams)",
+                actual=f"finish_reason={finish_reason}; {top_trigram} | {content[:150]}",
             )
         )
 

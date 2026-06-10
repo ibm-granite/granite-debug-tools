@@ -57,8 +57,13 @@ class ConsoleReporter(AbstractReporter):
                 continue
             mark = "+" if check.passed else "-"
             out.write(f"    [{mark}] {check.name}\n")
-            if not check.passed and check.detail:
-                out.write(f"        {check.detail}\n")
+            if not check.passed:
+                if check.detail:
+                    out.write(f"        detail:   {check.detail}\n")
+                if check.expected is not None:
+                    out.write(f"        expected: {check.expected}\n")
+                if check.actual is not None:
+                    out.write(f"        actual:   {check.actual}\n")
         if result.error:
             out.write(f"    ERROR: {result.error}\n")
 
