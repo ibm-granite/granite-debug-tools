@@ -188,7 +188,10 @@ class SwitchAdaptersTest(AbstractValidationTest):
         engine: VllmEngine,
         checks: list[CheckResult],
     ) -> None:
-        """Repetition detection: clarify_query must return concise JSON, not a runaway list."""
+        """Repetition detection: sends an ambiguous veterans program query to the clarify_query
+        adapter and checks for a runaway repetition loop using trigram analysis. Fails only when
+        both finish_reason=length AND a 3-word sequence repeats more than 5 times — the combination
+        that indicates the model is looping instead of returning a short clarifying question."""
         messages = [
             {
                 "role": "user",
@@ -217,10 +220,7 @@ class SwitchAdaptersTest(AbstractValidationTest):
         hit_max_tokens = finish_reason == "length"
 
         # Strip punctuation from each token so "VA." and "(VA" both count as "va"
-        words = [
-            "".join(c for c in token.lower() if c.isalpha())
-            for token in content.split()
-        ]
+        words = ["".join(c for c in token.lower() if c.isalpha()) for token in content.split()]
         words = [w for w in words if w]
 
         # Check for repeated trigrams — a runaway loop produces "va outreach programs",
