@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://w3id.org/pcm/ontology/pcm-ontology.owl#"
-     xml:base="https://w3id.org/pcm/ontology/pcm-ontology.owl"
+<rdf:RDF xmlns="https://w3id.org/pcm#"
+     xml:base="https://w3id.org/pcm"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -23,14 +23,17 @@
     <!-- Ontology                                                     -->
     <!-- ============================================================ -->
 
-    <owl:Ontology rdf:about="https://w3id.org/pcm/ontology/pcm-ontology.owl">
+    <owl:Ontology rdf:about="https://w3id.org/pcm">
         <rdfs:label xml:lang="en">The Personal Conversational Memory Ontology</rdfs:label>
         <dc:title xml:lang="en">The Personal Conversational Memory Ontology</dc:title>
         <rdfs:comment xml:lang="en">Schema for personal knowledge graph extraction from conversational text. Reuses Schema.org, OntoBio, FOAF, PROV-O, SKOS, Relationship vocab, BIO, OpenCare, and CV/ResumeRDF.</rdfs:comment>
-        <dct:created>2016/04/30</dct:created>
-        <dct:modified>2026/03/10</dct:modified>
+        <dct:abstract xml:lang="en">The Personal Conversational Memory (PCM) ontology is a multi-vocabulary schema for representing personal knowledge extracted from conversational interactions between users and AI agents. It reuses established vocabularies - Schema.org, OntoBio, FOAF, PROV-O, SKOS, the Relationship and BIO vocabularies, OpenCare, and CV/ResumeRDF - and defines custom extensions for concepts not adequately covered by existing standards, including personal preferences, problem and service events, and social media accounts. The ontology underpins the PCM pipeline for incremental personal knowledge graph construction, provenance tracking, and SPARQL-based retrieval over conversational memory.</dct:abstract>
+        <dct:description xml:lang="en">A multi-vocabulary schema for personal knowledge graph extraction from conversational text, defining custom extensions for personal preferences, problem and service events, and social media accounts on top of established vocabularies.</dct:description>
+        <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-05-10</dct:created>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-05-10</dct:modified>
         <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <dc:description rdf:resource="https://w3id.org/pcm/images/pcm-ontology-diagram.png"/>
+        <foaf:depiction rdf:resource="https://w3id.org/pcm/images/pcm-ontology-diagram.png"/>
+        <schema:image rdf:resource="https://w3id.org/pcm/images/pcm-ontology-diagram.png"/>
         <dc:creator rdf:resource="https://www.wikidata.org/wiki/Q54832532"/>
         <owl:versionInfo>1.0</owl:versionInfo>
     </owl:Ontology>

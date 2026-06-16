@@ -13,7 +13,7 @@
 @prefix opencare: <https://w3id.org/opencare#> .
 @prefix dct:      <http://purl.org/dc/terms/> .
 @prefix dc:       <http://purl.org/dc/elements/1.1/> .
-@prefix pcm:      <https://w3id.org/pcm/> .
+@prefix pcm:      <https://w3id.org/pcm#> .
 @prefix sioc:     <http://rdfs.org/sioc/ns#> .
 
 # =============================================================================
@@ -24,14 +24,17 @@
 # used by the extraction pipeline, drawing from standard vocabularies.
 # =============================================================================
 
-<https://w3id.org/pcm/ontology/pcm-ontology.owl> a owl:Ontology ;
+<https://w3id.org/pcm> a owl:Ontology ;
     rdfs:label "The Personal Conversational Memory Ontology"@en ;
     dc:title "The Personal Conversational Memory Ontology"@en ;
     rdfs:comment "Schema for personal knowledge graph extraction from conversational text. Reuses Schema.org, OntoBio, FOAF, PROV-O, SKOS, Relationship vocab, BIO, OpenCare, and CV/ResumeRDF."@en ;
-    dct:created "2016/04/30" ;
-    dct:lastModified "2026/03/10" ;
+    dct:abstract "The Personal Conversational Memory (PCM) ontology is a multi-vocabulary schema for representing personal knowledge extracted from conversational interactions between users and AI agents. It reuses established vocabularies - Schema.org, OntoBio, FOAF, PROV-O, SKOS, the Relationship and BIO vocabularies, OpenCare, and CV/ResumeRDF - and defines custom extensions for concepts not adequately covered by existing standards, including personal preferences, problem and service events, and social media accounts. The ontology underpins the PCM pipeline for incremental personal knowledge graph construction, provenance tracking, and SPARQL-based retrieval over conversational memory."@en ;
+    dct:description "A multi-vocabulary schema for personal knowledge graph extraction from conversational text, defining custom extensions for personal preferences, problem and service events, and social media accounts on top of established vocabularies."@en ;
+    dct:created "2026-05-10"^^xsd:date ;
+    dct:modified "2026-05-10"^^xsd:date ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dc:description <https://w3id.org/pcm/images/pcm-ontology-diagram.png> ;
+    foaf:depiction <https://w3id.org/pcm/images/pcm-ontology-diagram.png> ;
+    schema:image <https://w3id.org/pcm/images/pcm-ontology-diagram.png> ;
     dc:creator <https://w3id.org/scholarlydata/person/anna-lisa-gentile> ;
     owl:versionInfo "1.0" .
 
@@ -1348,3 +1351,14 @@ pcm:turnIndex a owl:DatatypeProperty ;
     rdfs:comment "The ordinal position of a message within a conversation thread."@en ;
     rdfs:domain sioc:Post ;
     rdfs:range xsd:integer .
+
+pcm:sourcePlatform a owl:DatatypeProperty ;
+    rdfs:label "source platform"@en ;
+    rdfs:comment "The communication platform this conversation was captured from (e.g. slack, chatgpt, email)."@en ;
+    rdfs:domain sioc:Thread ;
+    rdfs:range xsd:string .
+
+pcm:timezone a owl:DatatypeProperty ;
+    rdfs:label "timezone"@en ;
+    rdfs:comment "IANA timezone identifier (e.g. America/New_York)."@en ;
+    rdfs:range xsd:string .

@@ -1,0 +1,5028 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://schema.org", "https://w3id.org/ontobio", "http://www.w3.org/2001/XMLSchema", "http://purl.org/vocab/relationship", "http://rdfs.org/resume-rdf/cv.rdfs", "https://w3id.org/opencare", "https://w3id.org/pcm", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/ns/prov", "http://purl.org/dc/terms", "http://xmlns.com/foaf/0.1", "http://rdfs.org/sioc/ns", "http://purl.org/vocab/bio/0.1", "http://www.w3.org/2004/02/skos/core" ],
+    "title" : {
+      "en" : "The Personal Conversational Memory Ontology"
+    },
+    "iri" : "https://w3id.org/pcm",
+    "version" : "1.0",
+    "author" : [ "https://www.wikidata.org/wiki/Q54832532" ],
+    "description" : {
+      "en" : "A multi-vocabulary schema for personal knowledge graph extraction from conversational text, defining custom extensions for personal preferences, problem and service events, and social media accounts on top of established vocabularies."
+    },
+    "labels" : {
+      "en" : "The Personal Conversational Memory Ontology"
+    },
+    "comments" : {
+      "en" : "Schema for personal knowledge graph extraction from conversational text. Reuses Schema.org, OntoBio, FOAF, PROV-O, SKOS, Relationship vocab, BIO, OpenCare, and CV/ResumeRDF."
+    },
+    "other" : {
+      "image" : [ {
+        "identifier" : "image",
+        "language" : "undefined",
+        "value" : "https://w3id.org/pcm/images/pcm-ontology-diagram.png",
+        "type" : "iri"
+      } ],
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "https://creativecommons.org/licenses/by/4.0/",
+        "type" : "iri"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "https://www.wikidata.org/wiki/Q54832532",
+        "type" : "iri"
+      } ],
+      "modified" : [ {
+        "identifier" : "modified",
+        "language" : "undefined",
+        "value" : "2026-05-10",
+        "type" : "label"
+      } ],
+      "abstract" : [ {
+        "identifier" : "abstract",
+        "language" : "en",
+        "value" : "The Personal Conversational Memory (PCM) ontology is a multi-vocabulary schema for representing personal knowledge extracted from conversational interactions between users and AI agents. It reuses established vocabularies - Schema.org, OntoBio, FOAF, PROV-O, SKOS, the Relationship and BIO vocabularies, OpenCare, and CV/ResumeRDF - and defines custom extensions for concepts not adequately covered by existing standards, including personal preferences, problem and service events, and social media accounts. The ontology underpins the PCM pipeline for incremental personal knowledge graph construction, provenance tracking, and SPARQL-based retrieval over conversational memory.",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "1.0",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "The Personal Conversational Memory Ontology",
+        "type" : "label"
+      } ],
+      "depiction" : [ {
+        "identifier" : "depiction",
+        "language" : "undefined",
+        "value" : "https://w3id.org/pcm/images/pcm-ontology-diagram.png",
+        "type" : "iri"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "29",
+    "type" : "owl:Class"
+  }, {
+    "id" : "18",
+    "type" : "owl:Class"
+  }, {
+    "id" : "59",
+    "type" : "owl:Class"
+  }, {
+    "id" : "68",
+    "type" : "owl:Class"
+  }, {
+    "id" : "70",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "78",
+    "type" : "owl:Class"
+  }, {
+    "id" : "84",
+    "type" : "owl:Class"
+  }, {
+    "id" : "85",
+    "type" : "owl:Class"
+  }, {
+    "id" : "86",
+    "type" : "owl:Class"
+  }, {
+    "id" : "87",
+    "type" : "owl:Class"
+  }, {
+    "id" : "41",
+    "type" : "owl:Class"
+  }, {
+    "id" : "95",
+    "type" : "owl:Class"
+  }, {
+    "id" : "99",
+    "type" : "owl:Class"
+  }, {
+    "id" : "100",
+    "type" : "owl:Class"
+  }, {
+    "id" : "103",
+    "type" : "owl:Class"
+  }, {
+    "id" : "105",
+    "type" : "owl:Class"
+  }, {
+    "id" : "108",
+    "type" : "owl:Class"
+  }, {
+    "id" : "23",
+    "type" : "owl:Class"
+  }, {
+    "id" : "112",
+    "type" : "owl:Class"
+  }, {
+    "id" : "101",
+    "type" : "owl:Class"
+  }, {
+    "id" : "120",
+    "type" : "owl:Class"
+  }, {
+    "id" : "123",
+    "type" : "owl:Class"
+  }, {
+    "id" : "89",
+    "type" : "owl:Class"
+  }, {
+    "id" : "125",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "43",
+    "type" : "owl:Class"
+  }, {
+    "id" : "132",
+    "type" : "owl:Class"
+  }, {
+    "id" : "124",
+    "type" : "owl:Class"
+  }, {
+    "id" : "136",
+    "type" : "owl:Class"
+  }, {
+    "id" : "107",
+    "type" : "owl:Class"
+  }, {
+    "id" : "156",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "177",
+    "type" : "owl:Class"
+  }, {
+    "id" : "191",
+    "type" : "owl:Class"
+  }, {
+    "id" : "193",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "194",
+    "type" : "owl:Class"
+  }, {
+    "id" : "145",
+    "type" : "owl:Class"
+  }, {
+    "id" : "199",
+    "type" : "owl:Class"
+  }, {
+    "id" : "181",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "151",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "90",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "113",
+    "type" : "owl:Class"
+  }, {
+    "id" : "202",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "203",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "204",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "205",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "206",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "207",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "131",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "209",
+    "type" : "owl:Class"
+  }, {
+    "id" : "210",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "211",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "93",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "212",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "213",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "214",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "215",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "216",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "218",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "219",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "220",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "122",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "221",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "225",
+    "type" : "owl:Class"
+  }, {
+    "id" : "226",
+    "type" : "owl:Class"
+  }, {
+    "id" : "73",
+    "type" : "owl:Class"
+  }, {
+    "id" : "227",
+    "type" : "owl:Class"
+  }, {
+    "id" : "224",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "173",
+    "type" : "owl:Class"
+  }, {
+    "id" : "80",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "228",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "229",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "66",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "230",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "231",
+    "type" : "owl:Class"
+  }, {
+    "id" : "233",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "75",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "171",
+    "type" : "owl:Class"
+  }, {
+    "id" : "175",
+    "type" : "owl:Class"
+  }, {
+    "id" : "235",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "139",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "49",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "16",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "135",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "201",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "240",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "241",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "242",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "27",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "244",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "255",
+    "type" : "owl:Class"
+  }, {
+    "id" : "256",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "272",
+    "type" : "owl:Class"
+  }, {
+    "id" : "186",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "127",
+    "type" : "owl:Class"
+  }, {
+    "id" : "164",
+    "type" : "owl:Class"
+  }, {
+    "id" : "153",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "277",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "278",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "279",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "280",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "115",
+    "type" : "owl:Class"
+  }, {
+    "id" : "92",
+    "type" : "owl:Class"
+  }, {
+    "id" : "52",
+    "type" : "owl:Class"
+  }, {
+    "id" : "263",
+    "type" : "owl:Class"
+  }, {
+    "id" : "247",
+    "type" : "owl:Class"
+  }, {
+    "id" : "190",
+    "type" : "owl:Class"
+  }, {
+    "id" : "71",
+    "type" : "owl:Class"
+  }, {
+    "id" : "179",
+    "type" : "owl:Class"
+  }, {
+    "id" : "67",
+    "type" : "owl:Class"
+  }, {
+    "id" : "167",
+    "type" : "owl:Class"
+  }, {
+    "id" : "47",
+    "type" : "owl:Class"
+  }, {
+    "id" : "21",
+    "type" : "owl:Class"
+  }, {
+    "id" : "62",
+    "type" : "owl:Class"
+  }, {
+    "id" : "291",
+    "type" : "owl:Class"
+  }, {
+    "id" : "159",
+    "type" : "owl:Class"
+  }, {
+    "id" : "340",
+    "type" : "owl:Class"
+  }, {
+    "id" : "60",
+    "type" : "owl:Class"
+  }, {
+    "id" : "344",
+    "type" : "owl:Class"
+  }, {
+    "id" : "118",
+    "type" : "owl:Class"
+  }, {
+    "id" : "83",
+    "type" : "owl:Class"
+  }, {
+    "id" : "104",
+    "type" : "owl:Class"
+  }, {
+    "id" : "345",
+    "type" : "owl:Class"
+  }, {
+    "id" : "72",
+    "type" : "owl:Class"
+  }, {
+    "id" : "114",
+    "type" : "owl:Class"
+  }, {
+    "id" : "347",
+    "type" : "owl:Class"
+  }, {
+    "id" : "350",
+    "type" : "owl:Class"
+  }, {
+    "id" : "147",
+    "type" : "owl:Class"
+  }, {
+    "id" : "170",
+    "type" : "owl:Class"
+  }, {
+    "id" : "45",
+    "type" : "owl:Class"
+  }, {
+    "id" : "358",
+    "type" : "owl:Class"
+  }, {
+    "id" : "249",
+    "type" : "owl:Class"
+  }, {
+    "id" : "39",
+    "type" : "owl:Class"
+  }, {
+    "id" : "82",
+    "type" : "owl:Class"
+  }, {
+    "id" : "30",
+    "type" : "owl:Class"
+  }, {
+    "id" : "286",
+    "type" : "owl:Class"
+  }, {
+    "id" : "339",
+    "type" : "owl:Class"
+  }, {
+    "id" : "294",
+    "type" : "owl:Class"
+  }, {
+    "id" : "117",
+    "type" : "owl:Class"
+  }, {
+    "id" : "371",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "183",
+    "type" : "owl:Class"
+  }, {
+    "id" : "154",
+    "type" : "owl:Class"
+  }, {
+    "id" : "69",
+    "type" : "owl:Class"
+  }, {
+    "id" : "283",
+    "type" : "owl:Class"
+  }, {
+    "id" : "265",
+    "type" : "owl:Class"
+  }, {
+    "id" : "56",
+    "type" : "owl:Class"
+  }, {
+    "id" : "288",
+    "type" : "owl:Class"
+  }, {
+    "id" : "377",
+    "type" : "owl:Class"
+  }, {
+    "id" : "259",
+    "type" : "owl:Class"
+  }, {
+    "id" : "119",
+    "type" : "owl:Class"
+  }, {
+    "id" : "58",
+    "type" : "owl:Class"
+  }, {
+    "id" : "142",
+    "type" : "owl:Class"
+  }, {
+    "id" : "160",
+    "type" : "owl:Class"
+  }, {
+    "id" : "162",
+    "type" : "owl:Class"
+  }, {
+    "id" : "98",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "370",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "319",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "336",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "64",
+    "type" : "owl:Class"
+  }, {
+    "id" : "349",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "387",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "326",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "196",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "321",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "360",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "116",
+    "type" : "owl:Class"
+  }, {
+    "id" : "143",
+    "type" : "owl:Class"
+  }, {
+    "id" : "330",
+    "type" : "owl:Class"
+  }, {
+    "id" : "54",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "77",
+    "type" : "owl:Class"
+  }, {
+    "id" : "36",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://w3id.org/pcm#Pet",
+    "baseIri" : "https://w3id.org/pcm",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Pet",
+      "en" : "Pet"
+    },
+    "comment" : {
+      "en" : "A domestic animal kept for companionship."
+    },
+    "id" : "29",
+    "superClasses" : [ "30" ]
+  }, {
+    "iri" : "http://schema.org/RepairAction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RepairAction",
+      "en" : "Repair Action"
+    },
+    "attributes" : [ "external" ],
+    "id" : "18",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/ontobio#SpecialDish",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SpecialDish",
+      "en" : "Special Dish"
+    },
+    "attributes" : [ "external" ],
+    "id" : "59",
+    "superClasses" : [ "60" ]
+  }, {
+    "iri" : "https://w3id.org/ontobio#MastersDegree",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MastersDegree",
+      "en" : "Master's Degree"
+    },
+    "attributes" : [ "external" ],
+    "id" : "68",
+    "superClasses" : [ "69" ]
+  }, {
+    "iri" : "https://w3id.org/ontobio#FoodItem",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "FoodItem",
+      "en" : "Food Item"
+    },
+    "subClasses" : [ "72", "73" ],
+    "attributes" : [ "external" ],
+    "id" : "70",
+    "superClasses" : [ "71" ]
+  }, {
+    "iri" : "http://schema.org/WriteAction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "WriteAction",
+      "en" : "Write Action"
+    },
+    "attributes" : [ "external" ],
+    "id" : "13",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/ontobio#Brunch",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Brunch",
+      "en" : "Brunch"
+    },
+    "attributes" : [ "external" ],
+    "id" : "78",
+    "superClasses" : [ "60" ]
+  }, {
+    "iri" : "http://schema.org/GenderType",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "GenderType",
+      "en" : "Gender Type"
+    },
+    "attributes" : [ "external" ],
+    "id" : "84"
+  }, {
+    "iri" : "https://w3id.org/ontobio#Dinner",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Dinner",
+      "en" : "Dinner"
+    },
+    "attributes" : [ "external" ],
+    "id" : "85",
+    "superClasses" : [ "60" ]
+  }, {
+    "iri" : "http://rdfs.org/resume-rdf/cv.rdfs#WorkHistory",
+    "baseIri" : "http://rdfs.org/resume-rdf/cv.rdfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "WorkHistory",
+      "en" : "Work History"
+    },
+    "attributes" : [ "external" ],
+    "id" : "86"
+  }, {
+    "iri" : "https://w3id.org/ontobio#Religion",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Religion",
+      "en" : "Religion"
+    },
+    "attributes" : [ "external" ],
+    "id" : "87"
+  }, {
+    "iri" : "http://schema.org/UpdateAction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "UpdateAction",
+      "en" : "Update Action"
+    },
+    "attributes" : [ "external" ],
+    "id" : "41",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/ontobio#ProfessionalDegree",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ProfessionalDegree",
+      "en" : "Professional Degree"
+    },
+    "attributes" : [ "external" ],
+    "id" : "95",
+    "superClasses" : [ "69" ]
+  }, {
+    "iri" : "http://schema.org/TouristAttraction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TouristAttraction",
+      "en" : "Tourist Attraction"
+    },
+    "attributes" : [ "external" ],
+    "id" : "99",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "https://w3id.org/ontobio#CreativeActivity",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CreativeActivity",
+      "en" : "Creative Activity"
+    },
+    "attributes" : [ "external" ],
+    "id" : "100",
+    "superClasses" : [ "101" ]
+  }, {
+    "iri" : "http://schema.org/GovernmentOrganization",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "GovernmentOrganization",
+      "en" : "Government Organization"
+    },
+    "attributes" : [ "external" ],
+    "id" : "103",
+    "superClasses" : [ "104" ]
+  }, {
+    "iri" : "https://w3id.org/ontobio#Lunch",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Lunch",
+      "en" : "Lunch"
+    },
+    "attributes" : [ "external" ],
+    "id" : "105",
+    "superClasses" : [ "60" ]
+  }, {
+    "iri" : "https://w3id.org/ontobio#BachelorsDegree",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BachelorsDegree",
+      "en" : "Bachelor's Degree"
+    },
+    "attributes" : [ "external" ],
+    "id" : "108",
+    "superClasses" : [ "69" ]
+  }, {
+    "iri" : "https://w3id.org/ontobio#Woman",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Woman",
+      "en" : "Woman"
+    },
+    "attributes" : [ "external" ],
+    "id" : "23",
+    "superClasses" : [ "20" ]
+  }, {
+    "iri" : "http://schema.org/Event",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Event",
+      "en" : "Event"
+    },
+    "subClasses" : [ "15", "113", "114" ],
+    "attributes" : [ "external" ],
+    "id" : "112"
+  }, {
+    "iri" : "https://w3id.org/ontobio#Activity",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Activity",
+      "en" : "Activity"
+    },
+    "subClasses" : [ "115", "100", "116", "117", "118", "119" ],
+    "attributes" : [ "external" ],
+    "id" : "101"
+  }, {
+    "iri" : "http://schema.org/Occupation",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Occupation",
+      "en" : "Occupation"
+    },
+    "attributes" : [ "external" ],
+    "id" : "120"
+  }, {
+    "iri" : "http://purl.org/vocab/bio/0.1/Marriage",
+    "baseIri" : "http://purl.org/vocab/bio/0.1",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Marriage",
+      "en" : "Marriage"
+    },
+    "attributes" : [ "external" ],
+    "id" : "123"
+  }, {
+    "iri" : "https://w3id.org/pcm#SocialMediaAccount",
+    "baseIri" : "https://w3id.org/pcm",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SocialMediaAccount",
+      "en" : "Social Media Account"
+    },
+    "comment" : {
+      "en" : "A user account on a social media platform."
+    },
+    "id" : "89",
+    "superClasses" : [ "124" ]
+  }, {
+    "iri" : "http://schema.org/Continent",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Continent",
+      "en" : "Continent"
+    },
+    "attributes" : [ "external" ],
+    "id" : "125",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "http://schema.org/ReadAction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ReadAction",
+      "en" : "Read Action"
+    },
+    "attributes" : [ "external" ],
+    "id" : "9",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://schema.org/DeleteAction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DeleteAction",
+      "en" : "Delete Action"
+    },
+    "attributes" : [ "external" ],
+    "id" : "43",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://schema.org/BuyAction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BuyAction",
+      "en" : "Buy Action"
+    },
+    "attributes" : [ "external" ],
+    "id" : "132",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "http://rdfs.org/sioc/ns#UserAccount",
+    "baseIri" : "http://rdfs.org/sioc/ns",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "UserAccount",
+      "en" : "User Account"
+    },
+    "subClasses" : [ "89" ],
+    "comment" : {
+      "en" : "A user account in an online community."
+    },
+    "attributes" : [ "external" ],
+    "id" : "124"
+  }, {
+    "iri" : "http://schema.org/UseAction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "UseAction",
+      "en" : "Use Action"
+    },
+    "attributes" : [ "external" ],
+    "id" : "136",
+    "superClasses" : [ "58" ]
+  }, {
+    "iri" : "https://w3id.org/pcm#Preference",
+    "baseIri" : "https://w3id.org/pcm",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Preference",
+      "en" : "Preference"
+    },
+    "comment" : {
+      "en" : "A personal preference expressed by a person."
+    },
+    "id" : "107"
+  }, {
+    "iri" : "http://rdfs.org/sioc/ns#Post",
+    "baseIri" : "http://rdfs.org/sioc/ns",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Post",
+      "en" : "Post"
+    },
+    "comment" : {
+      "en" : "An article or message posted to a Forum."
+    },
+    "attributes" : [ "external" ],
+    "id" : "156"
+  }, {
+    "iri" : "http://schema.org/TransferAction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TransferAction",
+      "en" : "Transfer Action"
+    },
+    "attributes" : [ "external" ],
+    "id" : "4",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/pcm#ProblemEvent",
+    "baseIri" : "https://w3id.org/pcm",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ProblemEvent",
+      "en" : "Problem Event"
+    },
+    "comment" : {
+      "en" : "A problem or issue that occurred, affecting an entity."
+    },
+    "id" : "15",
+    "superClasses" : [ "112" ]
+  }, {
+    "iri" : "https://w3id.org/ontobio#DressingHabit",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DressingHabit",
+      "en" : "Dressing Habit"
+    },
+    "attributes" : [ "external" ],
+    "id" : "177",
+    "superClasses" : [ "175" ]
+  }, {
+    "iri" : "http://schema.org/State",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "State",
+      "en" : "State"
+    },
+    "attributes" : [ "external" ],
+    "id" : "191",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "193",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://rdfs.org/sioc/ns#Forum",
+    "baseIri" : "http://rdfs.org/sioc/ns",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Forum",
+      "en" : "Forum"
+    },
+    "comment" : {
+      "en" : "A discussion area on which Posts or entries are made."
+    },
+    "attributes" : [ "external" ],
+    "id" : "194"
+  }, {
+    "iri" : "https://w3id.org/ontobio#PhysicalAppearance",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PhysicalAppearance",
+      "en" : "Physical Appearance"
+    },
+    "attributes" : [ "external" ],
+    "id" : "145",
+    "superClasses" : [ "143" ]
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#Entity",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Entity",
+      "en" : "Entity"
+    },
+    "attributes" : [ "external" ],
+    "id" : "199"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "181",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "151",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "90",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://w3id.org/ontobio#Man",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Man",
+      "en" : "Man"
+    },
+    "attributes" : [ "external" ],
+    "id" : "25",
+    "superClasses" : [ "20" ]
+  }, {
+    "iri" : "http://schema.org/SocialEvent",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SocialEvent",
+      "en" : "Social Event"
+    },
+    "attributes" : [ "external" ],
+    "id" : "113",
+    "superClasses" : [ "112" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "202",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "203",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://schema.org/TradeAction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TradeAction",
+      "en" : "Trade Action"
+    },
+    "subClasses" : [ "132", "77" ],
+    "attributes" : [ "external" ],
+    "id" : "11",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "204",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "205",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "206",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "207",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://schema.org/Action",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Action",
+      "en" : "Action"
+    },
+    "subClasses" : [ "43", "45", "47", "52", "54", "56", "58", "62", "64", "39", "41", "1", "4", "9", "11", "13", "18" ],
+    "attributes" : [ "external" ],
+    "id" : "2"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "131",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://w3id.org/ontobio#Travel",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Travel",
+      "en" : "Travel"
+    },
+    "attributes" : [ "external" ],
+    "id" : "6"
+  }, {
+    "iri" : "https://w3id.org/ontobio#Breakfast",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Breakfast",
+      "en" : "Breakfast"
+    },
+    "attributes" : [ "external" ],
+    "id" : "209",
+    "superClasses" : [ "60" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "210",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#gYear",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "211",
+    "label" : {
+      "IRI-based" : "gYear"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "93",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#gYear",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "212",
+    "label" : {
+      "IRI-based" : "gYear"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#gYear",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "213",
+    "label" : {
+      "IRI-based" : "gYear"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#gYear",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "214",
+    "label" : {
+      "IRI-based" : "gYear"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#gYear",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "215",
+    "label" : {
+      "IRI-based" : "gYear"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "216",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#gYear",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "218",
+    "label" : {
+      "IRI-based" : "gYear"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "219",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "220",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "122",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "221",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "https://w3id.org/ontobio#AlternativeMedicine",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AlternativeMedicine",
+      "en" : "Alternative Medicine"
+    },
+    "attributes" : [ "external" ],
+    "id" : "225",
+    "superClasses" : [ "67" ]
+  }, {
+    "iri" : "https://w3id.org/opencare#Surgery",
+    "baseIri" : "https://w3id.org/opencare",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Surgery",
+      "en" : "Surgery"
+    },
+    "attributes" : [ "external" ],
+    "id" : "226",
+    "superClasses" : [ "67" ]
+  }, {
+    "iri" : "https://w3id.org/ontobio#EdibleFood",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EdibleFood",
+      "en" : "Edible Food"
+    },
+    "attributes" : [ "external" ],
+    "id" : "73",
+    "superClasses" : [ "70" ]
+  }, {
+    "iri" : "https://w3id.org/ontobio#AlcoholicDrink",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AlcoholicDrink",
+      "en" : "Alcoholic Drink"
+    },
+    "attributes" : [ "external" ],
+    "id" : "227",
+    "superClasses" : [ "72" ]
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "224",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://schema.org/Vehicle",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Vehicle",
+      "en" : "Vehicle"
+    },
+    "attributes" : [ "external" ],
+    "id" : "173",
+    "superClasses" : [ "171" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "80",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "228",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "229",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "66",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "230",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://schema.org/City",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "City",
+      "en" : "City"
+    },
+    "attributes" : [ "external" ],
+    "id" : "231",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "233",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "75",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://schema.org/Product",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Product",
+      "en" : "Product"
+    },
+    "subClasses" : [ "170", "173" ],
+    "attributes" : [ "external" ],
+    "id" : "171"
+  }, {
+    "iri" : "https://w3id.org/ontobio#Habit",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Habit",
+      "en" : "Habit"
+    },
+    "subClasses" : [ "154", "177", "179" ],
+    "attributes" : [ "external" ],
+    "id" : "175"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "235",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "139",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "49",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "16",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "135",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "201",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "240",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "241",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "242",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "27",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "244",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "https://w3id.org/ontobio#TravelPurpose",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TravelPurpose",
+      "en" : "Travel Purpose"
+    },
+    "attributes" : [ "external" ],
+    "id" : "7"
+  }, {
+    "iri" : "https://w3id.org/ontobio#Residence",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Residence",
+      "en" : "Residence"
+    },
+    "attributes" : [ "external" ],
+    "id" : "255",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "http://schema.org/Person",
+    "equivalent" : [ "20" ],
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Person",
+      "en" : "Person"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "256"
+  }, {
+    "iri" : "https://w3id.org/opencare#DentalProcedure",
+    "baseIri" : "https://w3id.org/opencare",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DentalProcedure",
+      "en" : "Dental Procedure"
+    },
+    "attributes" : [ "external" ],
+    "id" : "272",
+    "superClasses" : [ "67" ]
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "186",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://purl.org/vocab/bio/0.1/Employment",
+    "baseIri" : "http://purl.org/vocab/bio/0.1",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Employment",
+      "en" : "Employment"
+    },
+    "attributes" : [ "external" ],
+    "id" : "127"
+  }, {
+    "iri" : "http://schema.org/ReviewAction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ReviewAction",
+      "en" : "Review Action"
+    },
+    "attributes" : [ "external" ],
+    "id" : "164",
+    "superClasses" : [ "64" ]
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "153",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "277",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "278",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "279",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "280",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "https://w3id.org/ontobio#PhysicalActivity",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PhysicalActivity",
+      "en" : "Physical Activity"
+    },
+    "attributes" : [ "external" ],
+    "id" : "115",
+    "superClasses" : [ "101" ]
+  }, {
+    "iri" : "https://w3id.org/pcm#Collection",
+    "baseIri" : "https://w3id.org/pcm",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Collection",
+      "en" : "Collection"
+    },
+    "comment" : {
+      "en" : "A personal collection of items (e.g. coins, postcards, autographs)."
+    },
+    "id" : "92"
+  }, {
+    "iri" : "http://schema.org/CommunicateAction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CommunicateAction",
+      "en" : "Communicate Action"
+    },
+    "attributes" : [ "external" ],
+    "id" : "52",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/ontobio#Pharmacotherapy",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Pharmacotherapy",
+      "en" : "Pharmacotherapy"
+    },
+    "attributes" : [ "external" ],
+    "id" : "263",
+    "superClasses" : [ "67" ]
+  }, {
+    "iri" : "https://w3id.org/ontobio#Locality",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Locality",
+      "en" : "Locality"
+    },
+    "attributes" : [ "external" ],
+    "id" : "247",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "https://w3id.org/ontobio#DoctoralDegree",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DoctoralDegree",
+      "en" : "Doctoral Degree"
+    },
+    "attributes" : [ "external" ],
+    "id" : "190",
+    "superClasses" : [ "69" ]
+  }, {
+    "iri" : "https://w3id.org/ontobio#Food",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Food",
+      "en" : "Food"
+    },
+    "subClasses" : [ "70" ],
+    "attributes" : [ "external" ],
+    "id" : "71"
+  }, {
+    "iri" : "https://w3id.org/ontobio#DailyRoutine",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DailyRoutine",
+      "en" : "Daily Routine"
+    },
+    "attributes" : [ "external" ],
+    "id" : "179",
+    "superClasses" : [ "175" ]
+  }, {
+    "iri" : "https://w3id.org/opencare#TreatmentProcedure",
+    "baseIri" : "https://w3id.org/opencare",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TreatmentProcedure",
+      "en" : "Treatment Procedure"
+    },
+    "subClasses" : [ "272", "225", "263", "226" ],
+    "attributes" : [ "external" ],
+    "id" : "67"
+  }, {
+    "iri" : "https://w3id.org/ontobio#HonoraryDegree",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "HonoraryDegree",
+      "en" : "Honorary Degree"
+    },
+    "attributes" : [ "external" ],
+    "id" : "167",
+    "superClasses" : [ "69" ]
+  }, {
+    "iri" : "http://schema.org/SearchAction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SearchAction",
+      "en" : "Search Action"
+    },
+    "attributes" : [ "external" ],
+    "id" : "47",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://schema.org/Place",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Place",
+      "en" : "Place"
+    },
+    "subClasses" : [ "191", "265", "99", "259", "255", "247", "231", "125" ],
+    "attributes" : [ "external" ],
+    "id" : "21"
+  }, {
+    "iri" : "http://schema.org/MoveAction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MoveAction",
+      "en" : "Move Action"
+    },
+    "subClasses" : [ "249" ],
+    "attributes" : [ "external" ],
+    "id" : "62",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://schema.org/MedicalOrganization",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MedicalOrganization",
+      "en" : "Medical Organization"
+    },
+    "attributes" : [ "external" ],
+    "id" : "291",
+    "superClasses" : [ "104" ]
+  }, {
+    "iri" : "https://w3id.org/ontobio#Injury",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Injury",
+      "en" : "Injury"
+    },
+    "attributes" : [ "external" ],
+    "id" : "159",
+    "superClasses" : [ "160" ]
+  }, {
+    "iri" : "https://w3id.org/opencare#AnatomicalRegion",
+    "baseIri" : "https://w3id.org/opencare",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AnatomicalRegion",
+      "en" : "Anatomical Region"
+    },
+    "attributes" : [ "external" ],
+    "id" : "340"
+  }, {
+    "iri" : "https://w3id.org/ontobio#Meal",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Meal",
+      "en" : "Meal"
+    },
+    "subClasses" : [ "209", "78", "85", "294", "59", "105" ],
+    "attributes" : [ "external" ],
+    "id" : "60"
+  }, {
+    "iri" : "http://schema.org/DayOfWeek",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DayOfWeek",
+      "en" : "Day of Week"
+    },
+    "attributes" : [ "external" ],
+    "id" : "344"
+  }, {
+    "iri" : "https://w3id.org/ontobio#OccupationalActivity",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "OccupationalActivity",
+      "en" : "Occupational Activity"
+    },
+    "attributes" : [ "external" ],
+    "id" : "118",
+    "superClasses" : [ "101" ]
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#ConceptScheme",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ConceptScheme",
+      "en" : "Concept Scheme"
+    },
+    "attributes" : [ "external" ],
+    "id" : "83"
+  }, {
+    "iri" : "http://schema.org/Organization",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Organization",
+      "en" : "Organization"
+    },
+    "subClasses" : [ "288", "103", "291", "283" ],
+    "attributes" : [ "external" ],
+    "id" : "104"
+  }, {
+    "iri" : "https://w3id.org/opencare#Symptom",
+    "baseIri" : "https://w3id.org/opencare",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Symptom",
+      "en" : "Symptom"
+    },
+    "attributes" : [ "external" ],
+    "id" : "345"
+  }, {
+    "iri" : "https://w3id.org/ontobio#DrinkableFood",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DrinkableFood",
+      "en" : "Drinkable Food"
+    },
+    "subClasses" : [ "227", "286" ],
+    "attributes" : [ "external" ],
+    "id" : "72",
+    "superClasses" : [ "70" ]
+  }, {
+    "iri" : "https://w3id.org/pcm#ServiceEvent",
+    "baseIri" : "https://w3id.org/pcm",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ServiceEvent",
+      "en" : "Service Event"
+    },
+    "comment" : {
+      "en" : "A service interaction such as repair, maintenance, or professional service."
+    },
+    "id" : "114",
+    "superClasses" : [ "112" ]
+  }, {
+    "iri" : "http://schema.org/ActionStatusType",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ActionStatusType",
+      "en" : "Action Status Type"
+    },
+    "individuals" : [ {
+      "iri" : "http://schema.org/ActiveActionStatus",
+      "baseIri" : "http://schema.org",
+      "labels" : {
+        "IRI-based" : "ActiveActionStatus",
+        "en" : "Active"
+      }
+    }, {
+      "iri" : "http://schema.org/CompletedActionStatus",
+      "baseIri" : "http://schema.org",
+      "labels" : {
+        "IRI-based" : "CompletedActionStatus",
+        "en" : "Completed"
+      }
+    }, {
+      "iri" : "http://schema.org/PotentialActionStatus",
+      "baseIri" : "http://schema.org",
+      "labels" : {
+        "IRI-based" : "PotentialActionStatus",
+        "en" : "Potential"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "347"
+  }, {
+    "iri" : "http://schema.org/Schedule",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Schedule",
+      "en" : "Schedule"
+    },
+    "comment" : {
+      "en" : "A schedule defines the recurrence pattern for events or activities."
+    },
+    "attributes" : [ "external" ],
+    "id" : "350"
+  }, {
+    "iri" : "https://w3id.org/ontobio#PhysicalTrait",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PhysicalTrait",
+      "en" : "Physical Trait"
+    },
+    "attributes" : [ "external" ],
+    "id" : "147",
+    "superClasses" : [ "143" ]
+  }, {
+    "iri" : "https://w3id.org/pcm#Clothing",
+    "baseIri" : "https://w3id.org/pcm",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Clothing",
+      "en" : "Clothing"
+    },
+    "comment" : {
+      "en" : "A wearable garment or accessory."
+    },
+    "id" : "170",
+    "superClasses" : [ "171" ]
+  }, {
+    "iri" : "http://schema.org/InteractAction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "InteractAction",
+      "en" : "Interact Action"
+    },
+    "attributes" : [ "external" ],
+    "id" : "45",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://schema.org/Language",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Language",
+      "en" : "Language"
+    },
+    "attributes" : [ "external" ],
+    "id" : "358"
+  }, {
+    "iri" : "http://schema.org/TravelAction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TravelAction",
+      "en" : "Travel Action"
+    },
+    "attributes" : [ "external" ],
+    "id" : "249",
+    "superClasses" : [ "62" ]
+  }, {
+    "iri" : "http://schema.org/OrganizeAction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "OrganizeAction",
+      "en" : "Organize Action"
+    },
+    "attributes" : [ "external" ],
+    "id" : "39",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#Concept",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Concept",
+      "en" : "Concept"
+    },
+    "attributes" : [ "external" ],
+    "id" : "82"
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/Agent",
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Agent",
+      "en" : "Agent"
+    },
+    "subClasses" : [ "29", "20" ],
+    "attributes" : [ "external" ],
+    "id" : "30"
+  }, {
+    "iri" : "https://w3id.org/ontobio#NonAlcoholicDrink",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "NonAlcoholicDrink",
+      "en" : "Non-Alcoholic Drink"
+    },
+    "attributes" : [ "external" ],
+    "id" : "286",
+    "superClasses" : [ "72" ]
+  }, {
+    "iri" : "http://rdfs.org/sioc/ns#Thread",
+    "baseIri" : "http://rdfs.org/sioc/ns",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Thread",
+      "en" : "Thread"
+    },
+    "comment" : {
+      "en" : "A container for a series of threaded discussion Posts."
+    },
+    "attributes" : [ "external" ],
+    "id" : "339"
+  }, {
+    "iri" : "https://w3id.org/ontobio#EveningSnack",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EveningSnack",
+      "en" : "Evening Snack"
+    },
+    "attributes" : [ "external" ],
+    "id" : "294",
+    "superClasses" : [ "60" ]
+  }, {
+    "iri" : "https://w3id.org/ontobio#DailyLivingActivity",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DailyLivingActivity",
+      "en" : "Daily Living Activity"
+    },
+    "attributes" : [ "external" ],
+    "id" : "117",
+    "superClasses" : [ "101" ]
+  }, {
+    "iri" : "http://schema.org/CreativeWork",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CreativeWork",
+      "en" : "Creative Work"
+    },
+    "attributes" : [ "external" ],
+    "id" : "371"
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/Person",
+    "equivalent" : [ "256" ],
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Person",
+      "en" : "Person"
+    },
+    "subClasses" : [ "23", "25" ],
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "20",
+    "superClasses" : [ "30" ]
+  }, {
+    "iri" : "https://w3id.org/pcm#Plant",
+    "baseIri" : "https://w3id.org/pcm",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Plant",
+      "en" : "Plant"
+    },
+    "comment" : {
+      "en" : "A plant grown or maintained by a person."
+    },
+    "id" : "183"
+  }, {
+    "iri" : "https://w3id.org/ontobio#FoodHabit",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "FoodHabit",
+      "en" : "Food Habit"
+    },
+    "attributes" : [ "external" ],
+    "id" : "154",
+    "superClasses" : [ "175" ]
+  }, {
+    "iri" : "http://rdfs.org/resume-rdf/cv.rdfs#Education",
+    "baseIri" : "http://rdfs.org/resume-rdf/cv.rdfs",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Education",
+      "en" : "Education"
+    },
+    "subClasses" : [ "108", "68", "190", "167", "95" ],
+    "attributes" : [ "external" ],
+    "id" : "69"
+  }, {
+    "iri" : "https://w3id.org/ontobio#CommercialOrganization",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CommercialOrganization",
+      "en" : "Commercial Organization"
+    },
+    "attributes" : [ "external" ],
+    "id" : "283",
+    "superClasses" : [ "104" ]
+  }, {
+    "iri" : "http://schema.org/Country",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Country",
+      "en" : "Country"
+    },
+    "attributes" : [ "external" ],
+    "id" : "265",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "http://schema.org/PlayAction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PlayAction",
+      "en" : "Play Action"
+    },
+    "attributes" : [ "external" ],
+    "id" : "56",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://schema.org/EducationalOrganization",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EducationalOrganization",
+      "en" : "Educational Organization"
+    },
+    "attributes" : [ "external" ],
+    "id" : "288",
+    "superClasses" : [ "104" ]
+  }, {
+    "iri" : "https://w3id.org/ontobio#EthnicGroup",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EthnicGroup",
+      "en" : "Ethnic Group"
+    },
+    "attributes" : [ "external" ],
+    "id" : "377"
+  }, {
+    "iri" : "https://w3id.org/ontobio#Village",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Village",
+      "en" : "Village"
+    },
+    "attributes" : [ "external" ],
+    "id" : "259",
+    "superClasses" : [ "21" ]
+  }, {
+    "iri" : "https://w3id.org/ontobio#RecreationalActivity",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RecreationalActivity",
+      "en" : "Recreational Activity"
+    },
+    "attributes" : [ "external" ],
+    "id" : "119",
+    "superClasses" : [ "101" ]
+  }, {
+    "iri" : "http://schema.org/ConsumeAction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ConsumeAction",
+      "en" : "Consume Action"
+    },
+    "subClasses" : [ "136" ],
+    "attributes" : [ "external" ],
+    "id" : "58",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/ontobio#PersonalityTrait",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PersonalityTrait",
+      "en" : "Personality Trait"
+    },
+    "attributes" : [ "external" ],
+    "id" : "142",
+    "superClasses" : [ "143" ]
+  }, {
+    "iri" : "http://schema.org/MedicalCondition",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MedicalCondition",
+      "en" : "Medical Condition"
+    },
+    "subClasses" : [ "159", "162" ],
+    "attributes" : [ "external" ],
+    "id" : "160"
+  }, {
+    "iri" : "https://w3id.org/opencare#Disease",
+    "baseIri" : "https://w3id.org/opencare",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Disease",
+      "en" : "Disease"
+    },
+    "attributes" : [ "external" ],
+    "id" : "162",
+    "superClasses" : [ "160" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "98",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "370",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "319",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "336",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://schema.org/AssessAction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AssessAction",
+      "en" : "Assess Action"
+    },
+    "subClasses" : [ "164" ],
+    "attributes" : [ "external" ],
+    "id" : "64",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "349",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "387",
+    "label" : {
+      "IRI-based" : "anyURI"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "326",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "196",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "321",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "360",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "https://w3id.org/ontobio#ReligiousActivity",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ReligiousActivity",
+      "en" : "Religious Activity"
+    },
+    "attributes" : [ "external" ],
+    "id" : "116",
+    "superClasses" : [ "101" ]
+  }, {
+    "iri" : "https://w3id.org/ontobio#Trait",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Trait",
+      "en" : "Trait"
+    },
+    "subClasses" : [ "142", "145", "147" ],
+    "attributes" : [ "external" ],
+    "id" : "143"
+  }, {
+    "iri" : "https://w3id.org/ontobio#CausalType",
+    "baseIri" : "https://w3id.org/ontobio",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CausalType",
+      "en" : "Causal Type"
+    },
+    "attributes" : [ "external" ],
+    "id" : "330"
+  }, {
+    "iri" : "http://schema.org/CreateAction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CreateAction",
+      "en" : "Create Action"
+    },
+    "attributes" : [ "external" ],
+    "id" : "54",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://schema.org/AchieveAction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AchieveAction",
+      "en" : "Achieve Action"
+    },
+    "attributes" : [ "external" ],
+    "id" : "1",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://schema.org/PayAction",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PayAction",
+      "en" : "Pay Action"
+    },
+    "attributes" : [ "external" ],
+    "id" : "77",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "https://w3id.org/opencare#HealthRecord",
+    "baseIri" : "https://w3id.org/opencare",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "HealthRecord",
+      "en" : "Health Record"
+    },
+    "attributes" : [ "external" ],
+    "id" : "36"
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "3",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "5",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "8",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "10",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "12",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "14",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "17",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "19",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "22",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "24",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "26",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "31",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "35",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "37",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "38",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "40",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "42",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "44",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "46",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "48",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "51",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "53",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "55",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "57",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "61",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "63",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "65",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "74",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "76",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "79",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "81",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "88",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "91",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "94",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "96",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "97",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "102",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "106",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "109",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "121",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "126",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "128",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "130",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "133",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "134",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "137",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "138",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "141",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "144",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "146",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "148",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "150",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "152",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "157",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "158",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "161",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "163",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "165",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "166",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "168",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "169",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "172",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "174",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "176",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "178",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "180",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "182",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "184",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "185",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "187",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "188",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "189",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "192",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "195",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "197",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "198",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "200",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "110",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "208",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "50",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "222",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "223",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "232",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "234",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "236",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "237",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "238",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "239",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "243",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "245",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "246",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "248",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "250",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "252",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "253",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "254",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "257",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "258",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "260",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "261",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "262",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "264",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "266",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "267",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "268",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "269",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "270",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "271",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "273",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "274",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "33",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "275",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "276",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "281",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "282",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "284",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "285",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "287",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "289",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "290",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "292",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "251",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "293",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "295",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "296",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "297",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "129",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "298",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "299",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "300",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "301",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "302",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "303",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "304",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "305",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "306",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "307",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "308",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "309",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "310",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "311",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "312",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "313",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "314",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "315",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "316",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "317",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "318",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "320",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "322",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "323",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "324",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "325",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "327",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "328",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "329",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "331",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "332",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "333",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "334",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "335",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "337",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "338",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "341",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "140",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "343",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "346",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "155",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "348",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "351",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "352",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "353",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "354",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "355",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "356",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "357",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "359",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "361",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "342",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "362",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "149",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "363",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "364",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "366",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "367",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "368",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "369",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "372",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "373",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "32",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "375",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "376",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "378",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "379",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "111",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "365",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "380",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "34",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "381",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "382",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "383",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "384",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "385",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "28",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "386",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "374",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "388",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "389",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "390",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "217",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "range" : "2",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "0"
+  }, {
+    "range" : "2",
+    "domain" : "4",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "3"
+  }, {
+    "iri" : "https://w3id.org/ontobio#reasonForTravel",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "reasonForTravel",
+      "en" : "reason for travel"
+    },
+    "domain" : "6",
+    "attributes" : [ "external", "object" ],
+    "id" : "5"
+  }, {
+    "range" : "2",
+    "domain" : "9",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "8"
+  }, {
+    "range" : "2",
+    "domain" : "11",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "10"
+  }, {
+    "range" : "2",
+    "domain" : "13",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "12"
+  }, {
+    "iri" : "https://w3id.org/pcm#affects",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "16",
+    "label" : {
+      "IRI-based" : "affects",
+      "en" : "affects"
+    },
+    "domain" : "15",
+    "comment" : {
+      "en" : "Links a problem event to the entity it impacts."
+    },
+    "attributes" : [ "object" ],
+    "id" : "14"
+  }, {
+    "range" : "2",
+    "domain" : "18",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "17"
+  }, {
+    "iri" : "http://schema.org/birthPlace",
+    "baseIri" : "http://schema.org",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "birthPlace",
+      "en" : "birth place"
+    },
+    "domain" : "20",
+    "attributes" : [ "external", "object" ],
+    "id" : "19"
+  }, {
+    "range" : "20",
+    "domain" : "23",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "22"
+  }, {
+    "range" : "20",
+    "domain" : "25",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "24"
+  }, {
+    "iri" : "http://purl.org/vocab/relationship/mentorOf",
+    "baseIri" : "http://purl.org/vocab/relationship",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "mentorOf",
+      "en" : "mentor of"
+    },
+    "superproperty" : [ "28" ],
+    "domain" : "27",
+    "attributes" : [ "external", "object" ],
+    "id" : "26"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasParent",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "hasParent",
+      "en" : "has parent"
+    },
+    "superproperty" : [ "32" ],
+    "domain" : "27",
+    "subproperty" : [ "33", "34" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "31"
+  }, {
+    "iri" : "https://w3id.org/opencare#hasHealthRecord",
+    "baseIri" : "https://w3id.org/opencare",
+    "range" : "36",
+    "label" : {
+      "IRI-based" : "hasHealthRecord",
+      "en" : "has health record"
+    },
+    "domain" : "20",
+    "attributes" : [ "external", "object" ],
+    "id" : "35"
+  }, {
+    "iri" : "http://rdfs.org/sioc/ns#has_container",
+    "baseIri" : "http://rdfs.org/sioc/ns",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "has_container",
+      "en" : "has container"
+    },
+    "domain" : "27",
+    "comment" : {
+      "en" : "The Container to which this Item belongs."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "37"
+  }, {
+    "range" : "2",
+    "domain" : "39",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "38"
+  }, {
+    "range" : "2",
+    "domain" : "41",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "40"
+  }, {
+    "range" : "2",
+    "domain" : "43",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "42"
+  }, {
+    "range" : "2",
+    "domain" : "45",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "44"
+  }, {
+    "range" : "2",
+    "domain" : "47",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "46"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasSister",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "23",
+    "label" : {
+      "IRI-based" : "hasSister",
+      "en" : "has sister"
+    },
+    "superproperty" : [ "50" ],
+    "domain" : "49",
+    "attributes" : [ "external", "object" ],
+    "id" : "48"
+  }, {
+    "range" : "2",
+    "domain" : "52",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "51"
+  }, {
+    "range" : "2",
+    "domain" : "54",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "53"
+  }, {
+    "range" : "2",
+    "domain" : "56",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "55"
+  }, {
+    "range" : "2",
+    "domain" : "58",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "57"
+  }, {
+    "range" : "2",
+    "domain" : "62",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "61"
+  }, {
+    "range" : "2",
+    "domain" : "64",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "63"
+  }, {
+    "iri" : "https://w3id.org/opencare#hasTreatmentProcedure",
+    "baseIri" : "https://w3id.org/opencare",
+    "range" : "67",
+    "label" : {
+      "IRI-based" : "hasTreatmentProcedure",
+      "en" : "has treatment procedure"
+    },
+    "domain" : "66",
+    "attributes" : [ "external", "object" ],
+    "id" : "65"
+  }, {
+    "iri" : "https://w3id.org/ontobio#mealConsumedIn",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "75",
+    "label" : {
+      "IRI-based" : "mealConsumedIn",
+      "en" : "meal consumed in"
+    },
+    "domain" : "60",
+    "attributes" : [ "external", "object" ],
+    "id" : "74"
+  }, {
+    "range" : "11",
+    "domain" : "77",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "76"
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "range" : "80",
+    "label" : {
+      "IRI-based" : "prefLabel",
+      "en" : "preferred label"
+    },
+    "domain" : "27",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "79"
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#inScheme",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "range" : "83",
+    "label" : {
+      "IRI-based" : "inScheme",
+      "en" : "in scheme"
+    },
+    "domain" : "82",
+    "attributes" : [ "external", "object" ],
+    "id" : "81"
+  }, {
+    "iri" : "https://w3id.org/pcm#platform",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "90",
+    "label" : {
+      "IRI-based" : "platform",
+      "en" : "platform"
+    },
+    "domain" : "89",
+    "comment" : {
+      "en" : "The social media platform name (e.g. Instagram, TikTok, YouTube)."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "88"
+  }, {
+    "iri" : "https://w3id.org/pcm#collectionSize",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "93",
+    "label" : {
+      "IRI-based" : "collectionSize",
+      "en" : "collection size"
+    },
+    "domain" : "92",
+    "comment" : {
+      "en" : "The number of items in the collection."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "91"
+  }, {
+    "iri" : "https://w3id.org/pcm#hasPet",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "29",
+    "label" : {
+      "IRI-based" : "hasPet",
+      "en" : "has pet"
+    },
+    "domain" : "20",
+    "comment" : {
+      "en" : "Links a person to a pet they own or care for."
+    },
+    "attributes" : [ "object" ],
+    "id" : "94"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasGrandParent",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "hasGrandParent",
+      "en" : "has grandparent"
+    },
+    "superproperty" : [ "32" ],
+    "domain" : "27",
+    "attributes" : [ "external", "object" ],
+    "id" : "96"
+  }, {
+    "iri" : "http://rdfs.org/sioc/ns#content",
+    "baseIri" : "http://rdfs.org/sioc/ns",
+    "range" : "98",
+    "label" : {
+      "IRI-based" : "content",
+      "en" : "content"
+    },
+    "domain" : "27",
+    "comment" : {
+      "en" : "The content of the Item in plain text format."
+    },
+    "attributes" : [ "external", "datatype" ],
+    "id" : "97"
+  }, {
+    "iri" : "http://purl.org/vocab/relationship/worksWith",
+    "baseIri" : "http://purl.org/vocab/relationship",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "worksWith",
+      "en" : "works with"
+    },
+    "superproperty" : [ "28" ],
+    "domain" : "27",
+    "attributes" : [ "external", "object" ],
+    "id" : "102"
+  }, {
+    "iri" : "https://w3id.org/pcm#hasPreference",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "107",
+    "label" : {
+      "IRI-based" : "hasPreference",
+      "en" : "has preference"
+    },
+    "domain" : "20",
+    "attributes" : [ "object" ],
+    "id" : "106"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasSpouse",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "hasSpouse",
+      "en" : "has spouse"
+    },
+    "superproperty" : [ "32" ],
+    "domain" : "27",
+    "subproperty" : [ "110", "111" ],
+    "attributes" : [ "symmetric", "external", "object" ],
+    "id" : "109"
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#definition",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "range" : "122",
+    "label" : {
+      "IRI-based" : "definition",
+      "en" : "definition"
+    },
+    "domain" : "27",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "121"
+  }, {
+    "iri" : "https://w3id.org/ontobio#employedAt",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "104",
+    "label" : {
+      "IRI-based" : "employedAt",
+      "en" : "employed at"
+    },
+    "domain" : "127",
+    "attributes" : [ "external", "object" ],
+    "id" : "126"
+  }, {
+    "iri" : "http://purl.org/vocab/relationship/friendOf",
+    "baseIri" : "http://purl.org/vocab/relationship",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "friendOf",
+      "en" : "friend of"
+    },
+    "superproperty" : [ "28" ],
+    "domain" : "27",
+    "subproperty" : [ "129" ],
+    "attributes" : [ "symmetric", "external", "object" ],
+    "id" : "128"
+  }, {
+    "iri" : "https://w3id.org/pcm#petBreed",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "131",
+    "label" : {
+      "IRI-based" : "petBreed",
+      "en" : "pet breed"
+    },
+    "domain" : "29",
+    "comment" : {
+      "en" : "The breed of the pet, if applicable."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "130"
+  }, {
+    "iri" : "http://purl.org/vocab/relationship/acquaintanceOf",
+    "baseIri" : "http://purl.org/vocab/relationship",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "acquaintanceOf",
+      "en" : "acquaintance of"
+    },
+    "superproperty" : [ "28" ],
+    "domain" : "27",
+    "attributes" : [ "symmetric", "external", "object" ],
+    "id" : "133"
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/img",
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "range" : "135",
+    "label" : {
+      "IRI-based" : "img",
+      "en" : "image"
+    },
+    "domain" : "20",
+    "comment" : {
+      "en" : "A depiction of a person, typically a profile photo."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "134"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasCousin",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "hasCousin",
+      "en" : "has cousin"
+    },
+    "superproperty" : [ "32" ],
+    "domain" : "27",
+    "attributes" : [ "symmetric", "external", "object" ],
+    "id" : "137"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasSon",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "25",
+    "label" : {
+      "IRI-based" : "hasSon",
+      "en" : "has son"
+    },
+    "superproperty" : [ "140" ],
+    "domain" : "139",
+    "attributes" : [ "external", "object" ],
+    "id" : "138"
+  }, {
+    "range" : "143",
+    "domain" : "142",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "141"
+  }, {
+    "range" : "143",
+    "domain" : "145",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "144"
+  }, {
+    "range" : "143",
+    "domain" : "147",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "146"
+  }, {
+    "iri" : "https://w3id.org/ontobio#precededBy",
+    "inverse" : "149",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "precededBy",
+      "en" : "preceded by"
+    },
+    "domain" : "27",
+    "attributes" : [ "external", "object", "asymmetric", "irreflexive" ],
+    "id" : "148"
+  }, {
+    "iri" : "https://w3id.org/pcm#problemType",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "151",
+    "label" : {
+      "IRI-based" : "problemType",
+      "en" : "problem type"
+    },
+    "domain" : "15",
+    "comment" : {
+      "en" : "Category of the problem (e.g. mechanical, software, health)."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "150"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasFoodHabit",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "154",
+    "label" : {
+      "IRI-based" : "hasFoodHabit",
+      "en" : "has food habit"
+    },
+    "superproperty" : [ "155" ],
+    "domain" : "153",
+    "attributes" : [ "external", "object" ],
+    "id" : "152"
+  }, {
+    "range" : "58",
+    "domain" : "136",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "157"
+  }, {
+    "range" : "160",
+    "domain" : "159",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "158"
+  }, {
+    "range" : "160",
+    "domain" : "162",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "161"
+  }, {
+    "range" : "64",
+    "domain" : "164",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "163"
+  }, {
+    "iri" : "https://w3id.org/ontobio#travelTo",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "travelTo",
+      "en" : "travel to"
+    },
+    "domain" : "6",
+    "attributes" : [ "external", "object" ],
+    "id" : "165"
+  }, {
+    "range" : "69",
+    "domain" : "167",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "166"
+  }, {
+    "range" : "69",
+    "domain" : "95",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "168"
+  }, {
+    "range" : "171",
+    "domain" : "170",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "169"
+  }, {
+    "range" : "171",
+    "domain" : "173",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "172"
+  }, {
+    "range" : "175",
+    "domain" : "154",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "174"
+  }, {
+    "range" : "175",
+    "domain" : "177",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "176"
+  }, {
+    "range" : "175",
+    "domain" : "179",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "178"
+  }, {
+    "iri" : "https://w3id.org/pcm#role",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "181",
+    "label" : {
+      "IRI-based" : "role",
+      "en" : "role"
+    },
+    "domain" : "156",
+    "comment" : {
+      "en" : "The role of a message sender: user, assistant, or system."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "180"
+  }, {
+    "iri" : "https://w3id.org/pcm#grows",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "183",
+    "label" : {
+      "IRI-based" : "grows",
+      "en" : "grows"
+    },
+    "domain" : "20",
+    "comment" : {
+      "en" : "Links a person to a plant they grow or tend."
+    },
+    "attributes" : [ "object" ],
+    "id" : "182"
+  }, {
+    "iri" : "https://w3id.org/pcm#hasSocialAccount",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "89",
+    "label" : {
+      "IRI-based" : "hasSocialAccount",
+      "en" : "has social account"
+    },
+    "domain" : "20",
+    "comment" : {
+      "en" : "Links a person to a social media account they own."
+    },
+    "attributes" : [ "object" ],
+    "id" : "184"
+  }, {
+    "iri" : "https://w3id.org/opencare#diagnosedWith",
+    "baseIri" : "https://w3id.org/opencare",
+    "range" : "160",
+    "label" : {
+      "IRI-based" : "diagnosedWith",
+      "en" : "diagnosed with"
+    },
+    "domain" : "186",
+    "attributes" : [ "external", "object" ],
+    "id" : "185"
+  }, {
+    "range" : "69",
+    "domain" : "108",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "187"
+  }, {
+    "range" : "69",
+    "domain" : "68",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "188"
+  }, {
+    "range" : "69",
+    "domain" : "190",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "189"
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/interest",
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "range" : "135",
+    "label" : {
+      "IRI-based" : "interest",
+      "en" : "interest"
+    },
+    "domain" : "20",
+    "attributes" : [ "external", "object" ],
+    "id" : "192"
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/nick",
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "range" : "196",
+    "label" : {
+      "IRI-based" : "nick",
+      "en" : "nickname"
+    },
+    "domain" : "30",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "195"
+  }, {
+    "iri" : "http://rdfs.org/sioc/ns#reply_of",
+    "inverse" : "198",
+    "baseIri" : "http://rdfs.org/sioc/ns",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "reply_of",
+      "en" : "reply of"
+    },
+    "domain" : "27",
+    "comment" : {
+      "en" : "Links to an Item that this Item is a reply to."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "197"
+  }, {
+    "iri" : "http://rdfs.org/sioc/ns#has_reply",
+    "baseIri" : "http://rdfs.org/sioc/ns",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "has_reply",
+      "en" : "has reply"
+    },
+    "domain" : "27",
+    "comment" : {
+      "en" : "Points to an Item or Post that is a reply to this Item."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "198"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasDressStyle",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "177",
+    "label" : {
+      "IRI-based" : "hasDressStyle",
+      "en" : "has dress style"
+    },
+    "superproperty" : [ "155" ],
+    "domain" : "201",
+    "attributes" : [ "external", "object" ],
+    "id" : "200"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasHusband",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "25",
+    "label" : {
+      "IRI-based" : "hasHusband",
+      "en" : "has husband"
+    },
+    "superproperty" : [ "109" ],
+    "domain" : "139",
+    "attributes" : [ "external", "object" ],
+    "id" : "110"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasAunt",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "hasAunt",
+      "en" : "has aunt"
+    },
+    "superproperty" : [ "32" ],
+    "domain" : "27",
+    "attributes" : [ "external", "object" ],
+    "id" : "208"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasSibling",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "hasSibling",
+      "en" : "has sibling"
+    },
+    "superproperty" : [ "32" ],
+    "domain" : "27",
+    "subproperty" : [ "48", "217" ],
+    "attributes" : [ "symmetric", "external", "object" ],
+    "id" : "50"
+  }, {
+    "iri" : "https://w3id.org/ontobio#useOf",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "useOf",
+      "en" : "use of"
+    },
+    "domain" : "27",
+    "attributes" : [ "external", "object" ],
+    "id" : "222"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasRoutine",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "179",
+    "label" : {
+      "IRI-based" : "hasRoutine",
+      "en" : "has routine"
+    },
+    "superproperty" : [ "155" ],
+    "domain" : "224",
+    "attributes" : [ "external", "object" ],
+    "id" : "223"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasUncle",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "hasUncle",
+      "en" : "has uncle"
+    },
+    "superproperty" : [ "32" ],
+    "domain" : "27",
+    "attributes" : [ "external", "object" ],
+    "id" : "232"
+  }, {
+    "iri" : "https://w3id.org/pcm#hasCollection",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "92",
+    "label" : {
+      "IRI-based" : "hasCollection",
+      "en" : "has collection"
+    },
+    "domain" : "20",
+    "comment" : {
+      "en" : "Links a person to a collection they maintain."
+    },
+    "attributes" : [ "object" ],
+    "id" : "234"
+  }, {
+    "iri" : "https://w3id.org/ontobio#causalContext",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "causalContext",
+      "en" : "causal context"
+    },
+    "domain" : "27",
+    "attributes" : [ "external", "object" ],
+    "id" : "236"
+  }, {
+    "iri" : "http://purl.org/vocab/relationship/apprenticeTo",
+    "baseIri" : "http://purl.org/vocab/relationship",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "apprenticeTo",
+      "en" : "apprentice to"
+    },
+    "superproperty" : [ "28" ],
+    "domain" : "27",
+    "attributes" : [ "external", "object" ],
+    "id" : "237"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasActivity",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "101",
+    "label" : {
+      "IRI-based" : "hasActivity",
+      "en" : "has activity"
+    },
+    "domain" : "221",
+    "attributes" : [ "external", "object" ],
+    "id" : "238"
+  }, {
+    "iri" : "https://w3id.org/ontobio#modeOfTransport",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "219",
+    "label" : {
+      "IRI-based" : "modeOfTransport",
+      "en" : "mode of transport"
+    },
+    "domain" : "6",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "239"
+  }, {
+    "iri" : "http://rdfs.org/sioc/ns#account_of",
+    "baseIri" : "http://rdfs.org/sioc/ns",
+    "range" : "30",
+    "label" : {
+      "IRI-based" : "account_of",
+      "en" : "account of"
+    },
+    "domain" : "124",
+    "comment" : {
+      "en" : "Refers to the foaf:Agent or foaf:Person who owns this UserAccount."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "243"
+  }, {
+    "range" : "21",
+    "domain" : "231",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "245"
+  }, {
+    "range" : "21",
+    "domain" : "247",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "246"
+  }, {
+    "range" : "62",
+    "domain" : "249",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "248"
+  }, {
+    "iri" : "https://w3id.org/ontobio#travelUndertakenBy",
+    "inverse" : "251",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "travelUndertakenBy",
+      "en" : "travel undertaken by"
+    },
+    "domain" : "6",
+    "attributes" : [ "external", "object" ],
+    "id" : "250"
+  }, {
+    "range" : "21",
+    "domain" : "125",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "252"
+  }, {
+    "iri" : "https://w3id.org/pcm#collectionType",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "206",
+    "label" : {
+      "IRI-based" : "collectionType",
+      "en" : "collection type"
+    },
+    "domain" : "92",
+    "comment" : {
+      "en" : "What is collected (e.g. coins, postcards, stamps, autographed baseballs)."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "253"
+  }, {
+    "range" : "21",
+    "domain" : "255",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "254"
+  }, {
+    "iri" : "https://w3id.org/ontobio#residedIn",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "255",
+    "label" : {
+      "IRI-based" : "residedIn",
+      "en" : "resided in"
+    },
+    "domain" : "20",
+    "attributes" : [ "external", "object" ],
+    "id" : "257"
+  }, {
+    "range" : "21",
+    "domain" : "259",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "258"
+  }, {
+    "range" : "21",
+    "domain" : "99",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "260"
+  }, {
+    "range" : "67",
+    "domain" : "226",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "261"
+  }, {
+    "range" : "67",
+    "domain" : "263",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "262"
+  }, {
+    "range" : "21",
+    "domain" : "265",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "264"
+  }, {
+    "range" : "21",
+    "domain" : "191",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "266"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasNephew",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "hasNephew",
+      "en" : "has nephew"
+    },
+    "superproperty" : [ "32" ],
+    "domain" : "27",
+    "attributes" : [ "external", "object" ],
+    "id" : "267"
+  }, {
+    "range" : "71",
+    "domain" : "70",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "268"
+  }, {
+    "range" : "70",
+    "domain" : "73",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "269"
+  }, {
+    "range" : "67",
+    "domain" : "225",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "270"
+  }, {
+    "range" : "67",
+    "domain" : "272",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "271"
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#broader",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "broader",
+      "en" : "broader"
+    },
+    "domain" : "27",
+    "attributes" : [ "external", "object" ],
+    "id" : "273"
+  }, {
+    "iri" : "https://w3id.org/pcm#plantSpecies",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "202",
+    "label" : {
+      "IRI-based" : "plantSpecies",
+      "en" : "plant species"
+    },
+    "domain" : "183",
+    "comment" : {
+      "en" : "The species or variety of plant (e.g. tomato, marigold, basil)."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "274"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasFather",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "25",
+    "label" : {
+      "IRI-based" : "hasFather",
+      "en" : "has father"
+    },
+    "superproperty" : [ "31" ],
+    "domain" : "139",
+    "attributes" : [ "external", "object" ],
+    "id" : "33"
+  }, {
+    "iri" : "https://w3id.org/pcm#followerCount",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "205",
+    "label" : {
+      "IRI-based" : "followerCount",
+      "en" : "follower count"
+    },
+    "domain" : "89",
+    "comment" : {
+      "en" : "The number of followers on the social media account."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "275"
+  }, {
+    "range" : "70",
+    "domain" : "72",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "276"
+  }, {
+    "range" : "72",
+    "domain" : "227",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "281"
+  }, {
+    "range" : "104",
+    "domain" : "283",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "282"
+  }, {
+    "range" : "124",
+    "domain" : "89",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "284"
+  }, {
+    "range" : "72",
+    "domain" : "286",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "285"
+  }, {
+    "range" : "104",
+    "domain" : "288",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "287"
+  }, {
+    "iri" : "http://purl.org/vocab/relationship/engagedTo",
+    "baseIri" : "http://purl.org/vocab/relationship",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "engagedTo",
+      "en" : "engaged to"
+    },
+    "superproperty" : [ "28" ],
+    "domain" : "27",
+    "attributes" : [ "symmetric", "external", "object" ],
+    "id" : "289"
+  }, {
+    "range" : "104",
+    "domain" : "291",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "290"
+  }, {
+    "range" : "104",
+    "domain" : "103",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "292"
+  }, {
+    "iri" : "https://w3id.org/ontobio#undertookTravel",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "undertookTravel",
+      "en" : "undertook travel"
+    },
+    "domain" : "20",
+    "attributes" : [ "external", "object" ],
+    "id" : "251"
+  }, {
+    "range" : "60",
+    "domain" : "294",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "293"
+  }, {
+    "range" : "60",
+    "domain" : "85",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "295"
+  }, {
+    "range" : "60",
+    "domain" : "105",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "296"
+  }, {
+    "range" : "60",
+    "domain" : "59",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "297"
+  }, {
+    "iri" : "http://purl.org/vocab/relationship/closeFriendOf",
+    "baseIri" : "http://purl.org/vocab/relationship",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "closeFriendOf",
+      "en" : "close friend of"
+    },
+    "superproperty" : [ "128" ],
+    "domain" : "27",
+    "attributes" : [ "symmetric", "external", "object" ],
+    "id" : "129"
+  }, {
+    "range" : "101",
+    "domain" : "119",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "298"
+  }, {
+    "range" : "101",
+    "domain" : "118",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "299"
+  }, {
+    "range" : "60",
+    "domain" : "78",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "300"
+  }, {
+    "range" : "60",
+    "domain" : "209",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "301"
+  }, {
+    "range" : "101",
+    "domain" : "117",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "302"
+  }, {
+    "range" : "101",
+    "domain" : "116",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "303"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasNiece",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "hasNiece",
+      "en" : "has niece"
+    },
+    "superproperty" : [ "32" ],
+    "domain" : "27",
+    "attributes" : [ "external", "object" ],
+    "id" : "304"
+  }, {
+    "range" : "101",
+    "domain" : "100",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "305"
+  }, {
+    "range" : "112",
+    "domain" : "113",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "306"
+  }, {
+    "range" : "112",
+    "domain" : "15",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "307"
+  }, {
+    "range" : "101",
+    "domain" : "115",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "308"
+  }, {
+    "range" : "112",
+    "domain" : "114",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "309"
+  }, {
+    "iri" : "http://purl.org/vocab/relationship/colleagueOf",
+    "baseIri" : "http://purl.org/vocab/relationship",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "colleagueOf",
+      "en" : "colleague of"
+    },
+    "superproperty" : [ "28" ],
+    "domain" : "27",
+    "attributes" : [ "symmetric", "external", "object" ],
+    "id" : "310"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasHairStyle",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "135",
+    "label" : {
+      "IRI-based" : "hasHairStyle",
+      "en" : "has hair style"
+    },
+    "domain" : "20",
+    "attributes" : [ "external", "object" ],
+    "id" : "311"
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#narrower",
+    "inverse" : "273",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "narrower",
+      "en" : "narrower"
+    },
+    "domain" : "27",
+    "attributes" : [ "external", "object" ],
+    "id" : "312"
+  }, {
+    "iri" : "https://w3id.org/pcm#turnIndex",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "244",
+    "label" : {
+      "IRI-based" : "turnIndex",
+      "en" : "turn index"
+    },
+    "domain" : "156",
+    "comment" : {
+      "en" : "The ordinal position of a message within a conversation thread."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "313"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasEyeColor",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "135",
+    "label" : {
+      "IRI-based" : "hasEyeColor",
+      "en" : "has eye color"
+    },
+    "domain" : "20",
+    "attributes" : [ "external", "object" ],
+    "id" : "314"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasHeight",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "235",
+    "label" : {
+      "IRI-based" : "hasHeight",
+      "en" : "has height"
+    },
+    "domain" : "20",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "315"
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#related",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "related",
+      "en" : "related"
+    },
+    "domain" : "27",
+    "attributes" : [ "symmetric", "external", "object" ],
+    "id" : "316"
+  }, {
+    "iri" : "http://schema.org/deathPlace",
+    "baseIri" : "http://schema.org",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "deathPlace",
+      "en" : "death place"
+    },
+    "domain" : "20",
+    "attributes" : [ "external", "object" ],
+    "id" : "317"
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#generatedAtTime",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "range" : "319",
+    "label" : {
+      "IRI-based" : "generatedAtTime",
+      "en" : "generated at time"
+    },
+    "domain" : "27",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "318"
+  }, {
+    "iri" : "http://purl.org/dc/terms/created",
+    "baseIri" : "http://purl.org/dc/terms",
+    "range" : "321",
+    "label" : {
+      "IRI-based" : "created",
+      "en" : "date created"
+    },
+    "domain" : "27",
+    "comment" : {
+      "en" : "Date/time when the resource was created."
+    },
+    "attributes" : [ "external", "datatype" ],
+    "id" : "320"
+  }, {
+    "iri" : "https://w3id.org/ontobio#treatedBy",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "30",
+    "label" : {
+      "IRI-based" : "treatedBy",
+      "en" : "treated by"
+    },
+    "domain" : "233",
+    "attributes" : [ "external", "object" ],
+    "id" : "322"
+  }, {
+    "range" : "30",
+    "domain" : "20",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "323"
+  }, {
+    "range" : "30",
+    "domain" : "29",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "324"
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/name",
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "range" : "326",
+    "label" : {
+      "IRI-based" : "name",
+      "en" : "name"
+    },
+    "domain" : "30",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "325"
+  }, {
+    "range" : "11",
+    "domain" : "132",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "327"
+  }, {
+    "iri" : "https://w3id.org/ontobio#residedTill",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "213",
+    "label" : {
+      "IRI-based" : "residedTill",
+      "en" : "resided till"
+    },
+    "domain" : "255",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "328"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasCausality",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "330",
+    "label" : {
+      "IRI-based" : "hasCausality",
+      "en" : "has causality"
+    },
+    "domain" : "229",
+    "attributes" : [ "external", "object" ],
+    "id" : "329"
+  }, {
+    "iri" : "https://w3id.org/ontobio#followsReligion",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "87",
+    "label" : {
+      "IRI-based" : "followsReligion",
+      "en" : "follows religion"
+    },
+    "domain" : "20",
+    "attributes" : [ "external", "object" ],
+    "id" : "331"
+  }, {
+    "iri" : "https://w3id.org/ontobio#degreeAwardedBy",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "104",
+    "label" : {
+      "IRI-based" : "degreeAwardedBy",
+      "en" : "degree awarded by"
+    },
+    "domain" : "69",
+    "attributes" : [ "external", "object" ],
+    "id" : "332"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasWeight",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "220",
+    "label" : {
+      "IRI-based" : "hasWeight",
+      "en" : "has weight"
+    },
+    "domain" : "20",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "333"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasDegree",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "69",
+    "label" : {
+      "IRI-based" : "hasDegree",
+      "en" : "has degree"
+    },
+    "domain" : "20",
+    "attributes" : [ "external", "object" ],
+    "id" : "334"
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/family_name",
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "range" : "336",
+    "label" : {
+      "IRI-based" : "family_name",
+      "en" : "family name"
+    },
+    "domain" : "20",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "335"
+  }, {
+    "iri" : "http://rdfs.org/resume-rdf/cv.rdfs#hasWorkHistory",
+    "baseIri" : "http://rdfs.org/resume-rdf/cv.rdfs",
+    "range" : "86",
+    "label" : {
+      "IRI-based" : "hasWorkHistory",
+      "en" : "has work history"
+    },
+    "domain" : "20",
+    "attributes" : [ "external", "object" ],
+    "id" : "337"
+  }, {
+    "iri" : "https://w3id.org/pcm#sourcePlatform",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "242",
+    "label" : {
+      "IRI-based" : "sourcePlatform",
+      "en" : "source platform"
+    },
+    "domain" : "339",
+    "comment" : {
+      "en" : "The communication platform this conversation was captured from (e.g. slack, chatgpt, email)."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "338"
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#wasDerivedFrom",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "wasDerivedFrom",
+      "en" : "was derived from"
+    },
+    "domain" : "27",
+    "attributes" : [ "external", "object" ],
+    "id" : "341"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasChild",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "hasChild",
+      "en" : "has child"
+    },
+    "superproperty" : [ "32" ],
+    "domain" : "27",
+    "subproperty" : [ "342", "138" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "140"
+  }, {
+    "iri" : "https://w3id.org/ontobio#degreeAwardedIn",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "278",
+    "label" : {
+      "IRI-based" : "degreeAwardedIn",
+      "en" : "degree awarded in"
+    },
+    "domain" : "69",
+    "attributes" : [ "external", "object" ],
+    "id" : "343"
+  }, {
+    "iri" : "https://w3id.org/ontobio#isParentOf",
+    "inverse" : "31",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "isParentOf",
+      "en" : "is parent of"
+    },
+    "domain" : "27",
+    "attributes" : [ "external", "object" ],
+    "id" : "346"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasHabit",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "175",
+    "label" : {
+      "IRI-based" : "hasHabit",
+      "en" : "has habit"
+    },
+    "domain" : "20",
+    "subproperty" : [ "223", "200", "152" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "155"
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/firstName",
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "range" : "349",
+    "label" : {
+      "IRI-based" : "firstName",
+      "en" : "first name"
+    },
+    "domain" : "20",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "348"
+  }, {
+    "iri" : "https://w3id.org/ontobio#usedIn",
+    "inverse" : "222",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "usedIn",
+      "en" : "used in"
+    },
+    "domain" : "27",
+    "attributes" : [ "external", "object" ],
+    "id" : "351"
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#altLabel",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "range" : "280",
+    "label" : {
+      "IRI-based" : "altLabel",
+      "en" : "alternative label"
+    },
+    "domain" : "27",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "352"
+  }, {
+    "iri" : "https://w3id.org/ontobio#tenureTill",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "215",
+    "label" : {
+      "IRI-based" : "tenureTill",
+      "en" : "tenure till"
+    },
+    "domain" : "86",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "353"
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#wasAttributedTo",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "wasAttributedTo",
+      "en" : "was attributed to"
+    },
+    "domain" : "27",
+    "attributes" : [ "external", "object" ],
+    "id" : "354"
+  }, {
+    "iri" : "http://rdfs.org/sioc/ns#has_creator",
+    "baseIri" : "http://rdfs.org/sioc/ns",
+    "range" : "124",
+    "label" : {
+      "IRI-based" : "has_creator",
+      "en" : "has creator"
+    },
+    "domain" : "279",
+    "comment" : {
+      "en" : "This is the UserAccount that made this resource."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "355"
+  }, {
+    "iri" : "http://purl.org/vocab/relationship/neighborOf",
+    "baseIri" : "http://purl.org/vocab/relationship",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "neighborOf",
+      "en" : "neighbor of"
+    },
+    "superproperty" : [ "28" ],
+    "domain" : "27",
+    "attributes" : [ "symmetric", "external", "object" ],
+    "id" : "356"
+  }, {
+    "iri" : "https://w3id.org/opencare#encounterDate",
+    "baseIri" : "https://w3id.org/opencare",
+    "range" : "211",
+    "label" : {
+      "IRI-based" : "encounterDate",
+      "en" : "encounter date"
+    },
+    "domain" : "27",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "357"
+  }, {
+    "iri" : "http://purl.org/vocab/bio/0.1/biography",
+    "baseIri" : "http://purl.org/vocab/bio/0.1",
+    "range" : "360",
+    "label" : {
+      "IRI-based" : "biography",
+      "en" : "biography"
+    },
+    "domain" : "20",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "359"
+  }, {
+    "iri" : "http://rdfs.org/sioc/ns#addressed_to",
+    "baseIri" : "http://rdfs.org/sioc/ns",
+    "range" : "124",
+    "label" : {
+      "IRI-based" : "addressed_to",
+      "en" : "addressed to"
+    },
+    "domain" : "156",
+    "comment" : {
+      "en" : "A UserAccount that a Post was addressed to (e.g. DM recipient, @mention target)."
+    },
+    "attributes" : [ "external", "object" ],
+    "id" : "361"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasDaughter",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "23",
+    "label" : {
+      "IRI-based" : "hasDaughter",
+      "en" : "has daughter"
+    },
+    "superproperty" : [ "140" ],
+    "domain" : "49",
+    "attributes" : [ "external", "object" ],
+    "id" : "342"
+  }, {
+    "iri" : "https://w3id.org/pcm#serviceType",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "193",
+    "label" : {
+      "IRI-based" : "serviceType",
+      "en" : "service type"
+    },
+    "domain" : "114",
+    "comment" : {
+      "en" : "Category of service (e.g. repair, maintenance, cleaning)."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "362"
+  }, {
+    "iri" : "https://w3id.org/ontobio#followedBy",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "followedBy",
+      "en" : "followed by"
+    },
+    "domain" : "27",
+    "attributes" : [ "external", "object", "asymmetric", "irreflexive" ],
+    "id" : "149"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasGoal",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "216",
+    "label" : {
+      "IRI-based" : "hasGoal",
+      "en" : "has goal"
+    },
+    "domain" : "30",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "363"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasPhysicalAppearance",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "145",
+    "label" : {
+      "IRI-based" : "hasPhysicalAppearance",
+      "en" : "has physical appearance"
+    },
+    "superproperty" : [ "365" ],
+    "domain" : "240",
+    "attributes" : [ "external", "object" ],
+    "id" : "364"
+  }, {
+    "iri" : "https://w3id.org/ontobio#travelFrom",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "travelFrom",
+      "en" : "travel from"
+    },
+    "domain" : "6",
+    "attributes" : [ "external", "object" ],
+    "id" : "366"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasFoodItem",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "70",
+    "label" : {
+      "IRI-based" : "hasFoodItem",
+      "en" : "has food item"
+    },
+    "domain" : "60",
+    "attributes" : [ "external", "object" ],
+    "id" : "367"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasPersonalityTrait",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "142",
+    "label" : {
+      "IRI-based" : "hasPersonalityTrait",
+      "en" : "has personality trait"
+    },
+    "superproperty" : [ "365" ],
+    "domain" : "230",
+    "attributes" : [ "external", "object" ],
+    "id" : "368"
+  }, {
+    "iri" : "http://schema.org/scheduleTimezone",
+    "baseIri" : "http://schema.org",
+    "range" : "370",
+    "label" : {
+      "IRI-based" : "scheduleTimezone",
+      "en" : "schedule timezone"
+    },
+    "domain" : "350",
+    "comment" : {
+      "en" : "Timezone for the schedule (IANA identifier, e.g. America/New_York)."
+    },
+    "attributes" : [ "external", "datatype" ],
+    "id" : "369"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasWorkPlace",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "104",
+    "label" : {
+      "IRI-based" : "hasWorkPlace",
+      "en" : "has work place"
+    },
+    "domain" : "20",
+    "attributes" : [ "external", "object" ],
+    "id" : "372"
+  }, {
+    "iri" : "https://w3id.org/ontobio#residedFrom",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "218",
+    "label" : {
+      "IRI-based" : "residedFrom",
+      "en" : "resided from"
+    },
+    "domain" : "255",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "373"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasFamilyRelation",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "hasFamilyRelation",
+      "en" : "has family relation"
+    },
+    "domain" : "20",
+    "subproperty" : [ "267", "304", "109", "96", "140", "208", "31", "137", "374", "50", "232" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "32"
+  }, {
+    "iri" : "https://w3id.org/pcm#timezone",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "241",
+    "label" : {
+      "IRI-based" : "timezone",
+      "en" : "timezone"
+    },
+    "domain" : "27",
+    "comment" : {
+      "en" : "IANA timezone identifier (e.g. America/New_York)."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "375"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasEthnicity",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "377",
+    "label" : {
+      "IRI-based" : "hasEthnicity",
+      "en" : "has ethnicity"
+    },
+    "domain" : "20",
+    "attributes" : [ "external", "object" ],
+    "id" : "376"
+  }, {
+    "iri" : "https://w3id.org/opencare#hasSymptom",
+    "baseIri" : "https://w3id.org/opencare",
+    "range" : "345",
+    "label" : {
+      "IRI-based" : "hasSymptom",
+      "en" : "has symptom"
+    },
+    "domain" : "228",
+    "attributes" : [ "external", "object" ],
+    "id" : "378"
+  }, {
+    "iri" : "https://w3id.org/pcm#preferenceType",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "204",
+    "label" : {
+      "IRI-based" : "preferenceType",
+      "en" : "preference type"
+    },
+    "domain" : "107",
+    "comment" : {
+      "en" : "Category of preference (e.g. food, music, brand)."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "379"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasWife",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "23",
+    "label" : {
+      "IRI-based" : "hasWife",
+      "en" : "has wife"
+    },
+    "superproperty" : [ "109" ],
+    "domain" : "49",
+    "attributes" : [ "external", "object" ],
+    "id" : "111"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasTrait",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "143",
+    "label" : {
+      "IRI-based" : "hasTrait",
+      "en" : "has trait"
+    },
+    "domain" : "20",
+    "subproperty" : [ "364", "368" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "365"
+  }, {
+    "iri" : "https://w3id.org/pcm#petSpecies",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "207",
+    "label" : {
+      "IRI-based" : "petSpecies",
+      "en" : "pet species"
+    },
+    "domain" : "29",
+    "comment" : {
+      "en" : "The species or type of pet (e.g. dog, cat, parrot, fish)."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "380"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasMother",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "23",
+    "label" : {
+      "IRI-based" : "hasMother",
+      "en" : "has mother"
+    },
+    "superproperty" : [ "31" ],
+    "domain" : "49",
+    "attributes" : [ "external", "object" ],
+    "id" : "34"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasMeal",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "60",
+    "label" : {
+      "IRI-based" : "hasMeal",
+      "en" : "has meal"
+    },
+    "domain" : "20",
+    "attributes" : [ "external", "object" ],
+    "id" : "381"
+  }, {
+    "iri" : "https://w3id.org/ontobio#activityDuration",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "277",
+    "label" : {
+      "IRI-based" : "activityDuration",
+      "en" : "activity duration"
+    },
+    "domain" : "27",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "382"
+  }, {
+    "iri" : "http://schema.org/gender",
+    "baseIri" : "http://schema.org",
+    "range" : "84",
+    "label" : {
+      "IRI-based" : "gender",
+      "en" : "gender"
+    },
+    "domain" : "20",
+    "attributes" : [ "external", "object" ],
+    "id" : "383"
+  }, {
+    "iri" : "https://w3id.org/ontobio#travelYear",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "214",
+    "label" : {
+      "IRI-based" : "travelYear",
+      "en" : "travel year"
+    },
+    "domain" : "6",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "384"
+  }, {
+    "iri" : "https://w3id.org/pcm#clothingType",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "210",
+    "label" : {
+      "IRI-based" : "clothingType",
+      "en" : "clothing type"
+    },
+    "domain" : "170",
+    "comment" : {
+      "en" : "The type of clothing (e.g. shoes, shirt, jacket, dress)."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "385"
+  }, {
+    "iri" : "https://w3id.org/ontobio#socialRelationOf",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "socialRelationOf",
+      "en" : "social relation of"
+    },
+    "domain" : "20",
+    "subproperty" : [ "310", "289", "237", "133", "128", "102", "356", "26" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "28"
+  }, {
+    "iri" : "https://w3id.org/pcm#preferenceValue",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "203",
+    "label" : {
+      "IRI-based" : "preferenceValue",
+      "en" : "preference value"
+    },
+    "domain" : "107",
+    "comment" : {
+      "en" : "The value or target of the preference."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "386"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasInLaw",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "hasInLaw",
+      "en" : "has in-law"
+    },
+    "superproperty" : [ "32" ],
+    "domain" : "27",
+    "attributes" : [ "external", "object" ],
+    "id" : "374"
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/mbox",
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "range" : "387",
+    "label" : {
+      "IRI-based" : "mbox",
+      "en" : "email"
+    },
+    "domain" : "30",
+    "comment" : {
+      "en" : "A personal mailbox (email address) as a mailto: URI."
+    },
+    "attributes" : [ "external", "datatype" ],
+    "id" : "388"
+  }, {
+    "iri" : "https://w3id.org/ontobio#tenureFrom",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "212",
+    "label" : {
+      "IRI-based" : "tenureFrom",
+      "en" : "tenure from"
+    },
+    "domain" : "86",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "389"
+  }, {
+    "iri" : "https://w3id.org/pcm#wears",
+    "baseIri" : "https://w3id.org/pcm",
+    "range" : "170",
+    "label" : {
+      "IRI-based" : "wears",
+      "en" : "wears"
+    },
+    "domain" : "20",
+    "comment" : {
+      "en" : "Links a person to a clothing item they own or wear."
+    },
+    "attributes" : [ "object" ],
+    "id" : "390"
+  }, {
+    "iri" : "https://w3id.org/ontobio#hasBrother",
+    "baseIri" : "https://w3id.org/ontobio",
+    "range" : "25",
+    "label" : {
+      "IRI-based" : "hasBrother",
+      "en" : "has brother"
+    },
+    "superproperty" : [ "50" ],
+    "domain" : "139",
+    "attributes" : [ "external", "object" ],
+    "id" : "217"
+  } ]
+}

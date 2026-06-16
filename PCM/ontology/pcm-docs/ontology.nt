@@ -1,0 +1,1586 @@
+<https://w3id.org/pcm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/pcm> <http://purl.org/dc/elements/1.1/creator> <https://www.wikidata.org/wiki/Q54832532> .
+<https://w3id.org/pcm> <http://purl.org/dc/elements/1.1/title> "The Personal Conversational Memory Ontology"@en .
+<https://w3id.org/pcm> <http://purl.org/dc/terms/abstract> "The Personal Conversational Memory (PCM) ontology is a multi-vocabulary schema for representing personal knowledge extracted from conversational interactions between users and AI agents. It reuses established vocabularies - Schema.org, OntoBio, FOAF, PROV-O, SKOS, the Relationship and BIO vocabularies, OpenCare, and CV/ResumeRDF - and defines custom extensions for concepts not adequately covered by existing standards, including personal preferences, problem and service events, and social media accounts. The ontology underpins the PCM pipeline for incremental personal knowledge graph construction, provenance tracking, and SPARQL-based retrieval over conversational memory."@en .
+<https://w3id.org/pcm> <http://purl.org/dc/terms/description> "A multi-vocabulary schema for personal knowledge graph extraction from conversational text, defining custom extensions for personal preferences, problem and service events, and social media accounts on top of established vocabularies."@en .
+<https://w3id.org/pcm> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+<https://w3id.org/pcm> <http://purl.org/dc/terms/modified> "2026-05-10"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/pcm> <http://schema.org/image> <https://w3id.org/pcm/images/pcm-ontology-diagram.png> .
+<https://w3id.org/pcm> <http://www.w3.org/2000/01/rdf-schema#comment> "Schema for personal knowledge graph extraction from conversational text. Reuses Schema.org, OntoBio, FOAF, PROV-O, SKOS, Relationship vocab, BIO, OpenCare, and CV/ResumeRDF."@en .
+<https://w3id.org/pcm> <http://www.w3.org/2000/01/rdf-schema#label> "The Personal Conversational Memory Ontology"@en .
+<https://w3id.org/pcm> <http://www.w3.org/2002/07/owl#versionInfo> "1.0" .
+<https://w3id.org/pcm> <http://xmlns.com/foaf/0.1/depiction> <https://w3id.org/pcm/images/pcm-ontology-diagram.png> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/abstract
+<http://purl.org/dc/terms/abstract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://schema.org/affiliation
+<http://schema.org/affiliation> <http://www.w3.org/2000/01/rdf-schema#label> "affiliation"@en .
+<http://schema.org/affiliation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://schema.org/affiliation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+# 
+# http://schema.org/byDay
+<http://schema.org/byDay> <http://www.w3.org/2000/01/rdf-schema#comment> "Day(s) of the week on which the recurring event takes place."@en .
+<http://schema.org/byDay> <http://www.w3.org/2000/01/rdf-schema#label> "by day"@en .
+<http://schema.org/byDay> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://schema.org/byDay> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.org/Schedule> .
+# 
+# http://schema.org/byMonth
+<http://schema.org/byMonth> <http://www.w3.org/2000/01/rdf-schema#comment> "Month(s) of the year (1-12) on which the recurring event takes place."@en .
+<http://schema.org/byMonth> <http://www.w3.org/2000/01/rdf-schema#label> "by month"@en .
+<http://schema.org/byMonth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://schema.org/byMonth> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.org/Schedule> .
+# 
+# http://schema.org/byMonthDay
+<http://schema.org/byMonthDay> <http://www.w3.org/2000/01/rdf-schema#comment> "Day(s) of the month (1-31) on which the recurring event takes place."@en .
+<http://schema.org/byMonthDay> <http://www.w3.org/2000/01/rdf-schema#label> "by month day"@en .
+<http://schema.org/byMonthDay> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://schema.org/byMonthDay> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.org/Schedule> .
+# 
+# http://schema.org/hasOccupation
+<http://schema.org/hasOccupation> <http://www.w3.org/2000/01/rdf-schema#label> "has occupation"@en .
+<http://schema.org/hasOccupation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://schema.org/hasOccupation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+# 
+# http://schema.org/image
+<http://schema.org/image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://schema.org/knowsLanguage
+<http://schema.org/knowsLanguage> <http://www.w3.org/2000/01/rdf-schema#label> "knows language"@en .
+<http://schema.org/knowsLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://schema.org/knowsLanguage> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+# 
+# http://schema.org/repeatCount
+<http://schema.org/repeatCount> <http://www.w3.org/2000/01/rdf-schema#comment> "Number of times per period (e.g. 3 for 'three times a week')."@en .
+<http://schema.org/repeatCount> <http://www.w3.org/2000/01/rdf-schema#label> "repeat count"@en .
+<http://schema.org/repeatCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://schema.org/repeatCount> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.org/Schedule> .
+# 
+# http://schema.org/repeatFrequency
+<http://schema.org/repeatFrequency> <http://www.w3.org/2000/01/rdf-schema#comment> "How often the event/activity recurs, as ISO 8601 duration (e.g. P1W = weekly)."@en .
+<http://schema.org/repeatFrequency> <http://www.w3.org/2000/01/rdf-schema#label> "repeat frequency"@en .
+<http://schema.org/repeatFrequency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://schema.org/repeatFrequency> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.org/Schedule> .
+# 
+# http://xmlns.com/foaf/0.1/depiction
+<http://xmlns.com/foaf/0.1/depiction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# http://www.w3.org/2001/XMLSchema#gYear
+<http://www.w3.org/2001/XMLSchema#gYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/vocab/relationship/acquaintanceOf
+<http://purl.org/vocab/relationship/acquaintanceOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/vocab/relationship/acquaintanceOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#socialRelationOf> .
+<http://purl.org/vocab/relationship/acquaintanceOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<http://purl.org/vocab/relationship/acquaintanceOf> <http://www.w3.org/2000/01/rdf-schema#label> "acquaintance of"@en .
+# 
+# http://purl.org/vocab/relationship/apprenticeTo
+<http://purl.org/vocab/relationship/apprenticeTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/vocab/relationship/apprenticeTo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#socialRelationOf> .
+<http://purl.org/vocab/relationship/apprenticeTo> <http://www.w3.org/2000/01/rdf-schema#label> "apprentice to"@en .
+# 
+# http://purl.org/vocab/relationship/closeFriendOf
+<http://purl.org/vocab/relationship/closeFriendOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/vocab/relationship/closeFriendOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/vocab/relationship/friendOf> .
+<http://purl.org/vocab/relationship/closeFriendOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<http://purl.org/vocab/relationship/closeFriendOf> <http://www.w3.org/2000/01/rdf-schema#label> "close friend of"@en .
+# 
+# http://purl.org/vocab/relationship/colleagueOf
+<http://purl.org/vocab/relationship/colleagueOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/vocab/relationship/colleagueOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#socialRelationOf> .
+<http://purl.org/vocab/relationship/colleagueOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<http://purl.org/vocab/relationship/colleagueOf> <http://www.w3.org/2000/01/rdf-schema#label> "colleague of"@en .
+# 
+# http://purl.org/vocab/relationship/engagedTo
+<http://purl.org/vocab/relationship/engagedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/vocab/relationship/engagedTo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#socialRelationOf> .
+<http://purl.org/vocab/relationship/engagedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<http://purl.org/vocab/relationship/engagedTo> <http://www.w3.org/2000/01/rdf-schema#label> "engaged to"@en .
+# 
+# http://purl.org/vocab/relationship/friendOf
+<http://purl.org/vocab/relationship/friendOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/vocab/relationship/friendOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#socialRelationOf> .
+<http://purl.org/vocab/relationship/friendOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<http://purl.org/vocab/relationship/friendOf> <http://www.w3.org/2000/01/rdf-schema#label> "friend of"@en .
+# 
+# http://purl.org/vocab/relationship/mentorOf
+<http://purl.org/vocab/relationship/mentorOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/vocab/relationship/mentorOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#socialRelationOf> .
+<http://purl.org/vocab/relationship/mentorOf> <http://www.w3.org/2000/01/rdf-schema#label> "mentor of"@en .
+# 
+# http://purl.org/vocab/relationship/neighborOf
+<http://purl.org/vocab/relationship/neighborOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/vocab/relationship/neighborOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#socialRelationOf> .
+<http://purl.org/vocab/relationship/neighborOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<http://purl.org/vocab/relationship/neighborOf> <http://www.w3.org/2000/01/rdf-schema#label> "neighbor of"@en .
+# 
+# http://purl.org/vocab/relationship/worksWith
+<http://purl.org/vocab/relationship/worksWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/vocab/relationship/worksWith> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#socialRelationOf> .
+<http://purl.org/vocab/relationship/worksWith> <http://www.w3.org/2000/01/rdf-schema#label> "works with"@en .
+# 
+# http://rdfs.org/resume-rdf/cv.rdfs#hasWorkHistory
+<http://rdfs.org/resume-rdf/cv.rdfs#hasWorkHistory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://rdfs.org/resume-rdf/cv.rdfs#hasWorkHistory> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<http://rdfs.org/resume-rdf/cv.rdfs#hasWorkHistory> <http://www.w3.org/2000/01/rdf-schema#range> <http://rdfs.org/resume-rdf/cv.rdfs#WorkHistory> .
+<http://rdfs.org/resume-rdf/cv.rdfs#hasWorkHistory> <http://www.w3.org/2000/01/rdf-schema#label> "has work history"@en .
+# 
+# http://rdfs.org/sioc/ns#account_of
+<http://rdfs.org/sioc/ns#account_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://rdfs.org/sioc/ns#account_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#UserAccount> .
+<http://rdfs.org/sioc/ns#account_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Agent> .
+<http://rdfs.org/sioc/ns#account_of> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the foaf:Agent or foaf:Person who owns this UserAccount."@en .
+<http://rdfs.org/sioc/ns#account_of> <http://www.w3.org/2000/01/rdf-schema#label> "account of"@en .
+# 
+# http://rdfs.org/sioc/ns#addressed_to
+<http://rdfs.org/sioc/ns#addressed_to> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://rdfs.org/sioc/ns#addressed_to> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#Post> .
+<http://rdfs.org/sioc/ns#addressed_to> <http://www.w3.org/2000/01/rdf-schema#range> <http://rdfs.org/sioc/ns#UserAccount> .
+<http://rdfs.org/sioc/ns#addressed_to> <http://www.w3.org/2000/01/rdf-schema#comment> "A UserAccount that a Post was addressed to (e.g. DM recipient, @mention target)."@en .
+<http://rdfs.org/sioc/ns#addressed_to> <http://www.w3.org/2000/01/rdf-schema#label> "addressed to"@en .
+# 
+# http://rdfs.org/sioc/ns#has_container
+<http://rdfs.org/sioc/ns#has_container> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://rdfs.org/sioc/ns#has_container> <http://www.w3.org/2000/01/rdf-schema#comment> "The Container to which this Item belongs."@en .
+<http://rdfs.org/sioc/ns#has_container> <http://www.w3.org/2000/01/rdf-schema#label> "has container"@en .
+# 
+# http://rdfs.org/sioc/ns#has_creator
+<http://rdfs.org/sioc/ns#has_creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://rdfs.org/sioc/ns#has_creator> <http://www.w3.org/2000/01/rdf-schema#range> <http://rdfs.org/sioc/ns#UserAccount> .
+<http://rdfs.org/sioc/ns#has_creator> <http://www.w3.org/2000/01/rdf-schema#comment> "This is the UserAccount that made this resource."@en .
+<http://rdfs.org/sioc/ns#has_creator> <http://www.w3.org/2000/01/rdf-schema#label> "has creator"@en .
+# 
+# http://rdfs.org/sioc/ns#has_reply
+<http://rdfs.org/sioc/ns#has_reply> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://rdfs.org/sioc/ns#has_reply> <http://www.w3.org/2000/01/rdf-schema#comment> "Points to an Item or Post that is a reply to this Item."@en .
+<http://rdfs.org/sioc/ns#has_reply> <http://www.w3.org/2000/01/rdf-schema#label> "has reply"@en .
+# 
+# http://rdfs.org/sioc/ns#reply_of
+<http://rdfs.org/sioc/ns#reply_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://rdfs.org/sioc/ns#reply_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://rdfs.org/sioc/ns#has_reply> .
+<http://rdfs.org/sioc/ns#reply_of> <http://www.w3.org/2000/01/rdf-schema#comment> "Links to an Item that this Item is a reply to."@en .
+<http://rdfs.org/sioc/ns#reply_of> <http://www.w3.org/2000/01/rdf-schema#label> "reply of"@en .
+# 
+# http://schema.org/birthPlace
+<http://schema.org/birthPlace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.org/birthPlace> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<http://schema.org/birthPlace> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Place> .
+<http://schema.org/birthPlace> <http://www.w3.org/2000/01/rdf-schema#label> "birth place"@en .
+# 
+# http://schema.org/deathPlace
+<http://schema.org/deathPlace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.org/deathPlace> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<http://schema.org/deathPlace> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Place> .
+<http://schema.org/deathPlace> <http://www.w3.org/2000/01/rdf-schema#label> "death place"@en .
+# 
+# http://schema.org/gender
+<http://schema.org/gender> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.org/gender> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<http://schema.org/gender> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/GenderType> .
+<http://schema.org/gender> <http://www.w3.org/2000/01/rdf-schema#label> "gender"@en .
+# 
+# http://www.w3.org/2004/02/skos/core#broader
+<http://www.w3.org/2004/02/skos/core#broader> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/2004/02/skos/core#broader> <http://www.w3.org/2000/01/rdf-schema#label> "broader"@en .
+# 
+# http://www.w3.org/2004/02/skos/core#inScheme
+<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.w3.org/2000/01/rdf-schema#label> "in scheme"@en .
+# 
+# http://www.w3.org/2004/02/skos/core#narrower
+<http://www.w3.org/2004/02/skos/core#narrower> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/2004/02/skos/core#narrower> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/2004/02/skos/core#broader> .
+<http://www.w3.org/2004/02/skos/core#narrower> <http://www.w3.org/2000/01/rdf-schema#label> "narrower"@en .
+# 
+# http://www.w3.org/2004/02/skos/core#related
+<http://www.w3.org/2004/02/skos/core#related> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/2004/02/skos/core#related> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<http://www.w3.org/2004/02/skos/core#related> <http://www.w3.org/2000/01/rdf-schema#label> "related"@en .
+# 
+# http://www.w3.org/ns/prov#wasAttributedTo
+<http://www.w3.org/ns/prov#wasAttributedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/prov#wasAttributedTo> <http://www.w3.org/2000/01/rdf-schema#label> "was attributed to"@en .
+# 
+# http://www.w3.org/ns/prov#wasDerivedFrom
+<http://www.w3.org/ns/prov#wasDerivedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/prov#wasDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#label> "was derived from"@en .
+# 
+# http://xmlns.com/foaf/0.1/img
+<http://xmlns.com/foaf/0.1/img> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://xmlns.com/foaf/0.1/img> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<http://xmlns.com/foaf/0.1/img> <http://www.w3.org/2000/01/rdf-schema#comment> "A depiction of a person, typically a profile photo."@en .
+<http://xmlns.com/foaf/0.1/img> <http://www.w3.org/2000/01/rdf-schema#label> "image"@en .
+# 
+# http://xmlns.com/foaf/0.1/interest
+<http://xmlns.com/foaf/0.1/interest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://xmlns.com/foaf/0.1/interest> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<http://xmlns.com/foaf/0.1/interest> <http://www.w3.org/2000/01/rdf-schema#label> "interest"@en .
+# 
+# https://w3id.org/ontobio#causalContext
+<https://w3id.org/ontobio#causalContext> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#causalContext> <http://www.w3.org/2000/01/rdf-schema#label> "causal context"@en .
+# 
+# https://w3id.org/ontobio#degreeAwardedBy
+<https://w3id.org/ontobio#degreeAwardedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#degreeAwardedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/resume-rdf/cv.rdfs#Education> .
+<https://w3id.org/ontobio#degreeAwardedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
+<https://w3id.org/ontobio#degreeAwardedBy> <http://www.w3.org/2000/01/rdf-schema#label> "degree awarded by"@en .
+# 
+# https://w3id.org/ontobio#degreeAwardedIn
+<https://w3id.org/ontobio#degreeAwardedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#degreeAwardedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/resume-rdf/cv.rdfs#Education> .
+<https://w3id.org/ontobio#degreeAwardedIn> <http://www.w3.org/2000/01/rdf-schema#label> "degree awarded in"@en .
+# 
+# https://w3id.org/ontobio#employedAt
+<https://w3id.org/ontobio#employedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#employedAt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/vocab/bio/0.1/Employment> .
+<https://w3id.org/ontobio#employedAt> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
+<https://w3id.org/ontobio#employedAt> <http://www.w3.org/2000/01/rdf-schema#label> "employed at"@en .
+# 
+# https://w3id.org/ontobio#followedBy
+<https://w3id.org/ontobio#followedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#followedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<https://w3id.org/ontobio#followedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<https://w3id.org/ontobio#followedBy> <http://www.w3.org/2000/01/rdf-schema#label> "followed by"@en .
+# 
+# https://w3id.org/ontobio#followsReligion
+<https://w3id.org/ontobio#followsReligion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#followsReligion> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/ontobio#followsReligion> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#Religion> .
+<https://w3id.org/ontobio#followsReligion> <http://www.w3.org/2000/01/rdf-schema#label> "follows religion"@en .
+# 
+# https://w3id.org/ontobio#hasActivity
+<https://w3id.org/ontobio#hasActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasActivity> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#Activity> .
+<https://w3id.org/ontobio#hasActivity> <http://www.w3.org/2000/01/rdf-schema#label> "has activity"@en .
+# 
+# https://w3id.org/ontobio#hasAunt
+<https://w3id.org/ontobio#hasAunt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasAunt> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasFamilyRelation> .
+<https://w3id.org/ontobio#hasAunt> <http://www.w3.org/2000/01/rdf-schema#label> "has aunt"@en .
+# 
+# https://w3id.org/ontobio#hasBrother
+<https://w3id.org/ontobio#hasBrother> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasBrother> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasSibling> .
+<https://w3id.org/ontobio#hasBrother> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#Man> .
+<https://w3id.org/ontobio#hasBrother> <http://www.w3.org/2000/01/rdf-schema#label> "has brother"@en .
+# 
+# https://w3id.org/ontobio#hasCausality
+<https://w3id.org/ontobio#hasCausality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasCausality> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#CausalType> .
+<https://w3id.org/ontobio#hasCausality> <http://www.w3.org/2000/01/rdf-schema#label> "has causality"@en .
+# 
+# https://w3id.org/ontobio#hasChild
+<https://w3id.org/ontobio#hasChild> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasChild> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasFamilyRelation> .
+<https://w3id.org/ontobio#hasChild> <http://www.w3.org/2000/01/rdf-schema#label> "has child"@en .
+# 
+# https://w3id.org/ontobio#hasCousin
+<https://w3id.org/ontobio#hasCousin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasCousin> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasFamilyRelation> .
+<https://w3id.org/ontobio#hasCousin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<https://w3id.org/ontobio#hasCousin> <http://www.w3.org/2000/01/rdf-schema#label> "has cousin"@en .
+# 
+# https://w3id.org/ontobio#hasDaughter
+<https://w3id.org/ontobio#hasDaughter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasDaughter> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasChild> .
+<https://w3id.org/ontobio#hasDaughter> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#Woman> .
+<https://w3id.org/ontobio#hasDaughter> <http://www.w3.org/2000/01/rdf-schema#label> "has daughter"@en .
+# 
+# https://w3id.org/ontobio#hasDegree
+<https://w3id.org/ontobio#hasDegree> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasDegree> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/ontobio#hasDegree> <http://www.w3.org/2000/01/rdf-schema#range> <http://rdfs.org/resume-rdf/cv.rdfs#Education> .
+<https://w3id.org/ontobio#hasDegree> <http://www.w3.org/2000/01/rdf-schema#label> "has degree"@en .
+# 
+# https://w3id.org/ontobio#hasDressStyle
+<https://w3id.org/ontobio#hasDressStyle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasDressStyle> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasHabit> .
+<https://w3id.org/ontobio#hasDressStyle> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#DressingHabit> .
+<https://w3id.org/ontobio#hasDressStyle> <http://www.w3.org/2000/01/rdf-schema#label> "has dress style"@en .
+# 
+# https://w3id.org/ontobio#hasEthnicity
+<https://w3id.org/ontobio#hasEthnicity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasEthnicity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/ontobio#hasEthnicity> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#EthnicGroup> .
+<https://w3id.org/ontobio#hasEthnicity> <http://www.w3.org/2000/01/rdf-schema#label> "has ethnicity"@en .
+# 
+# https://w3id.org/ontobio#hasEyeColor
+<https://w3id.org/ontobio#hasEyeColor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasEyeColor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/ontobio#hasEyeColor> <http://www.w3.org/2000/01/rdf-schema#label> "has eye color"@en .
+# 
+# https://w3id.org/ontobio#hasFamilyRelation
+<https://w3id.org/ontobio#hasFamilyRelation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasFamilyRelation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/ontobio#hasFamilyRelation> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/ontobio#hasFamilyRelation> <http://www.w3.org/2000/01/rdf-schema#label> "has family relation"@en .
+# 
+# https://w3id.org/ontobio#hasFather
+<https://w3id.org/ontobio#hasFather> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasFather> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasParent> .
+<https://w3id.org/ontobio#hasFather> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#Man> .
+<https://w3id.org/ontobio#hasFather> <http://www.w3.org/2000/01/rdf-schema#label> "has father"@en .
+# 
+# https://w3id.org/ontobio#hasFoodHabit
+<https://w3id.org/ontobio#hasFoodHabit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasFoodHabit> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasHabit> .
+<https://w3id.org/ontobio#hasFoodHabit> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#FoodHabit> .
+<https://w3id.org/ontobio#hasFoodHabit> <http://www.w3.org/2000/01/rdf-schema#label> "has food habit"@en .
+# 
+# https://w3id.org/ontobio#hasFoodItem
+<https://w3id.org/ontobio#hasFoodItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasFoodItem> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ontobio#Meal> .
+<https://w3id.org/ontobio#hasFoodItem> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#FoodItem> .
+<https://w3id.org/ontobio#hasFoodItem> <http://www.w3.org/2000/01/rdf-schema#label> "has food item"@en .
+# 
+# https://w3id.org/ontobio#hasGrandParent
+<https://w3id.org/ontobio#hasGrandParent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasGrandParent> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasFamilyRelation> .
+<https://w3id.org/ontobio#hasGrandParent> <http://www.w3.org/2000/01/rdf-schema#label> "has grandparent"@en .
+# 
+# https://w3id.org/ontobio#hasHabit
+<https://w3id.org/ontobio#hasHabit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasHabit> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/ontobio#hasHabit> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#Habit> .
+<https://w3id.org/ontobio#hasHabit> <http://www.w3.org/2000/01/rdf-schema#label> "has habit"@en .
+# 
+# https://w3id.org/ontobio#hasHairStyle
+<https://w3id.org/ontobio#hasHairStyle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasHairStyle> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/ontobio#hasHairStyle> <http://www.w3.org/2000/01/rdf-schema#label> "has hair style"@en .
+# 
+# https://w3id.org/ontobio#hasHusband
+<https://w3id.org/ontobio#hasHusband> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasHusband> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasSpouse> .
+<https://w3id.org/ontobio#hasHusband> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#Man> .
+<https://w3id.org/ontobio#hasHusband> <http://www.w3.org/2000/01/rdf-schema#label> "has husband"@en .
+# 
+# https://w3id.org/ontobio#hasInLaw
+<https://w3id.org/ontobio#hasInLaw> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasInLaw> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasFamilyRelation> .
+<https://w3id.org/ontobio#hasInLaw> <http://www.w3.org/2000/01/rdf-schema#label> "has in-law"@en .
+# 
+# https://w3id.org/ontobio#hasMeal
+<https://w3id.org/ontobio#hasMeal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasMeal> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/ontobio#hasMeal> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#Meal> .
+<https://w3id.org/ontobio#hasMeal> <http://www.w3.org/2000/01/rdf-schema#label> "has meal"@en .
+# 
+# https://w3id.org/ontobio#hasMother
+<https://w3id.org/ontobio#hasMother> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasMother> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasParent> .
+<https://w3id.org/ontobio#hasMother> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#Woman> .
+<https://w3id.org/ontobio#hasMother> <http://www.w3.org/2000/01/rdf-schema#label> "has mother"@en .
+# 
+# https://w3id.org/ontobio#hasNephew
+<https://w3id.org/ontobio#hasNephew> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasNephew> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasFamilyRelation> .
+<https://w3id.org/ontobio#hasNephew> <http://www.w3.org/2000/01/rdf-schema#label> "has nephew"@en .
+# 
+# https://w3id.org/ontobio#hasNiece
+<https://w3id.org/ontobio#hasNiece> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasNiece> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasFamilyRelation> .
+<https://w3id.org/ontobio#hasNiece> <http://www.w3.org/2000/01/rdf-schema#label> "has niece"@en .
+# 
+# https://w3id.org/ontobio#hasParent
+<https://w3id.org/ontobio#hasParent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasParent> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasFamilyRelation> .
+<https://w3id.org/ontobio#hasParent> <http://www.w3.org/2000/01/rdf-schema#label> "has parent"@en .
+# 
+# https://w3id.org/ontobio#hasPersonalityTrait
+<https://w3id.org/ontobio#hasPersonalityTrait> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasPersonalityTrait> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasTrait> .
+<https://w3id.org/ontobio#hasPersonalityTrait> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#PersonalityTrait> .
+<https://w3id.org/ontobio#hasPersonalityTrait> <http://www.w3.org/2000/01/rdf-schema#label> "has personality trait"@en .
+# 
+# https://w3id.org/ontobio#hasPhysicalAppearance
+<https://w3id.org/ontobio#hasPhysicalAppearance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasPhysicalAppearance> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasTrait> .
+<https://w3id.org/ontobio#hasPhysicalAppearance> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#PhysicalAppearance> .
+<https://w3id.org/ontobio#hasPhysicalAppearance> <http://www.w3.org/2000/01/rdf-schema#label> "has physical appearance"@en .
+# 
+# https://w3id.org/ontobio#hasRoutine
+<https://w3id.org/ontobio#hasRoutine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasRoutine> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasHabit> .
+<https://w3id.org/ontobio#hasRoutine> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#DailyRoutine> .
+<https://w3id.org/ontobio#hasRoutine> <http://www.w3.org/2000/01/rdf-schema#label> "has routine"@en .
+# 
+# https://w3id.org/ontobio#hasSibling
+<https://w3id.org/ontobio#hasSibling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasSibling> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasFamilyRelation> .
+<https://w3id.org/ontobio#hasSibling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<https://w3id.org/ontobio#hasSibling> <http://www.w3.org/2000/01/rdf-schema#label> "has sibling"@en .
+# 
+# https://w3id.org/ontobio#hasSister
+<https://w3id.org/ontobio#hasSister> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasSister> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasSibling> .
+<https://w3id.org/ontobio#hasSister> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#Woman> .
+<https://w3id.org/ontobio#hasSister> <http://www.w3.org/2000/01/rdf-schema#label> "has sister"@en .
+# 
+# https://w3id.org/ontobio#hasSon
+<https://w3id.org/ontobio#hasSon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasSon> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasChild> .
+<https://w3id.org/ontobio#hasSon> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#Man> .
+<https://w3id.org/ontobio#hasSon> <http://www.w3.org/2000/01/rdf-schema#label> "has son"@en .
+# 
+# https://w3id.org/ontobio#hasSpouse
+<https://w3id.org/ontobio#hasSpouse> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasSpouse> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasFamilyRelation> .
+<https://w3id.org/ontobio#hasSpouse> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<https://w3id.org/ontobio#hasSpouse> <http://www.w3.org/2000/01/rdf-schema#label> "has spouse"@en .
+# 
+# https://w3id.org/ontobio#hasTrait
+<https://w3id.org/ontobio#hasTrait> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasTrait> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/ontobio#hasTrait> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#Trait> .
+<https://w3id.org/ontobio#hasTrait> <http://www.w3.org/2000/01/rdf-schema#label> "has trait"@en .
+# 
+# https://w3id.org/ontobio#hasUncle
+<https://w3id.org/ontobio#hasUncle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasUncle> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasFamilyRelation> .
+<https://w3id.org/ontobio#hasUncle> <http://www.w3.org/2000/01/rdf-schema#label> "has uncle"@en .
+# 
+# https://w3id.org/ontobio#hasWife
+<https://w3id.org/ontobio#hasWife> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasWife> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/ontobio#hasSpouse> .
+<https://w3id.org/ontobio#hasWife> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#Woman> .
+<https://w3id.org/ontobio#hasWife> <http://www.w3.org/2000/01/rdf-schema#label> "has wife"@en .
+# 
+# https://w3id.org/ontobio#hasWorkPlace
+<https://w3id.org/ontobio#hasWorkPlace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#hasWorkPlace> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/ontobio#hasWorkPlace> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
+<https://w3id.org/ontobio#hasWorkPlace> <http://www.w3.org/2000/01/rdf-schema#label> "has work place"@en .
+# 
+# https://w3id.org/ontobio#isParentOf
+<https://w3id.org/ontobio#isParentOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#isParentOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ontobio#hasParent> .
+<https://w3id.org/ontobio#isParentOf> <http://www.w3.org/2000/01/rdf-schema#label> "is parent of"@en .
+# 
+# https://w3id.org/ontobio#mealConsumedIn
+<https://w3id.org/ontobio#mealConsumedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#mealConsumedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ontobio#Meal> .
+<https://w3id.org/ontobio#mealConsumedIn> <http://www.w3.org/2000/01/rdf-schema#label> "meal consumed in"@en .
+# 
+# https://w3id.org/ontobio#precededBy
+<https://w3id.org/ontobio#precededBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#precededBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ontobio#followedBy> .
+<https://w3id.org/ontobio#precededBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<https://w3id.org/ontobio#precededBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<https://w3id.org/ontobio#precededBy> <http://www.w3.org/2000/01/rdf-schema#label> "preceded by"@en .
+# 
+# https://w3id.org/ontobio#reasonForTravel
+<https://w3id.org/ontobio#reasonForTravel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#reasonForTravel> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ontobio#Travel> .
+<https://w3id.org/ontobio#reasonForTravel> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#TravelPurpose> .
+<https://w3id.org/ontobio#reasonForTravel> <http://www.w3.org/2000/01/rdf-schema#label> "reason for travel"@en .
+# 
+# https://w3id.org/ontobio#residedIn
+<https://w3id.org/ontobio#residedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#residedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/ontobio#residedIn> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#Residence> .
+<https://w3id.org/ontobio#residedIn> <http://www.w3.org/2000/01/rdf-schema#label> "resided in"@en .
+# 
+# https://w3id.org/ontobio#socialRelationOf
+<https://w3id.org/ontobio#socialRelationOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#socialRelationOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/ontobio#socialRelationOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/ontobio#socialRelationOf> <http://www.w3.org/2000/01/rdf-schema#label> "social relation of"@en .
+# 
+# https://w3id.org/ontobio#travelFrom
+<https://w3id.org/ontobio#travelFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#travelFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ontobio#Travel> .
+<https://w3id.org/ontobio#travelFrom> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Place> .
+<https://w3id.org/ontobio#travelFrom> <http://www.w3.org/2000/01/rdf-schema#label> "travel from"@en .
+# 
+# https://w3id.org/ontobio#travelTo
+<https://w3id.org/ontobio#travelTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#travelTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ontobio#Travel> .
+<https://w3id.org/ontobio#travelTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Place> .
+<https://w3id.org/ontobio#travelTo> <http://www.w3.org/2000/01/rdf-schema#label> "travel to"@en .
+# 
+# https://w3id.org/ontobio#travelUndertakenBy
+<https://w3id.org/ontobio#travelUndertakenBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#travelUndertakenBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ontobio#undertookTravel> .
+<https://w3id.org/ontobio#travelUndertakenBy> <http://www.w3.org/2000/01/rdf-schema#label> "travel undertaken by"@en .
+# 
+# https://w3id.org/ontobio#treatedBy
+<https://w3id.org/ontobio#treatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#treatedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Agent> .
+<https://w3id.org/ontobio#treatedBy> <http://www.w3.org/2000/01/rdf-schema#label> "treated by"@en .
+# 
+# https://w3id.org/ontobio#undertookTravel
+<https://w3id.org/ontobio#undertookTravel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#undertookTravel> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/ontobio#undertookTravel> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/ontobio#Travel> .
+<https://w3id.org/ontobio#undertookTravel> <http://www.w3.org/2000/01/rdf-schema#label> "undertook travel"@en .
+# 
+# https://w3id.org/ontobio#useOf
+<https://w3id.org/ontobio#useOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#useOf> <http://www.w3.org/2000/01/rdf-schema#label> "use of"@en .
+# 
+# https://w3id.org/ontobio#usedIn
+<https://w3id.org/ontobio#usedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/ontobio#usedIn> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/ontobio#useOf> .
+<https://w3id.org/ontobio#usedIn> <http://www.w3.org/2000/01/rdf-schema#label> "used in"@en .
+# 
+# https://w3id.org/opencare#diagnosedWith
+<https://w3id.org/opencare#diagnosedWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/opencare#diagnosedWith> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/MedicalCondition> .
+<https://w3id.org/opencare#diagnosedWith> <http://www.w3.org/2000/01/rdf-schema#label> "diagnosed with"@en .
+# 
+# https://w3id.org/opencare#hasHealthRecord
+<https://w3id.org/opencare#hasHealthRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/opencare#hasHealthRecord> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/opencare#hasHealthRecord> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/opencare#HealthRecord> .
+<https://w3id.org/opencare#hasHealthRecord> <http://www.w3.org/2000/01/rdf-schema#label> "has health record"@en .
+# 
+# https://w3id.org/opencare#hasSymptom
+<https://w3id.org/opencare#hasSymptom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/opencare#hasSymptom> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/opencare#Symptom> .
+<https://w3id.org/opencare#hasSymptom> <http://www.w3.org/2000/01/rdf-schema#label> "has symptom"@en .
+# 
+# https://w3id.org/opencare#hasTreatmentProcedure
+<https://w3id.org/opencare#hasTreatmentProcedure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/opencare#hasTreatmentProcedure> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/opencare#TreatmentProcedure> .
+<https://w3id.org/opencare#hasTreatmentProcedure> <http://www.w3.org/2000/01/rdf-schema#label> "has treatment procedure"@en .
+# 
+# https://w3id.org/pcm#affects
+<https://w3id.org/pcm#affects> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/pcm#affects> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/pcm#ProblemEvent> .
+<https://w3id.org/pcm#affects> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a problem event to the entity it impacts."@en .
+<https://w3id.org/pcm#affects> <http://www.w3.org/2000/01/rdf-schema#label> "affects"@en .
+# 
+# https://w3id.org/pcm#grows
+<https://w3id.org/pcm#grows> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/pcm#grows> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/pcm#grows> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/pcm#Plant> .
+<https://w3id.org/pcm#grows> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a person to a plant they grow or tend."@en .
+<https://w3id.org/pcm#grows> <http://www.w3.org/2000/01/rdf-schema#label> "grows"@en .
+# 
+# https://w3id.org/pcm#hasCollection
+<https://w3id.org/pcm#hasCollection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/pcm#hasCollection> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/pcm#hasCollection> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/pcm#Collection> .
+<https://w3id.org/pcm#hasCollection> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a person to a collection they maintain."@en .
+<https://w3id.org/pcm#hasCollection> <http://www.w3.org/2000/01/rdf-schema#label> "has collection"@en .
+# 
+# https://w3id.org/pcm#hasPet
+<https://w3id.org/pcm#hasPet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/pcm#hasPet> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/pcm#hasPet> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/pcm#Pet> .
+<https://w3id.org/pcm#hasPet> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a person to a pet they own or care for."@en .
+<https://w3id.org/pcm#hasPet> <http://www.w3.org/2000/01/rdf-schema#label> "has pet"@en .
+# 
+# https://w3id.org/pcm#hasPreference
+<https://w3id.org/pcm#hasPreference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/pcm#hasPreference> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/pcm#hasPreference> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/pcm#Preference> .
+<https://w3id.org/pcm#hasPreference> <http://www.w3.org/2000/01/rdf-schema#label> "has preference"@en .
+# 
+# https://w3id.org/pcm#hasSocialAccount
+<https://w3id.org/pcm#hasSocialAccount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/pcm#hasSocialAccount> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/pcm#hasSocialAccount> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/pcm#SocialMediaAccount> .
+<https://w3id.org/pcm#hasSocialAccount> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a person to a social media account they own."@en .
+<https://w3id.org/pcm#hasSocialAccount> <http://www.w3.org/2000/01/rdf-schema#label> "has social account"@en .
+# 
+# https://w3id.org/pcm#wears
+<https://w3id.org/pcm#wears> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/pcm#wears> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/pcm#wears> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/pcm#Clothing> .
+<https://w3id.org/pcm#wears> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a person to a clothing item they own or wear."@en .
+<https://w3id.org/pcm#wears> <http://www.w3.org/2000/01/rdf-schema#label> "wears"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/created> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://purl.org/dc/terms/created> <http://www.w3.org/2000/01/rdf-schema#comment> "Date/time when the resource was created."@en .
+<http://purl.org/dc/terms/created> <http://www.w3.org/2000/01/rdf-schema#label> "date created"@en .
+# 
+# http://purl.org/vocab/bio/0.1/biography
+<http://purl.org/vocab/bio/0.1/biography> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/vocab/bio/0.1/biography> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<http://purl.org/vocab/bio/0.1/biography> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://purl.org/vocab/bio/0.1/biography> <http://www.w3.org/2000/01/rdf-schema#label> "biography"@en .
+# 
+# http://rdfs.org/sioc/ns#content
+<http://rdfs.org/sioc/ns#content> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://rdfs.org/sioc/ns#content> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://rdfs.org/sioc/ns#content> <http://www.w3.org/2000/01/rdf-schema#comment> "The content of the Item in plain text format."@en .
+<http://rdfs.org/sioc/ns#content> <http://www.w3.org/2000/01/rdf-schema#label> "content"@en .
+# 
+# http://schema.org/scheduleTimezone
+<http://schema.org/scheduleTimezone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://schema.org/scheduleTimezone> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.org/Schedule> .
+<http://schema.org/scheduleTimezone> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://schema.org/scheduleTimezone> <http://www.w3.org/2000/01/rdf-schema#comment> "Timezone for the schedule (IANA identifier, e.g. America/New_York)."@en .
+<http://schema.org/scheduleTimezone> <http://www.w3.org/2000/01/rdf-schema#label> "schedule timezone"@en .
+# 
+# http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.w3.org/2000/01/rdf-schema#label> "alternative label"@en .
+# 
+# http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.w3.org/2004/02/skos/core#definition> <http://www.w3.org/2000/01/rdf-schema#label> "definition"@en .
+# 
+# http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.w3.org/2004/02/skos/core#prefLabel> <http://www.w3.org/2000/01/rdf-schema#label> "preferred label"@en .
+# 
+# http://www.w3.org/ns/prov#generatedAtTime
+<http://www.w3.org/ns/prov#generatedAtTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.w3.org/ns/prov#generatedAtTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://www.w3.org/ns/prov#generatedAtTime> <http://www.w3.org/2000/01/rdf-schema#label> "generated at time"@en .
+# 
+# http://xmlns.com/foaf/0.1/family_name
+<http://xmlns.com/foaf/0.1/family_name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/family_name> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<http://xmlns.com/foaf/0.1/family_name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://xmlns.com/foaf/0.1/family_name> <http://www.w3.org/2000/01/rdf-schema#label> "family name"@en .
+# 
+# http://xmlns.com/foaf/0.1/firstName
+<http://xmlns.com/foaf/0.1/firstName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/firstName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<http://xmlns.com/foaf/0.1/firstName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://xmlns.com/foaf/0.1/firstName> <http://www.w3.org/2000/01/rdf-schema#label> "first name"@en .
+# 
+# http://xmlns.com/foaf/0.1/mbox
+<http://xmlns.com/foaf/0.1/mbox> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/mbox> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Agent> .
+<http://xmlns.com/foaf/0.1/mbox> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://xmlns.com/foaf/0.1/mbox> <http://www.w3.org/2000/01/rdf-schema#comment> "A personal mailbox (email address) as a mailto: URI."@en .
+<http://xmlns.com/foaf/0.1/mbox> <http://www.w3.org/2000/01/rdf-schema#label> "email"@en .
+# 
+# http://xmlns.com/foaf/0.1/name
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Agent> .
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://xmlns.com/foaf/0.1/name> <http://www.w3.org/2000/01/rdf-schema#label> "name"@en .
+# 
+# http://xmlns.com/foaf/0.1/nick
+<http://xmlns.com/foaf/0.1/nick> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://xmlns.com/foaf/0.1/nick> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Agent> .
+<http://xmlns.com/foaf/0.1/nick> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://xmlns.com/foaf/0.1/nick> <http://www.w3.org/2000/01/rdf-schema#label> "nickname"@en .
+# 
+# https://w3id.org/ontobio#activityDuration
+<https://w3id.org/ontobio#activityDuration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ontobio#activityDuration> <http://www.w3.org/2000/01/rdf-schema#label> "activity duration"@en .
+# 
+# https://w3id.org/ontobio#hasGoal
+<https://w3id.org/ontobio#hasGoal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ontobio#hasGoal> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Agent> .
+<https://w3id.org/ontobio#hasGoal> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/ontobio#hasGoal> <http://www.w3.org/2000/01/rdf-schema#label> "has goal"@en .
+# 
+# https://w3id.org/ontobio#hasHeight
+<https://w3id.org/ontobio#hasHeight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ontobio#hasHeight> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/ontobio#hasHeight> <http://www.w3.org/2000/01/rdf-schema#label> "has height"@en .
+# 
+# https://w3id.org/ontobio#hasWeight
+<https://w3id.org/ontobio#hasWeight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ontobio#hasWeight> <http://www.w3.org/2000/01/rdf-schema#domain> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/ontobio#hasWeight> <http://www.w3.org/2000/01/rdf-schema#label> "has weight"@en .
+# 
+# https://w3id.org/ontobio#modeOfTransport
+<https://w3id.org/ontobio#modeOfTransport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ontobio#modeOfTransport> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ontobio#Travel> .
+<https://w3id.org/ontobio#modeOfTransport> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/ontobio#modeOfTransport> <http://www.w3.org/2000/01/rdf-schema#label> "mode of transport"@en .
+# 
+# https://w3id.org/ontobio#residedFrom
+<https://w3id.org/ontobio#residedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ontobio#residedFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ontobio#Residence> .
+<https://w3id.org/ontobio#residedFrom> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#gYear> .
+<https://w3id.org/ontobio#residedFrom> <http://www.w3.org/2000/01/rdf-schema#label> "resided from"@en .
+# 
+# https://w3id.org/ontobio#residedTill
+<https://w3id.org/ontobio#residedTill> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ontobio#residedTill> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ontobio#Residence> .
+<https://w3id.org/ontobio#residedTill> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#gYear> .
+<https://w3id.org/ontobio#residedTill> <http://www.w3.org/2000/01/rdf-schema#label> "resided till"@en .
+# 
+# https://w3id.org/ontobio#tenureFrom
+<https://w3id.org/ontobio#tenureFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ontobio#tenureFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/resume-rdf/cv.rdfs#WorkHistory> .
+<https://w3id.org/ontobio#tenureFrom> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#gYear> .
+<https://w3id.org/ontobio#tenureFrom> <http://www.w3.org/2000/01/rdf-schema#label> "tenure from"@en .
+# 
+# https://w3id.org/ontobio#tenureTill
+<https://w3id.org/ontobio#tenureTill> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ontobio#tenureTill> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/resume-rdf/cv.rdfs#WorkHistory> .
+<https://w3id.org/ontobio#tenureTill> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#gYear> .
+<https://w3id.org/ontobio#tenureTill> <http://www.w3.org/2000/01/rdf-schema#label> "tenure till"@en .
+# 
+# https://w3id.org/ontobio#travelYear
+<https://w3id.org/ontobio#travelYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/ontobio#travelYear> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/ontobio#Travel> .
+<https://w3id.org/ontobio#travelYear> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#gYear> .
+<https://w3id.org/ontobio#travelYear> <http://www.w3.org/2000/01/rdf-schema#label> "travel year"@en .
+# 
+# https://w3id.org/opencare#encounterDate
+<https://w3id.org/opencare#encounterDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/opencare#encounterDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#gYear> .
+<https://w3id.org/opencare#encounterDate> <http://www.w3.org/2000/01/rdf-schema#label> "encounter date"@en .
+# 
+# https://w3id.org/pcm#clothingType
+<https://w3id.org/pcm#clothingType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/pcm#clothingType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/pcm#Clothing> .
+<https://w3id.org/pcm#clothingType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/pcm#clothingType> <http://www.w3.org/2000/01/rdf-schema#comment> "The type of clothing (e.g. shoes, shirt, jacket, dress)."@en .
+<https://w3id.org/pcm#clothingType> <http://www.w3.org/2000/01/rdf-schema#label> "clothing type"@en .
+# 
+# https://w3id.org/pcm#collectionSize
+<https://w3id.org/pcm#collectionSize> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/pcm#collectionSize> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/pcm#Collection> .
+<https://w3id.org/pcm#collectionSize> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/pcm#collectionSize> <http://www.w3.org/2000/01/rdf-schema#comment> "The number of items in the collection."@en .
+<https://w3id.org/pcm#collectionSize> <http://www.w3.org/2000/01/rdf-schema#label> "collection size"@en .
+# 
+# https://w3id.org/pcm#collectionType
+<https://w3id.org/pcm#collectionType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/pcm#collectionType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/pcm#Collection> .
+<https://w3id.org/pcm#collectionType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/pcm#collectionType> <http://www.w3.org/2000/01/rdf-schema#comment> "What is collected (e.g. coins, postcards, stamps, autographed baseballs)."@en .
+<https://w3id.org/pcm#collectionType> <http://www.w3.org/2000/01/rdf-schema#label> "collection type"@en .
+# 
+# https://w3id.org/pcm#followerCount
+<https://w3id.org/pcm#followerCount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/pcm#followerCount> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/pcm#SocialMediaAccount> .
+<https://w3id.org/pcm#followerCount> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/pcm#followerCount> <http://www.w3.org/2000/01/rdf-schema#comment> "The number of followers on the social media account."@en .
+<https://w3id.org/pcm#followerCount> <http://www.w3.org/2000/01/rdf-schema#label> "follower count"@en .
+# 
+# https://w3id.org/pcm#petBreed
+<https://w3id.org/pcm#petBreed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/pcm#petBreed> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/pcm#Pet> .
+<https://w3id.org/pcm#petBreed> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/pcm#petBreed> <http://www.w3.org/2000/01/rdf-schema#comment> "The breed of the pet, if applicable."@en .
+<https://w3id.org/pcm#petBreed> <http://www.w3.org/2000/01/rdf-schema#label> "pet breed"@en .
+# 
+# https://w3id.org/pcm#petSpecies
+<https://w3id.org/pcm#petSpecies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/pcm#petSpecies> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/pcm#Pet> .
+<https://w3id.org/pcm#petSpecies> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/pcm#petSpecies> <http://www.w3.org/2000/01/rdf-schema#comment> "The species or type of pet (e.g. dog, cat, parrot, fish)."@en .
+<https://w3id.org/pcm#petSpecies> <http://www.w3.org/2000/01/rdf-schema#label> "pet species"@en .
+# 
+# https://w3id.org/pcm#plantSpecies
+<https://w3id.org/pcm#plantSpecies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/pcm#plantSpecies> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/pcm#Plant> .
+<https://w3id.org/pcm#plantSpecies> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/pcm#plantSpecies> <http://www.w3.org/2000/01/rdf-schema#comment> "The species or variety of plant (e.g. tomato, marigold, basil)."@en .
+<https://w3id.org/pcm#plantSpecies> <http://www.w3.org/2000/01/rdf-schema#label> "plant species"@en .
+# 
+# https://w3id.org/pcm#platform
+<https://w3id.org/pcm#platform> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/pcm#platform> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/pcm#SocialMediaAccount> .
+<https://w3id.org/pcm#platform> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/pcm#platform> <http://www.w3.org/2000/01/rdf-schema#comment> "The social media platform name (e.g. Instagram, TikTok, YouTube)."@en .
+<https://w3id.org/pcm#platform> <http://www.w3.org/2000/01/rdf-schema#label> "platform"@en .
+# 
+# https://w3id.org/pcm#preferenceType
+<https://w3id.org/pcm#preferenceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/pcm#preferenceType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/pcm#Preference> .
+<https://w3id.org/pcm#preferenceType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/pcm#preferenceType> <http://www.w3.org/2000/01/rdf-schema#comment> "Category of preference (e.g. food, music, brand)."@en .
+<https://w3id.org/pcm#preferenceType> <http://www.w3.org/2000/01/rdf-schema#label> "preference type"@en .
+# 
+# https://w3id.org/pcm#preferenceValue
+<https://w3id.org/pcm#preferenceValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/pcm#preferenceValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/pcm#Preference> .
+<https://w3id.org/pcm#preferenceValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/pcm#preferenceValue> <http://www.w3.org/2000/01/rdf-schema#comment> "The value or target of the preference."@en .
+<https://w3id.org/pcm#preferenceValue> <http://www.w3.org/2000/01/rdf-schema#label> "preference value"@en .
+# 
+# https://w3id.org/pcm#problemType
+<https://w3id.org/pcm#problemType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/pcm#problemType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/pcm#ProblemEvent> .
+<https://w3id.org/pcm#problemType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/pcm#problemType> <http://www.w3.org/2000/01/rdf-schema#comment> "Category of the problem (e.g. mechanical, software, health)."@en .
+<https://w3id.org/pcm#problemType> <http://www.w3.org/2000/01/rdf-schema#label> "problem type"@en .
+# 
+# https://w3id.org/pcm#role
+<https://w3id.org/pcm#role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/pcm#role> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#Post> .
+<https://w3id.org/pcm#role> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/pcm#role> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of a message sender: user, assistant, or system."@en .
+<https://w3id.org/pcm#role> <http://www.w3.org/2000/01/rdf-schema#label> "role"@en .
+# 
+# https://w3id.org/pcm#serviceType
+<https://w3id.org/pcm#serviceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/pcm#serviceType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/pcm#ServiceEvent> .
+<https://w3id.org/pcm#serviceType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/pcm#serviceType> <http://www.w3.org/2000/01/rdf-schema#comment> "Category of service (e.g. repair, maintenance, cleaning)."@en .
+<https://w3id.org/pcm#serviceType> <http://www.w3.org/2000/01/rdf-schema#label> "service type"@en .
+# 
+# https://w3id.org/pcm#sourcePlatform
+<https://w3id.org/pcm#sourcePlatform> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/pcm#sourcePlatform> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#Thread> .
+<https://w3id.org/pcm#sourcePlatform> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/pcm#sourcePlatform> <http://www.w3.org/2000/01/rdf-schema#comment> "The communication platform this conversation was captured from (e.g. slack, chatgpt, email)."@en .
+<https://w3id.org/pcm#sourcePlatform> <http://www.w3.org/2000/01/rdf-schema#label> "source platform"@en .
+# 
+# https://w3id.org/pcm#timezone
+<https://w3id.org/pcm#timezone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/pcm#timezone> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/pcm#timezone> <http://www.w3.org/2000/01/rdf-schema#comment> "IANA timezone identifier (e.g. America/New_York)."@en .
+<https://w3id.org/pcm#timezone> <http://www.w3.org/2000/01/rdf-schema#label> "timezone"@en .
+# 
+# https://w3id.org/pcm#turnIndex
+<https://w3id.org/pcm#turnIndex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/pcm#turnIndex> <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#Post> .
+<https://w3id.org/pcm#turnIndex> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://w3id.org/pcm#turnIndex> <http://www.w3.org/2000/01/rdf-schema#comment> "The ordinal position of a message within a conversation thread."@en .
+<https://w3id.org/pcm#turnIndex> <http://www.w3.org/2000/01/rdf-schema#label> "turn index"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/vocab/bio/0.1/Employment
+<http://purl.org/vocab/bio/0.1/Employment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/vocab/bio/0.1/Employment> <http://www.w3.org/2000/01/rdf-schema#label> "Employment"@en .
+# 
+# http://purl.org/vocab/bio/0.1/Marriage
+<http://purl.org/vocab/bio/0.1/Marriage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/vocab/bio/0.1/Marriage> <http://www.w3.org/2000/01/rdf-schema#label> "Marriage"@en .
+# 
+# http://rdfs.org/resume-rdf/cv.rdfs#Education
+<http://rdfs.org/resume-rdf/cv.rdfs#Education> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://rdfs.org/resume-rdf/cv.rdfs#Education> <http://www.w3.org/2000/01/rdf-schema#label> "Education"@en .
+# 
+# http://rdfs.org/resume-rdf/cv.rdfs#WorkHistory
+<http://rdfs.org/resume-rdf/cv.rdfs#WorkHistory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://rdfs.org/resume-rdf/cv.rdfs#WorkHistory> <http://www.w3.org/2000/01/rdf-schema#label> "Work History"@en .
+# 
+# http://rdfs.org/sioc/ns#Forum
+<http://rdfs.org/sioc/ns#Forum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://rdfs.org/sioc/ns#Forum> <http://www.w3.org/2000/01/rdf-schema#comment> "A discussion area on which Posts or entries are made."@en .
+<http://rdfs.org/sioc/ns#Forum> <http://www.w3.org/2000/01/rdf-schema#label> "Forum"@en .
+# 
+# http://rdfs.org/sioc/ns#Post
+<http://rdfs.org/sioc/ns#Post> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://rdfs.org/sioc/ns#Post> <http://www.w3.org/2000/01/rdf-schema#comment> "An article or message posted to a Forum."@en .
+<http://rdfs.org/sioc/ns#Post> <http://www.w3.org/2000/01/rdf-schema#label> "Post"@en .
+# 
+# http://rdfs.org/sioc/ns#Thread
+<http://rdfs.org/sioc/ns#Thread> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://rdfs.org/sioc/ns#Thread> <http://www.w3.org/2000/01/rdf-schema#comment> "A container for a series of threaded discussion Posts."@en .
+<http://rdfs.org/sioc/ns#Thread> <http://www.w3.org/2000/01/rdf-schema#label> "Thread"@en .
+# 
+# http://rdfs.org/sioc/ns#UserAccount
+<http://rdfs.org/sioc/ns#UserAccount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://rdfs.org/sioc/ns#UserAccount> <http://www.w3.org/2000/01/rdf-schema#comment> "A user account in an online community."@en .
+<http://rdfs.org/sioc/ns#UserAccount> <http://www.w3.org/2000/01/rdf-schema#label> "User Account"@en .
+# 
+# http://schema.org/AchieveAction
+<http://schema.org/AchieveAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/AchieveAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Action> .
+<http://schema.org/AchieveAction> <http://www.w3.org/2000/01/rdf-schema#label> "Achieve Action"@en .
+# 
+# http://schema.org/Action
+<http://schema.org/Action> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/Action> <http://www.w3.org/2000/01/rdf-schema#label> "Action"@en .
+# 
+# http://schema.org/ActionStatusType
+<http://schema.org/ActionStatusType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/ActionStatusType> <http://www.w3.org/2000/01/rdf-schema#label> "Action Status Type"@en .
+# 
+# http://schema.org/AssessAction
+<http://schema.org/AssessAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/AssessAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Action> .
+<http://schema.org/AssessAction> <http://www.w3.org/2000/01/rdf-schema#label> "Assess Action"@en .
+# 
+# http://schema.org/BuyAction
+<http://schema.org/BuyAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/BuyAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/TradeAction> .
+<http://schema.org/BuyAction> <http://www.w3.org/2000/01/rdf-schema#label> "Buy Action"@en .
+# 
+# http://schema.org/City
+<http://schema.org/City> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/City> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Place> .
+<http://schema.org/City> <http://www.w3.org/2000/01/rdf-schema#label> "City"@en .
+# 
+# http://schema.org/CommunicateAction
+<http://schema.org/CommunicateAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/CommunicateAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Action> .
+<http://schema.org/CommunicateAction> <http://www.w3.org/2000/01/rdf-schema#label> "Communicate Action"@en .
+# 
+# http://schema.org/ConsumeAction
+<http://schema.org/ConsumeAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/ConsumeAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Action> .
+<http://schema.org/ConsumeAction> <http://www.w3.org/2000/01/rdf-schema#label> "Consume Action"@en .
+# 
+# http://schema.org/Continent
+<http://schema.org/Continent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/Continent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Place> .
+<http://schema.org/Continent> <http://www.w3.org/2000/01/rdf-schema#label> "Continent"@en .
+# 
+# http://schema.org/Country
+<http://schema.org/Country> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/Country> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Place> .
+<http://schema.org/Country> <http://www.w3.org/2000/01/rdf-schema#label> "Country"@en .
+# 
+# http://schema.org/CreateAction
+<http://schema.org/CreateAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/CreateAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Action> .
+<http://schema.org/CreateAction> <http://www.w3.org/2000/01/rdf-schema#label> "Create Action"@en .
+# 
+# http://schema.org/CreativeWork
+<http://schema.org/CreativeWork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/CreativeWork> <http://www.w3.org/2000/01/rdf-schema#label> "Creative Work"@en .
+# 
+# http://schema.org/DayOfWeek
+<http://schema.org/DayOfWeek> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/DayOfWeek> <http://www.w3.org/2000/01/rdf-schema#label> "Day of Week"@en .
+# 
+# http://schema.org/DeleteAction
+<http://schema.org/DeleteAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/DeleteAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Action> .
+<http://schema.org/DeleteAction> <http://www.w3.org/2000/01/rdf-schema#label> "Delete Action"@en .
+# 
+# http://schema.org/EducationalOrganization
+<http://schema.org/EducationalOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/EducationalOrganization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Organization> .
+<http://schema.org/EducationalOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "Educational Organization"@en .
+# 
+# http://schema.org/Event
+<http://schema.org/Event> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/Event> <http://www.w3.org/2000/01/rdf-schema#label> "Event"@en .
+# 
+# http://schema.org/GenderType
+<http://schema.org/GenderType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/GenderType> <http://www.w3.org/2000/01/rdf-schema#label> "Gender Type"@en .
+# 
+# http://schema.org/GovernmentOrganization
+<http://schema.org/GovernmentOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/GovernmentOrganization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Organization> .
+<http://schema.org/GovernmentOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "Government Organization"@en .
+# 
+# http://schema.org/InteractAction
+<http://schema.org/InteractAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/InteractAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Action> .
+<http://schema.org/InteractAction> <http://www.w3.org/2000/01/rdf-schema#label> "Interact Action"@en .
+# 
+# http://schema.org/Language
+<http://schema.org/Language> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/Language> <http://www.w3.org/2000/01/rdf-schema#label> "Language"@en .
+# 
+# http://schema.org/MedicalCondition
+<http://schema.org/MedicalCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/MedicalCondition> <http://www.w3.org/2000/01/rdf-schema#label> "Medical Condition"@en .
+# 
+# http://schema.org/MedicalOrganization
+<http://schema.org/MedicalOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/MedicalOrganization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Organization> .
+<http://schema.org/MedicalOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "Medical Organization"@en .
+# 
+# http://schema.org/MoveAction
+<http://schema.org/MoveAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/MoveAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Action> .
+<http://schema.org/MoveAction> <http://www.w3.org/2000/01/rdf-schema#label> "Move Action"@en .
+# 
+# http://schema.org/Occupation
+<http://schema.org/Occupation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/Occupation> <http://www.w3.org/2000/01/rdf-schema#label> "Occupation"@en .
+# 
+# http://schema.org/Organization
+<http://schema.org/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/Organization> <http://www.w3.org/2000/01/rdf-schema#label> "Organization"@en .
+# 
+# http://schema.org/OrganizeAction
+<http://schema.org/OrganizeAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/OrganizeAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Action> .
+<http://schema.org/OrganizeAction> <http://www.w3.org/2000/01/rdf-schema#label> "Organize Action"@en .
+# 
+# http://schema.org/PayAction
+<http://schema.org/PayAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/PayAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/TradeAction> .
+<http://schema.org/PayAction> <http://www.w3.org/2000/01/rdf-schema#label> "Pay Action"@en .
+# 
+# http://schema.org/Person
+<http://schema.org/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/Person> <http://www.w3.org/2002/07/owl#equivalentClass> <http://xmlns.com/foaf/0.1/Person> .
+<http://schema.org/Person> <http://www.w3.org/2000/01/rdf-schema#label> "Person"@en .
+# 
+# http://schema.org/Place
+<http://schema.org/Place> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/Place> <http://www.w3.org/2000/01/rdf-schema#label> "Place"@en .
+# 
+# http://schema.org/PlayAction
+<http://schema.org/PlayAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/PlayAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Action> .
+<http://schema.org/PlayAction> <http://www.w3.org/2000/01/rdf-schema#label> "Play Action"@en .
+# 
+# http://schema.org/Product
+<http://schema.org/Product> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/Product> <http://www.w3.org/2000/01/rdf-schema#label> "Product"@en .
+# 
+# http://schema.org/ReadAction
+<http://schema.org/ReadAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/ReadAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Action> .
+<http://schema.org/ReadAction> <http://www.w3.org/2000/01/rdf-schema#label> "Read Action"@en .
+# 
+# http://schema.org/RepairAction
+<http://schema.org/RepairAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/RepairAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Action> .
+<http://schema.org/RepairAction> <http://www.w3.org/2000/01/rdf-schema#label> "Repair Action"@en .
+# 
+# http://schema.org/ReviewAction
+<http://schema.org/ReviewAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/ReviewAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/AssessAction> .
+<http://schema.org/ReviewAction> <http://www.w3.org/2000/01/rdf-schema#label> "Review Action"@en .
+# 
+# http://schema.org/Schedule
+<http://schema.org/Schedule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/Schedule> <http://www.w3.org/2000/01/rdf-schema#comment> "A schedule defines the recurrence pattern for events or activities."@en .
+<http://schema.org/Schedule> <http://www.w3.org/2000/01/rdf-schema#label> "Schedule"@en .
+# 
+# http://schema.org/SearchAction
+<http://schema.org/SearchAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/SearchAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Action> .
+<http://schema.org/SearchAction> <http://www.w3.org/2000/01/rdf-schema#label> "Search Action"@en .
+# 
+# http://schema.org/SocialEvent
+<http://schema.org/SocialEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/SocialEvent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Event> .
+<http://schema.org/SocialEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Social Event"@en .
+# 
+# http://schema.org/State
+<http://schema.org/State> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/State> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Place> .
+<http://schema.org/State> <http://www.w3.org/2000/01/rdf-schema#label> "State"@en .
+# 
+# http://schema.org/TouristAttraction
+<http://schema.org/TouristAttraction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/TouristAttraction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Place> .
+<http://schema.org/TouristAttraction> <http://www.w3.org/2000/01/rdf-schema#label> "Tourist Attraction"@en .
+# 
+# http://schema.org/TradeAction
+<http://schema.org/TradeAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/TradeAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Action> .
+<http://schema.org/TradeAction> <http://www.w3.org/2000/01/rdf-schema#label> "Trade Action"@en .
+# 
+# http://schema.org/TransferAction
+<http://schema.org/TransferAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/TransferAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Action> .
+<http://schema.org/TransferAction> <http://www.w3.org/2000/01/rdf-schema#label> "Transfer Action"@en .
+# 
+# http://schema.org/TravelAction
+<http://schema.org/TravelAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/TravelAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/MoveAction> .
+<http://schema.org/TravelAction> <http://www.w3.org/2000/01/rdf-schema#label> "Travel Action"@en .
+# 
+# http://schema.org/UpdateAction
+<http://schema.org/UpdateAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/UpdateAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Action> .
+<http://schema.org/UpdateAction> <http://www.w3.org/2000/01/rdf-schema#label> "Update Action"@en .
+# 
+# http://schema.org/UseAction
+<http://schema.org/UseAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/UseAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/ConsumeAction> .
+<http://schema.org/UseAction> <http://www.w3.org/2000/01/rdf-schema#label> "Use Action"@en .
+# 
+# http://schema.org/Vehicle
+<http://schema.org/Vehicle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/Vehicle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Product> .
+<http://schema.org/Vehicle> <http://www.w3.org/2000/01/rdf-schema#label> "Vehicle"@en .
+# 
+# http://schema.org/WriteAction
+<http://schema.org/WriteAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/WriteAction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Action> .
+<http://schema.org/WriteAction> <http://www.w3.org/2000/01/rdf-schema#label> "Write Action"@en .
+# 
+# http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/2000/01/rdf-schema#label> "Concept"@en .
+# 
+# http://www.w3.org/2004/02/skos/core#ConceptScheme
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://www.w3.org/2000/01/rdf-schema#label> "Concept Scheme"@en .
+# 
+# http://www.w3.org/ns/prov#Entity
+<http://www.w3.org/ns/prov#Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/prov#Entity> <http://www.w3.org/2000/01/rdf-schema#label> "Entity"@en .
+# 
+# http://xmlns.com/foaf/0.1/Agent
+<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/2000/01/rdf-schema#label> "Agent"@en .
+# 
+# http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/2000/01/rdf-schema#label> "Person"@en .
+# 
+# https://w3id.org/ontobio#Activity
+<https://w3id.org/ontobio#Activity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#Activity> <http://www.w3.org/2000/01/rdf-schema#label> "Activity"@en .
+# 
+# https://w3id.org/ontobio#AlcoholicDrink
+<https://w3id.org/ontobio#AlcoholicDrink> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#AlcoholicDrink> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#DrinkableFood> .
+<https://w3id.org/ontobio#AlcoholicDrink> <http://www.w3.org/2000/01/rdf-schema#label> "Alcoholic Drink"@en .
+# 
+# https://w3id.org/ontobio#AlternativeMedicine
+<https://w3id.org/ontobio#AlternativeMedicine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#AlternativeMedicine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/opencare#TreatmentProcedure> .
+<https://w3id.org/ontobio#AlternativeMedicine> <http://www.w3.org/2000/01/rdf-schema#label> "Alternative Medicine"@en .
+# 
+# https://w3id.org/ontobio#BachelorsDegree
+<https://w3id.org/ontobio#BachelorsDegree> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#BachelorsDegree> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://rdfs.org/resume-rdf/cv.rdfs#Education> .
+<https://w3id.org/ontobio#BachelorsDegree> <http://www.w3.org/2000/01/rdf-schema#label> "Bachelor's Degree"@en .
+# 
+# https://w3id.org/ontobio#Breakfast
+<https://w3id.org/ontobio#Breakfast> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#Breakfast> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#Meal> .
+<https://w3id.org/ontobio#Breakfast> <http://www.w3.org/2000/01/rdf-schema#label> "Breakfast"@en .
+# 
+# https://w3id.org/ontobio#Brunch
+<https://w3id.org/ontobio#Brunch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#Brunch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#Meal> .
+<https://w3id.org/ontobio#Brunch> <http://www.w3.org/2000/01/rdf-schema#label> "Brunch"@en .
+# 
+# https://w3id.org/ontobio#CausalType
+<https://w3id.org/ontobio#CausalType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#CausalType> <http://www.w3.org/2000/01/rdf-schema#label> "Causal Type"@en .
+# 
+# https://w3id.org/ontobio#CommercialOrganization
+<https://w3id.org/ontobio#CommercialOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#CommercialOrganization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Organization> .
+<https://w3id.org/ontobio#CommercialOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "Commercial Organization"@en .
+# 
+# https://w3id.org/ontobio#CreativeActivity
+<https://w3id.org/ontobio#CreativeActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#CreativeActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#Activity> .
+<https://w3id.org/ontobio#CreativeActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Creative Activity"@en .
+# 
+# https://w3id.org/ontobio#DailyLivingActivity
+<https://w3id.org/ontobio#DailyLivingActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#DailyLivingActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#Activity> .
+<https://w3id.org/ontobio#DailyLivingActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Daily Living Activity"@en .
+# 
+# https://w3id.org/ontobio#DailyRoutine
+<https://w3id.org/ontobio#DailyRoutine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#DailyRoutine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#Habit> .
+<https://w3id.org/ontobio#DailyRoutine> <http://www.w3.org/2000/01/rdf-schema#label> "Daily Routine"@en .
+# 
+# https://w3id.org/ontobio#Dinner
+<https://w3id.org/ontobio#Dinner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#Dinner> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#Meal> .
+<https://w3id.org/ontobio#Dinner> <http://www.w3.org/2000/01/rdf-schema#label> "Dinner"@en .
+# 
+# https://w3id.org/ontobio#DoctoralDegree
+<https://w3id.org/ontobio#DoctoralDegree> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#DoctoralDegree> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://rdfs.org/resume-rdf/cv.rdfs#Education> .
+<https://w3id.org/ontobio#DoctoralDegree> <http://www.w3.org/2000/01/rdf-schema#label> "Doctoral Degree"@en .
+# 
+# https://w3id.org/ontobio#DressingHabit
+<https://w3id.org/ontobio#DressingHabit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#DressingHabit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#Habit> .
+<https://w3id.org/ontobio#DressingHabit> <http://www.w3.org/2000/01/rdf-schema#label> "Dressing Habit"@en .
+# 
+# https://w3id.org/ontobio#DrinkableFood
+<https://w3id.org/ontobio#DrinkableFood> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#DrinkableFood> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#FoodItem> .
+<https://w3id.org/ontobio#DrinkableFood> <http://www.w3.org/2000/01/rdf-schema#label> "Drinkable Food"@en .
+# 
+# https://w3id.org/ontobio#EdibleFood
+<https://w3id.org/ontobio#EdibleFood> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#EdibleFood> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#FoodItem> .
+<https://w3id.org/ontobio#EdibleFood> <http://www.w3.org/2000/01/rdf-schema#label> "Edible Food"@en .
+# 
+# https://w3id.org/ontobio#EthnicGroup
+<https://w3id.org/ontobio#EthnicGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#EthnicGroup> <http://www.w3.org/2000/01/rdf-schema#label> "Ethnic Group"@en .
+# 
+# https://w3id.org/ontobio#EveningSnack
+<https://w3id.org/ontobio#EveningSnack> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#EveningSnack> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#Meal> .
+<https://w3id.org/ontobio#EveningSnack> <http://www.w3.org/2000/01/rdf-schema#label> "Evening Snack"@en .
+# 
+# https://w3id.org/ontobio#Food
+<https://w3id.org/ontobio#Food> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#Food> <http://www.w3.org/2000/01/rdf-schema#label> "Food"@en .
+# 
+# https://w3id.org/ontobio#FoodHabit
+<https://w3id.org/ontobio#FoodHabit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#FoodHabit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#Habit> .
+<https://w3id.org/ontobio#FoodHabit> <http://www.w3.org/2000/01/rdf-schema#label> "Food Habit"@en .
+# 
+# https://w3id.org/ontobio#FoodItem
+<https://w3id.org/ontobio#FoodItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#FoodItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#Food> .
+<https://w3id.org/ontobio#FoodItem> <http://www.w3.org/2000/01/rdf-schema#label> "Food Item"@en .
+# 
+# https://w3id.org/ontobio#Habit
+<https://w3id.org/ontobio#Habit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#Habit> <http://www.w3.org/2000/01/rdf-schema#label> "Habit"@en .
+# 
+# https://w3id.org/ontobio#HonoraryDegree
+<https://w3id.org/ontobio#HonoraryDegree> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#HonoraryDegree> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://rdfs.org/resume-rdf/cv.rdfs#Education> .
+<https://w3id.org/ontobio#HonoraryDegree> <http://www.w3.org/2000/01/rdf-schema#label> "Honorary Degree"@en .
+# 
+# https://w3id.org/ontobio#Injury
+<https://w3id.org/ontobio#Injury> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#Injury> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/MedicalCondition> .
+<https://w3id.org/ontobio#Injury> <http://www.w3.org/2000/01/rdf-schema#label> "Injury"@en .
+# 
+# https://w3id.org/ontobio#Locality
+<https://w3id.org/ontobio#Locality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#Locality> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Place> .
+<https://w3id.org/ontobio#Locality> <http://www.w3.org/2000/01/rdf-schema#label> "Locality"@en .
+# 
+# https://w3id.org/ontobio#Lunch
+<https://w3id.org/ontobio#Lunch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#Lunch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#Meal> .
+<https://w3id.org/ontobio#Lunch> <http://www.w3.org/2000/01/rdf-schema#label> "Lunch"@en .
+# 
+# https://w3id.org/ontobio#Man
+<https://w3id.org/ontobio#Man> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#Man> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/ontobio#Man> <http://www.w3.org/2000/01/rdf-schema#label> "Man"@en .
+# 
+# https://w3id.org/ontobio#MastersDegree
+<https://w3id.org/ontobio#MastersDegree> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#MastersDegree> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://rdfs.org/resume-rdf/cv.rdfs#Education> .
+<https://w3id.org/ontobio#MastersDegree> <http://www.w3.org/2000/01/rdf-schema#label> "Master's Degree"@en .
+# 
+# https://w3id.org/ontobio#Meal
+<https://w3id.org/ontobio#Meal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#Meal> <http://www.w3.org/2000/01/rdf-schema#label> "Meal"@en .
+# 
+# https://w3id.org/ontobio#NonAlcoholicDrink
+<https://w3id.org/ontobio#NonAlcoholicDrink> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#NonAlcoholicDrink> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#DrinkableFood> .
+<https://w3id.org/ontobio#NonAlcoholicDrink> <http://www.w3.org/2000/01/rdf-schema#label> "Non-Alcoholic Drink"@en .
+# 
+# https://w3id.org/ontobio#OccupationalActivity
+<https://w3id.org/ontobio#OccupationalActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#OccupationalActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#Activity> .
+<https://w3id.org/ontobio#OccupationalActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Occupational Activity"@en .
+# 
+# https://w3id.org/ontobio#PersonalityTrait
+<https://w3id.org/ontobio#PersonalityTrait> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#PersonalityTrait> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#Trait> .
+<https://w3id.org/ontobio#PersonalityTrait> <http://www.w3.org/2000/01/rdf-schema#label> "Personality Trait"@en .
+# 
+# https://w3id.org/ontobio#Pharmacotherapy
+<https://w3id.org/ontobio#Pharmacotherapy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#Pharmacotherapy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/opencare#TreatmentProcedure> .
+<https://w3id.org/ontobio#Pharmacotherapy> <http://www.w3.org/2000/01/rdf-schema#label> "Pharmacotherapy"@en .
+# 
+# https://w3id.org/ontobio#PhysicalActivity
+<https://w3id.org/ontobio#PhysicalActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#PhysicalActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#Activity> .
+<https://w3id.org/ontobio#PhysicalActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Physical Activity"@en .
+# 
+# https://w3id.org/ontobio#PhysicalAppearance
+<https://w3id.org/ontobio#PhysicalAppearance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#PhysicalAppearance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#Trait> .
+<https://w3id.org/ontobio#PhysicalAppearance> <http://www.w3.org/2000/01/rdf-schema#label> "Physical Appearance"@en .
+# 
+# https://w3id.org/ontobio#PhysicalTrait
+<https://w3id.org/ontobio#PhysicalTrait> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#PhysicalTrait> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#Trait> .
+<https://w3id.org/ontobio#PhysicalTrait> <http://www.w3.org/2000/01/rdf-schema#label> "Physical Trait"@en .
+# 
+# https://w3id.org/ontobio#ProfessionalDegree
+<https://w3id.org/ontobio#ProfessionalDegree> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#ProfessionalDegree> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://rdfs.org/resume-rdf/cv.rdfs#Education> .
+<https://w3id.org/ontobio#ProfessionalDegree> <http://www.w3.org/2000/01/rdf-schema#label> "Professional Degree"@en .
+# 
+# https://w3id.org/ontobio#RecreationalActivity
+<https://w3id.org/ontobio#RecreationalActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#RecreationalActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#Activity> .
+<https://w3id.org/ontobio#RecreationalActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Recreational Activity"@en .
+# 
+# https://w3id.org/ontobio#Religion
+<https://w3id.org/ontobio#Religion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#Religion> <http://www.w3.org/2000/01/rdf-schema#label> "Religion"@en .
+# 
+# https://w3id.org/ontobio#ReligiousActivity
+<https://w3id.org/ontobio#ReligiousActivity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#ReligiousActivity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#Activity> .
+<https://w3id.org/ontobio#ReligiousActivity> <http://www.w3.org/2000/01/rdf-schema#label> "Religious Activity"@en .
+# 
+# https://w3id.org/ontobio#Residence
+<https://w3id.org/ontobio#Residence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#Residence> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Place> .
+<https://w3id.org/ontobio#Residence> <http://www.w3.org/2000/01/rdf-schema#label> "Residence"@en .
+# 
+# https://w3id.org/ontobio#SpecialDish
+<https://w3id.org/ontobio#SpecialDish> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#SpecialDish> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontobio#Meal> .
+<https://w3id.org/ontobio#SpecialDish> <http://www.w3.org/2000/01/rdf-schema#label> "Special Dish"@en .
+# 
+# https://w3id.org/ontobio#Trait
+<https://w3id.org/ontobio#Trait> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#Trait> <http://www.w3.org/2000/01/rdf-schema#label> "Trait"@en .
+# 
+# https://w3id.org/ontobio#Travel
+<https://w3id.org/ontobio#Travel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#Travel> <http://www.w3.org/2000/01/rdf-schema#label> "Travel"@en .
+# 
+# https://w3id.org/ontobio#TravelPurpose
+<https://w3id.org/ontobio#TravelPurpose> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#TravelPurpose> <http://www.w3.org/2000/01/rdf-schema#label> "Travel Purpose"@en .
+# 
+# https://w3id.org/ontobio#Village
+<https://w3id.org/ontobio#Village> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#Village> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Place> .
+<https://w3id.org/ontobio#Village> <http://www.w3.org/2000/01/rdf-schema#label> "Village"@en .
+# 
+# https://w3id.org/ontobio#Woman
+<https://w3id.org/ontobio#Woman> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/ontobio#Woman> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/ontobio#Woman> <http://www.w3.org/2000/01/rdf-schema#label> "Woman"@en .
+# 
+# https://w3id.org/opencare#AnatomicalRegion
+<https://w3id.org/opencare#AnatomicalRegion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/opencare#AnatomicalRegion> <http://www.w3.org/2000/01/rdf-schema#label> "Anatomical Region"@en .
+# 
+# https://w3id.org/opencare#DentalProcedure
+<https://w3id.org/opencare#DentalProcedure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/opencare#DentalProcedure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/opencare#TreatmentProcedure> .
+<https://w3id.org/opencare#DentalProcedure> <http://www.w3.org/2000/01/rdf-schema#label> "Dental Procedure"@en .
+# 
+# https://w3id.org/opencare#Disease
+<https://w3id.org/opencare#Disease> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/opencare#Disease> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/MedicalCondition> .
+<https://w3id.org/opencare#Disease> <http://www.w3.org/2000/01/rdf-schema#label> "Disease"@en .
+# 
+# https://w3id.org/opencare#HealthRecord
+<https://w3id.org/opencare#HealthRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/opencare#HealthRecord> <http://www.w3.org/2000/01/rdf-schema#label> "Health Record"@en .
+# 
+# https://w3id.org/opencare#Surgery
+<https://w3id.org/opencare#Surgery> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/opencare#Surgery> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/opencare#TreatmentProcedure> .
+<https://w3id.org/opencare#Surgery> <http://www.w3.org/2000/01/rdf-schema#label> "Surgery"@en .
+# 
+# https://w3id.org/opencare#Symptom
+<https://w3id.org/opencare#Symptom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/opencare#Symptom> <http://www.w3.org/2000/01/rdf-schema#label> "Symptom"@en .
+# 
+# https://w3id.org/opencare#TreatmentProcedure
+<https://w3id.org/opencare#TreatmentProcedure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/opencare#TreatmentProcedure> <http://www.w3.org/2000/01/rdf-schema#label> "Treatment Procedure"@en .
+# 
+# https://w3id.org/pcm#Clothing
+<https://w3id.org/pcm#Clothing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/pcm#Clothing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Product> .
+<https://w3id.org/pcm#Clothing> <http://www.w3.org/2000/01/rdf-schema#comment> "A wearable garment or accessory."@en .
+<https://w3id.org/pcm#Clothing> <http://www.w3.org/2000/01/rdf-schema#label> "Clothing"@en .
+# 
+# https://w3id.org/pcm#Collection
+<https://w3id.org/pcm#Collection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/pcm#Collection> <http://www.w3.org/2000/01/rdf-schema#comment> "A personal collection of items (e.g. coins, postcards, autographs)."@en .
+<https://w3id.org/pcm#Collection> <http://www.w3.org/2000/01/rdf-schema#label> "Collection"@en .
+# 
+# https://w3id.org/pcm#Pet
+<https://w3id.org/pcm#Pet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/pcm#Pet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
+<https://w3id.org/pcm#Pet> <http://www.w3.org/2000/01/rdf-schema#comment> "A domestic animal kept for companionship."@en .
+<https://w3id.org/pcm#Pet> <http://www.w3.org/2000/01/rdf-schema#label> "Pet"@en .
+# 
+# https://w3id.org/pcm#Plant
+<https://w3id.org/pcm#Plant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/pcm#Plant> <http://www.w3.org/2000/01/rdf-schema#comment> "A plant grown or maintained by a person."@en .
+<https://w3id.org/pcm#Plant> <http://www.w3.org/2000/01/rdf-schema#label> "Plant"@en .
+# 
+# https://w3id.org/pcm#Preference
+<https://w3id.org/pcm#Preference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/pcm#Preference> <http://www.w3.org/2000/01/rdf-schema#comment> "A personal preference expressed by a person."@en .
+<https://w3id.org/pcm#Preference> <http://www.w3.org/2000/01/rdf-schema#label> "Preference"@en .
+# 
+# https://w3id.org/pcm#ProblemEvent
+<https://w3id.org/pcm#ProblemEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/pcm#ProblemEvent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Event> .
+<https://w3id.org/pcm#ProblemEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "A problem or issue that occurred, affecting an entity."@en .
+<https://w3id.org/pcm#ProblemEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Problem Event"@en .
+# 
+# https://w3id.org/pcm#ServiceEvent
+<https://w3id.org/pcm#ServiceEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/pcm#ServiceEvent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Event> .
+<https://w3id.org/pcm#ServiceEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "A service interaction such as repair, maintenance, or professional service."@en .
+<https://w3id.org/pcm#ServiceEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Service Event"@en .
+# 
+# https://w3id.org/pcm#SocialMediaAccount
+<https://w3id.org/pcm#SocialMediaAccount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/pcm#SocialMediaAccount> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://rdfs.org/sioc/ns#UserAccount> .
+<https://w3id.org/pcm#SocialMediaAccount> <http://www.w3.org/2000/01/rdf-schema#comment> "A user account on a social media platform."@en .
+<https://w3id.org/pcm#SocialMediaAccount> <http://www.w3.org/2000/01/rdf-schema#label> "Social Media Account"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://schema.org/ActiveActionStatus
+<http://schema.org/ActiveActionStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.org/ActiveActionStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/ActionStatusType> .
+<http://schema.org/ActiveActionStatus> <http://www.w3.org/2000/01/rdf-schema#label> "Active"@en .
+# 
+# http://schema.org/CompletedActionStatus
+<http://schema.org/CompletedActionStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.org/CompletedActionStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/ActionStatusType> .
+<http://schema.org/CompletedActionStatus> <http://www.w3.org/2000/01/rdf-schema#label> "Completed"@en .
+# 
+# http://schema.org/PotentialActionStatus
+<http://schema.org/PotentialActionStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.org/PotentialActionStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/ActionStatusType> .
+<http://schema.org/PotentialActionStatus> <http://www.w3.org/2000/01/rdf-schema#label> "Potential"@en .
+# 
+# https://w3id.org/pcm
+<https://w3id.org/pcm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/pcm> <http://purl.org/dc/terms/created> "2026-05-10"^^<http://www.w3.org/2001/XMLSchema#date> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<http://schema.org/actionStatus> <http://www.w3.org/2000/01/rdf-schema#label> "action status"@en .
+# 
+<http://schema.org/agent> <http://www.w3.org/2000/01/rdf-schema#label> "agent"@en .
+# 
+<http://schema.org/alternateName> <http://www.w3.org/2000/01/rdf-schema#label> "alternate name"@en .
+# 
+<http://schema.org/associatedAnatomy> <http://www.w3.org/2000/01/rdf-schema#label> "associated anatomy"@en .
+# 
+<http://schema.org/attendee> <http://www.w3.org/2000/01/rdf-schema#label> "attendee"@en .
+# 
+<http://schema.org/brand> <http://www.w3.org/2000/01/rdf-schema#label> "brand"@en .
+# 
+<http://schema.org/color> <http://www.w3.org/2000/01/rdf-schema#label> "color"@en .
+# 
+<http://schema.org/containedInPlace> <http://www.w3.org/2000/01/rdf-schema#label> "contained in place"@en .
+# 
+<http://schema.org/containsPlace> <http://www.w3.org/2000/01/rdf-schema#label> "contains place"@en .
+# 
+<http://schema.org/description> <http://www.w3.org/2000/01/rdf-schema#label> "description"@en .
+# 
+<http://schema.org/duration> <http://www.w3.org/2000/01/rdf-schema#comment> "The duration of each occurrence, in ISO 8601 format."@en .
+<http://schema.org/duration> <http://www.w3.org/2000/01/rdf-schema#label> "duration"@en .
+# 
+<http://schema.org/endDate> <http://www.w3.org/2000/01/rdf-schema#label> "end date"@en .
+# 
+<http://schema.org/estimatedSalary> <http://www.w3.org/2000/01/rdf-schema#label> "estimated salary"@en .
+# 
+<http://schema.org/eventSchedule> <http://www.w3.org/2000/01/rdf-schema#comment> "Associates an Event, Habit, or Activity with a recurring Schedule."@en .
+<http://schema.org/eventSchedule> <http://www.w3.org/2000/01/rdf-schema#label> "event schedule"@en .
+# 
+<http://schema.org/identifier> <http://www.w3.org/2000/01/rdf-schema#comment> "Any kind of identifier (e.g. social media handle, ISBN, account ID)."@en .
+<http://schema.org/identifier> <http://www.w3.org/2000/01/rdf-schema#label> "identifier"@en .
+# 
+<http://schema.org/instrument> <http://www.w3.org/2000/01/rdf-schema#label> "instrument"@en .
+# 
+<http://schema.org/jobTitle> <http://www.w3.org/2000/01/rdf-schema#label> "job title"@en .
+# 
+<http://schema.org/location> <http://www.w3.org/2000/01/rdf-schema#label> "location"@en .
+# 
+<http://schema.org/member> <http://www.w3.org/2000/01/rdf-schema#label> "member"@en .
+# 
+<http://schema.org/memberOf> <http://www.w3.org/2000/01/rdf-schema#label> "member of"@en .
+# 
+<http://schema.org/model> <http://www.w3.org/2000/01/rdf-schema#label> "model"@en .
+# 
+<http://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#label> "name"@en .
+# 
+<http://schema.org/object> <http://www.w3.org/2000/01/rdf-schema#label> "object"@en .
+# 
+<http://schema.org/organizer> <http://www.w3.org/2000/01/rdf-schema#label> "organizer"@en .
+# 
+<http://schema.org/owns> <http://www.w3.org/2000/01/rdf-schema#label> "owns"@en .
+# 
+<http://schema.org/participant> <http://www.w3.org/2000/01/rdf-schema#label> "participant"@en .
+# 
+<http://schema.org/price> <http://www.w3.org/2000/01/rdf-schema#label> "price"@en .
+# 
+<http://schema.org/priceCurrency> <http://www.w3.org/2000/01/rdf-schema#label> "price currency"@en .
+# 
+<http://schema.org/result> <http://www.w3.org/2000/01/rdf-schema#label> "result"@en .
+# 
+<http://schema.org/startDate> <http://www.w3.org/2000/01/rdf-schema#label> "start date"@en .
+# 
+<http://schema.org/streetAddress> <http://www.w3.org/2000/01/rdf-schema#label> "street address"@en .
+# 
+<http://schema.org/telephone> <http://www.w3.org/2000/01/rdf-schema#comment> "A telephone number."@en .
+<http://schema.org/telephone> <http://www.w3.org/2000/01/rdf-schema#label> "telephone"@en .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

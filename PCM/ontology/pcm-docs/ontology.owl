@@ -1,0 +1,3028 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/pcm#"
+     xml:base="https://w3id.org/pcm"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="http://schema.org/">
+    <owl:Ontology rdf:about="https://w3id.org/pcm">
+        <dc:creator rdf:resource="https://www.wikidata.org/wiki/Q54832532"/>
+        <dc:title xml:lang="en">The Personal Conversational Memory Ontology</dc:title>
+        <terms:abstract xml:lang="en">The Personal Conversational Memory (PCM) ontology is a multi-vocabulary schema for representing personal knowledge extracted from conversational interactions between users and AI agents. It reuses established vocabularies - Schema.org, OntoBio, FOAF, PROV-O, SKOS, the Relationship and BIO vocabularies, OpenCare, and CV/ResumeRDF - and defines custom extensions for concepts not adequately covered by existing standards, including personal preferences, problem and service events, and social media accounts. The ontology underpins the PCM pipeline for incremental personal knowledge graph construction, provenance tracking, and SPARQL-based retrieval over conversational memory.</terms:abstract>
+        <terms:description xml:lang="en">A multi-vocabulary schema for personal knowledge graph extraction from conversational text, defining custom extensions for personal preferences, problem and service events, and social media accounts on top of established vocabularies.</terms:description>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-05-10</terms:modified>
+        <schema:image rdf:resource="https://w3id.org/pcm/images/pcm-ontology-diagram.png"/>
+        <rdfs:comment xml:lang="en">Schema for personal knowledge graph extraction from conversational text. Reuses Schema.org, OntoBio, FOAF, PROV-O, SKOS, Relationship vocab, BIO, OpenCare, and CV/ResumeRDF.</rdfs:comment>
+        <rdfs:label xml:lang="en">The Personal Conversational Memory Ontology</rdfs:label>
+        <owl:versionInfo>1.0</owl:versionInfo>
+        <foaf:depiction rdf:resource="https://w3id.org/pcm/images/pcm-ontology-diagram.png"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/abstract -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/abstract"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://schema.org/affiliation -->
+
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/affiliation">
+        <rdfs:label xml:lang="en">affiliation</rdfs:label>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://schema.org/byDay -->
+
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/byDay">
+        <rdfs:comment xml:lang="en">Day(s) of the week on which the recurring event takes place.</rdfs:comment>
+        <rdfs:label xml:lang="en">by day</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.org/Schedule"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://schema.org/byMonth -->
+
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/byMonth">
+        <rdfs:comment xml:lang="en">Month(s) of the year (1-12) on which the recurring event takes place.</rdfs:comment>
+        <rdfs:label xml:lang="en">by month</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.org/Schedule"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://schema.org/byMonthDay -->
+
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/byMonthDay">
+        <rdfs:comment xml:lang="en">Day(s) of the month (1-31) on which the recurring event takes place.</rdfs:comment>
+        <rdfs:label xml:lang="en">by month day</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.org/Schedule"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://schema.org/hasOccupation -->
+
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/hasOccupation">
+        <rdfs:label xml:lang="en">has occupation</rdfs:label>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://schema.org/image -->
+
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/image"/>
+    
+
+
+    <!-- http://schema.org/knowsLanguage -->
+
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/knowsLanguage">
+        <rdfs:label xml:lang="en">knows language</rdfs:label>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://schema.org/repeatCount -->
+
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/repeatCount">
+        <rdfs:comment xml:lang="en">Number of times per period (e.g. 3 for &apos;three times a week&apos;).</rdfs:comment>
+        <rdfs:label xml:lang="en">repeat count</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.org/Schedule"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://schema.org/repeatFrequency -->
+
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/repeatFrequency">
+        <rdfs:comment xml:lang="en">How often the event/activity recurs, as ISO 8601 duration (e.g. P1W = weekly).</rdfs:comment>
+        <rdfs:label xml:lang="en">repeat frequency</rdfs:label>
+        <rdfs:domain rdf:resource="http://schema.org/Schedule"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/depiction -->
+
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/depiction"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#gYear -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#gYear"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/vocab/relationship/acquaintanceOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/vocab/relationship/acquaintanceOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#socialRelationOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:label xml:lang="en">acquaintance of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/vocab/relationship/apprenticeTo -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/vocab/relationship/apprenticeTo">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#socialRelationOf"/>
+        <rdfs:label xml:lang="en">apprentice to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/vocab/relationship/closeFriendOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/vocab/relationship/closeFriendOf">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/relationship/friendOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:label xml:lang="en">close friend of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/vocab/relationship/colleagueOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/vocab/relationship/colleagueOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#socialRelationOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:label xml:lang="en">colleague of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/vocab/relationship/engagedTo -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/vocab/relationship/engagedTo">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#socialRelationOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:label xml:lang="en">engaged to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/vocab/relationship/friendOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/vocab/relationship/friendOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#socialRelationOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:label xml:lang="en">friend of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/vocab/relationship/mentorOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/vocab/relationship/mentorOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#socialRelationOf"/>
+        <rdfs:label xml:lang="en">mentor of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/vocab/relationship/neighborOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/vocab/relationship/neighborOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#socialRelationOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:label xml:lang="en">neighbor of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/vocab/relationship/worksWith -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/vocab/relationship/worksWith">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#socialRelationOf"/>
+        <rdfs:label xml:lang="en">works with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/resume-rdf/cv.rdfs#hasWorkHistory -->
+
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/resume-rdf/cv.rdfs#hasWorkHistory">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://rdfs.org/resume-rdf/cv.rdfs#WorkHistory"/>
+        <rdfs:label xml:lang="en">has work history</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#account_of -->
+
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#account_of">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:comment xml:lang="en">Refers to the foaf:Agent or foaf:Person who owns this UserAccount.</rdfs:comment>
+        <rdfs:label xml:lang="en">account of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#addressed_to -->
+
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#addressed_to">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#Post"/>
+        <rdfs:range rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <rdfs:comment xml:lang="en">A UserAccount that a Post was addressed to (e.g. DM recipient, @mention target).</rdfs:comment>
+        <rdfs:label xml:lang="en">addressed to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#has_container -->
+
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#has_container">
+        <rdfs:comment xml:lang="en">The Container to which this Item belongs.</rdfs:comment>
+        <rdfs:label xml:lang="en">has container</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#has_creator -->
+
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#has_creator">
+        <rdfs:range rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <rdfs:comment xml:lang="en">This is the UserAccount that made this resource.</rdfs:comment>
+        <rdfs:label xml:lang="en">has creator</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#has_reply -->
+
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#has_reply">
+        <rdfs:comment xml:lang="en">Points to an Item or Post that is a reply to this Item.</rdfs:comment>
+        <rdfs:label xml:lang="en">has reply</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#reply_of -->
+
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#reply_of">
+        <owl:inverseOf rdf:resource="http://rdfs.org/sioc/ns#has_reply"/>
+        <rdfs:comment xml:lang="en">Links to an Item that this Item is a reply to.</rdfs:comment>
+        <rdfs:label xml:lang="en">reply of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.org/birthPlace -->
+
+
+    <owl:ObjectProperty rdf:about="http://schema.org/birthPlace">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://schema.org/Place"/>
+        <rdfs:label xml:lang="en">birth place</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.org/deathPlace -->
+
+
+    <owl:ObjectProperty rdf:about="http://schema.org/deathPlace">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://schema.org/Place"/>
+        <rdfs:label xml:lang="en">death place</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.org/gender -->
+
+
+    <owl:ObjectProperty rdf:about="http://schema.org/gender">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://schema.org/GenderType"/>
+        <rdfs:label xml:lang="en">gender</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#broader -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#broader">
+        <rdfs:label xml:lang="en">broader</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#inScheme -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#inScheme">
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:label xml:lang="en">in scheme</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrower -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#narrower">
+        <owl:inverseOf rdf:resource="http://www.w3.org/2004/02/skos/core#broader"/>
+        <rdfs:label xml:lang="en">narrower</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#related -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#related">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:label xml:lang="en">related</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasAttributedTo -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasAttributedTo">
+        <rdfs:label xml:lang="en">was attributed to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasDerivedFrom -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasDerivedFrom">
+        <rdfs:label xml:lang="en">was derived from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/img -->
+
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/img">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment xml:lang="en">A depiction of a person, typically a profile photo.</rdfs:comment>
+        <rdfs:label xml:lang="en">image</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/interest -->
+
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/interest">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="en">interest</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#causalContext -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#causalContext">
+        <rdfs:label xml:lang="en">causal context</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#degreeAwardedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#degreeAwardedBy">
+        <rdfs:domain rdf:resource="http://rdfs.org/resume-rdf/cv.rdfs#Education"/>
+        <rdfs:range rdf:resource="http://schema.org/Organization"/>
+        <rdfs:label xml:lang="en">degree awarded by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#degreeAwardedIn -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#degreeAwardedIn">
+        <rdfs:domain rdf:resource="http://rdfs.org/resume-rdf/cv.rdfs#Education"/>
+        <rdfs:label xml:lang="en">degree awarded in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#employedAt -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#employedAt">
+        <rdfs:domain rdf:resource="http://purl.org/vocab/bio/0.1/Employment"/>
+        <rdfs:range rdf:resource="http://schema.org/Organization"/>
+        <rdfs:label xml:lang="en">employed at</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#followedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#followedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:label xml:lang="en">followed by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#followsReligion -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#followsReligion">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#Religion"/>
+        <rdfs:label xml:lang="en">follows religion</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasActivity -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasActivity">
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#Activity"/>
+        <rdfs:label xml:lang="en">has activity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasAunt -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasAunt">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasFamilyRelation"/>
+        <rdfs:label xml:lang="en">has aunt</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasBrother -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasBrother">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasSibling"/>
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#Man"/>
+        <rdfs:label xml:lang="en">has brother</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasCausality -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasCausality">
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#CausalType"/>
+        <rdfs:label xml:lang="en">has causality</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasChild -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasChild">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasFamilyRelation"/>
+        <rdfs:label xml:lang="en">has child</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasCousin -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasCousin">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasFamilyRelation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:label xml:lang="en">has cousin</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasDaughter -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasDaughter">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasChild"/>
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#Woman"/>
+        <rdfs:label xml:lang="en">has daughter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasDegree -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasDegree">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://rdfs.org/resume-rdf/cv.rdfs#Education"/>
+        <rdfs:label xml:lang="en">has degree</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasDressStyle -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasDressStyle">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasHabit"/>
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#DressingHabit"/>
+        <rdfs:label xml:lang="en">has dress style</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasEthnicity -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasEthnicity">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#EthnicGroup"/>
+        <rdfs:label xml:lang="en">has ethnicity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasEyeColor -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasEyeColor">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="en">has eye color</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasFamilyRelation -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasFamilyRelation">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="en">has family relation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasFather -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasFather">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasParent"/>
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#Man"/>
+        <rdfs:label xml:lang="en">has father</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasFoodHabit -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasFoodHabit">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasHabit"/>
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#FoodHabit"/>
+        <rdfs:label xml:lang="en">has food habit</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasFoodItem -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasFoodItem">
+        <rdfs:domain rdf:resource="https://w3id.org/ontobio#Meal"/>
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#FoodItem"/>
+        <rdfs:label xml:lang="en">has food item</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasGrandParent -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasGrandParent">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasFamilyRelation"/>
+        <rdfs:label xml:lang="en">has grandparent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasHabit -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasHabit">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#Habit"/>
+        <rdfs:label xml:lang="en">has habit</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasHairStyle -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasHairStyle">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="en">has hair style</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasHusband -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasHusband">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasSpouse"/>
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#Man"/>
+        <rdfs:label xml:lang="en">has husband</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasInLaw -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasInLaw">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasFamilyRelation"/>
+        <rdfs:label xml:lang="en">has in-law</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasMeal -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasMeal">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#Meal"/>
+        <rdfs:label xml:lang="en">has meal</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasMother -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasMother">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasParent"/>
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#Woman"/>
+        <rdfs:label xml:lang="en">has mother</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasNephew -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasNephew">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasFamilyRelation"/>
+        <rdfs:label xml:lang="en">has nephew</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasNiece -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasNiece">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasFamilyRelation"/>
+        <rdfs:label xml:lang="en">has niece</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasParent -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasParent">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasFamilyRelation"/>
+        <rdfs:label xml:lang="en">has parent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasPersonalityTrait -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasPersonalityTrait">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasTrait"/>
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#PersonalityTrait"/>
+        <rdfs:label xml:lang="en">has personality trait</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasPhysicalAppearance -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasPhysicalAppearance">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasTrait"/>
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#PhysicalAppearance"/>
+        <rdfs:label xml:lang="en">has physical appearance</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasRoutine -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasRoutine">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasHabit"/>
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#DailyRoutine"/>
+        <rdfs:label xml:lang="en">has routine</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasSibling -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasSibling">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasFamilyRelation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:label xml:lang="en">has sibling</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasSister -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasSister">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasSibling"/>
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#Woman"/>
+        <rdfs:label xml:lang="en">has sister</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasSon -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasSon">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasChild"/>
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#Man"/>
+        <rdfs:label xml:lang="en">has son</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasSpouse -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasSpouse">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasFamilyRelation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:label xml:lang="en">has spouse</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasTrait -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasTrait">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#Trait"/>
+        <rdfs:label xml:lang="en">has trait</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasUncle -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasUncle">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasFamilyRelation"/>
+        <rdfs:label xml:lang="en">has uncle</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasWife -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasWife">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/ontobio#hasSpouse"/>
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#Woman"/>
+        <rdfs:label xml:lang="en">has wife</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasWorkPlace -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#hasWorkPlace">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://schema.org/Organization"/>
+        <rdfs:label xml:lang="en">has work place</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#isParentOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#isParentOf">
+        <owl:inverseOf rdf:resource="https://w3id.org/ontobio#hasParent"/>
+        <rdfs:label xml:lang="en">is parent of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#mealConsumedIn -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#mealConsumedIn">
+        <rdfs:domain rdf:resource="https://w3id.org/ontobio#Meal"/>
+        <rdfs:label xml:lang="en">meal consumed in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#precededBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#precededBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/ontobio#followedBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:label xml:lang="en">preceded by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#reasonForTravel -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#reasonForTravel">
+        <rdfs:domain rdf:resource="https://w3id.org/ontobio#Travel"/>
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#TravelPurpose"/>
+        <rdfs:label xml:lang="en">reason for travel</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#residedIn -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#residedIn">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#Residence"/>
+        <rdfs:label xml:lang="en">resided in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#socialRelationOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#socialRelationOf">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="en">social relation of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#travelFrom -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#travelFrom">
+        <rdfs:domain rdf:resource="https://w3id.org/ontobio#Travel"/>
+        <rdfs:range rdf:resource="http://schema.org/Place"/>
+        <rdfs:label xml:lang="en">travel from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#travelTo -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#travelTo">
+        <rdfs:domain rdf:resource="https://w3id.org/ontobio#Travel"/>
+        <rdfs:range rdf:resource="http://schema.org/Place"/>
+        <rdfs:label xml:lang="en">travel to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#travelUndertakenBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#travelUndertakenBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/ontobio#undertookTravel"/>
+        <rdfs:label xml:lang="en">travel undertaken by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#treatedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#treatedBy">
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:label xml:lang="en">treated by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#undertookTravel -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#undertookTravel">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/ontobio#Travel"/>
+        <rdfs:label xml:lang="en">undertook travel</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#useOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#useOf">
+        <rdfs:label xml:lang="en">use of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#usedIn -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/ontobio#usedIn">
+        <owl:inverseOf rdf:resource="https://w3id.org/ontobio#useOf"/>
+        <rdfs:label xml:lang="en">used in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/opencare#diagnosedWith -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/opencare#diagnosedWith">
+        <rdfs:range rdf:resource="http://schema.org/MedicalCondition"/>
+        <rdfs:label xml:lang="en">diagnosed with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/opencare#hasHealthRecord -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/opencare#hasHealthRecord">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/opencare#HealthRecord"/>
+        <rdfs:label xml:lang="en">has health record</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/opencare#hasSymptom -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/opencare#hasSymptom">
+        <rdfs:range rdf:resource="https://w3id.org/opencare#Symptom"/>
+        <rdfs:label xml:lang="en">has symptom</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/opencare#hasTreatmentProcedure -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/opencare#hasTreatmentProcedure">
+        <rdfs:range rdf:resource="https://w3id.org/opencare#TreatmentProcedure"/>
+        <rdfs:label xml:lang="en">has treatment procedure</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#affects -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/pcm#affects">
+        <rdfs:domain rdf:resource="https://w3id.org/pcm#ProblemEvent"/>
+        <rdfs:comment xml:lang="en">Links a problem event to the entity it impacts.</rdfs:comment>
+        <rdfs:label xml:lang="en">affects</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#grows -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/pcm#grows">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/pcm#Plant"/>
+        <rdfs:comment xml:lang="en">Links a person to a plant they grow or tend.</rdfs:comment>
+        <rdfs:label xml:lang="en">grows</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#hasCollection -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/pcm#hasCollection">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/pcm#Collection"/>
+        <rdfs:comment xml:lang="en">Links a person to a collection they maintain.</rdfs:comment>
+        <rdfs:label xml:lang="en">has collection</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#hasPet -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/pcm#hasPet">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/pcm#Pet"/>
+        <rdfs:comment xml:lang="en">Links a person to a pet they own or care for.</rdfs:comment>
+        <rdfs:label xml:lang="en">has pet</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#hasPreference -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/pcm#hasPreference">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/pcm#Preference"/>
+        <rdfs:label xml:lang="en">has preference</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#hasSocialAccount -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/pcm#hasSocialAccount">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/pcm#SocialMediaAccount"/>
+        <rdfs:comment xml:lang="en">Links a person to a social media account they own.</rdfs:comment>
+        <rdfs:label xml:lang="en">has social account</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#wears -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/pcm#wears">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/pcm#Clothing"/>
+        <rdfs:comment xml:lang="en">Links a person to a clothing item they own or wear.</rdfs:comment>
+        <rdfs:label xml:lang="en">wears</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/created">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">Date/time when the resource was created.</rdfs:comment>
+        <rdfs:label xml:lang="en">date created</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/vocab/bio/0.1/biography -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/vocab/bio/0.1/biography">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">biography</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#content -->
+
+
+    <owl:DatatypeProperty rdf:about="http://rdfs.org/sioc/ns#content">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The content of the Item in plain text format.</rdfs:comment>
+        <rdfs:label xml:lang="en">content</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/scheduleTimezone -->
+
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/scheduleTimezone">
+        <rdfs:domain rdf:resource="http://schema.org/Schedule"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Timezone for the schedule (IANA identifier, e.g. America/New_York).</rdfs:comment>
+        <rdfs:label xml:lang="en">schedule timezone</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel">
+        <rdfs:label xml:lang="en">alternative label</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition">
+        <rdfs:label xml:lang="en">definition</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel">
+        <rdfs:label xml:lang="en">preferred label</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#generatedAtTime -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/prov#generatedAtTime">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">generated at time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/family_name -->
+
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/family_name">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">family name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/firstName -->
+
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/firstName">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">first name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/mbox -->
+
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/mbox">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment xml:lang="en">A personal mailbox (email address) as a mailto: URI.</rdfs:comment>
+        <rdfs:label xml:lang="en">email</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/name">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/nick -->
+
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/nick">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">nickname</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#activityDuration -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ontobio#activityDuration">
+        <rdfs:label xml:lang="en">activity duration</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasGoal -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ontobio#hasGoal">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has goal</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasHeight -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ontobio#hasHeight">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="en">has height</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#hasWeight -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ontobio#hasWeight">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="en">has weight</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#modeOfTransport -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ontobio#modeOfTransport">
+        <rdfs:domain rdf:resource="https://w3id.org/ontobio#Travel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">mode of transport</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#residedFrom -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ontobio#residedFrom">
+        <rdfs:domain rdf:resource="https://w3id.org/ontobio#Residence"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+        <rdfs:label xml:lang="en">resided from</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#residedTill -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ontobio#residedTill">
+        <rdfs:domain rdf:resource="https://w3id.org/ontobio#Residence"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+        <rdfs:label xml:lang="en">resided till</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#tenureFrom -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ontobio#tenureFrom">
+        <rdfs:domain rdf:resource="http://rdfs.org/resume-rdf/cv.rdfs#WorkHistory"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+        <rdfs:label xml:lang="en">tenure from</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#tenureTill -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ontobio#tenureTill">
+        <rdfs:domain rdf:resource="http://rdfs.org/resume-rdf/cv.rdfs#WorkHistory"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+        <rdfs:label xml:lang="en">tenure till</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/ontobio#travelYear -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/ontobio#travelYear">
+        <rdfs:domain rdf:resource="https://w3id.org/ontobio#Travel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+        <rdfs:label xml:lang="en">travel year</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/opencare#encounterDate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/opencare#encounterDate">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+        <rdfs:label xml:lang="en">encounter date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#clothingType -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/pcm#clothingType">
+        <rdfs:domain rdf:resource="https://w3id.org/pcm#Clothing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The type of clothing (e.g. shoes, shirt, jacket, dress).</rdfs:comment>
+        <rdfs:label xml:lang="en">clothing type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#collectionSize -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/pcm#collectionSize">
+        <rdfs:domain rdf:resource="https://w3id.org/pcm#Collection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">The number of items in the collection.</rdfs:comment>
+        <rdfs:label xml:lang="en">collection size</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#collectionType -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/pcm#collectionType">
+        <rdfs:domain rdf:resource="https://w3id.org/pcm#Collection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">What is collected (e.g. coins, postcards, stamps, autographed baseballs).</rdfs:comment>
+        <rdfs:label xml:lang="en">collection type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#followerCount -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/pcm#followerCount">
+        <rdfs:domain rdf:resource="https://w3id.org/pcm#SocialMediaAccount"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">The number of followers on the social media account.</rdfs:comment>
+        <rdfs:label xml:lang="en">follower count</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#petBreed -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/pcm#petBreed">
+        <rdfs:domain rdf:resource="https://w3id.org/pcm#Pet"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The breed of the pet, if applicable.</rdfs:comment>
+        <rdfs:label xml:lang="en">pet breed</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#petSpecies -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/pcm#petSpecies">
+        <rdfs:domain rdf:resource="https://w3id.org/pcm#Pet"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The species or type of pet (e.g. dog, cat, parrot, fish).</rdfs:comment>
+        <rdfs:label xml:lang="en">pet species</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#plantSpecies -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/pcm#plantSpecies">
+        <rdfs:domain rdf:resource="https://w3id.org/pcm#Plant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The species or variety of plant (e.g. tomato, marigold, basil).</rdfs:comment>
+        <rdfs:label xml:lang="en">plant species</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#platform -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/pcm#platform">
+        <rdfs:domain rdf:resource="https://w3id.org/pcm#SocialMediaAccount"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The social media platform name (e.g. Instagram, TikTok, YouTube).</rdfs:comment>
+        <rdfs:label xml:lang="en">platform</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#preferenceType -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/pcm#preferenceType">
+        <rdfs:domain rdf:resource="https://w3id.org/pcm#Preference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Category of preference (e.g. food, music, brand).</rdfs:comment>
+        <rdfs:label xml:lang="en">preference type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#preferenceValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/pcm#preferenceValue">
+        <rdfs:domain rdf:resource="https://w3id.org/pcm#Preference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The value or target of the preference.</rdfs:comment>
+        <rdfs:label xml:lang="en">preference value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#problemType -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/pcm#problemType">
+        <rdfs:domain rdf:resource="https://w3id.org/pcm#ProblemEvent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Category of the problem (e.g. mechanical, software, health).</rdfs:comment>
+        <rdfs:label xml:lang="en">problem type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#role -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/pcm#role">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#Post"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The role of a message sender: user, assistant, or system.</rdfs:comment>
+        <rdfs:label xml:lang="en">role</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#serviceType -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/pcm#serviceType">
+        <rdfs:domain rdf:resource="https://w3id.org/pcm#ServiceEvent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Category of service (e.g. repair, maintenance, cleaning).</rdfs:comment>
+        <rdfs:label xml:lang="en">service type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#sourcePlatform -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/pcm#sourcePlatform">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#Thread"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The communication platform this conversation was captured from (e.g. slack, chatgpt, email).</rdfs:comment>
+        <rdfs:label xml:lang="en">source platform</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#timezone -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/pcm#timezone">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">IANA timezone identifier (e.g. America/New_York).</rdfs:comment>
+        <rdfs:label xml:lang="en">timezone</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/pcm#turnIndex -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/pcm#turnIndex">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#Post"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">The ordinal position of a message within a conversation thread.</rdfs:comment>
+        <rdfs:label xml:lang="en">turn index</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/vocab/bio/0.1/Employment -->
+
+
+    <owl:Class rdf:about="http://purl.org/vocab/bio/0.1/Employment">
+        <rdfs:label xml:lang="en">Employment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/vocab/bio/0.1/Marriage -->
+
+
+    <owl:Class rdf:about="http://purl.org/vocab/bio/0.1/Marriage">
+        <rdfs:label xml:lang="en">Marriage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/resume-rdf/cv.rdfs#Education -->
+
+
+    <owl:Class rdf:about="http://rdfs.org/resume-rdf/cv.rdfs#Education">
+        <rdfs:label xml:lang="en">Education</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/resume-rdf/cv.rdfs#WorkHistory -->
+
+
+    <owl:Class rdf:about="http://rdfs.org/resume-rdf/cv.rdfs#WorkHistory">
+        <rdfs:label xml:lang="en">Work History</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#Forum -->
+
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#Forum">
+        <rdfs:comment xml:lang="en">A discussion area on which Posts or entries are made.</rdfs:comment>
+        <rdfs:label xml:lang="en">Forum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#Post -->
+
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#Post">
+        <rdfs:comment xml:lang="en">An article or message posted to a Forum.</rdfs:comment>
+        <rdfs:label xml:lang="en">Post</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#Thread -->
+
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#Thread">
+        <rdfs:comment xml:lang="en">A container for a series of threaded discussion Posts.</rdfs:comment>
+        <rdfs:label xml:lang="en">Thread</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#UserAccount -->
+
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#UserAccount">
+        <rdfs:comment xml:lang="en">A user account in an online community.</rdfs:comment>
+        <rdfs:label xml:lang="en">User Account</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/AchieveAction -->
+
+
+    <owl:Class rdf:about="http://schema.org/AchieveAction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Action"/>
+        <rdfs:label xml:lang="en">Achieve Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Action -->
+
+
+    <owl:Class rdf:about="http://schema.org/Action">
+        <rdfs:label xml:lang="en">Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/ActionStatusType -->
+
+
+    <owl:Class rdf:about="http://schema.org/ActionStatusType">
+        <rdfs:label xml:lang="en">Action Status Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/AssessAction -->
+
+
+    <owl:Class rdf:about="http://schema.org/AssessAction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Action"/>
+        <rdfs:label xml:lang="en">Assess Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/BuyAction -->
+
+
+    <owl:Class rdf:about="http://schema.org/BuyAction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/TradeAction"/>
+        <rdfs:label xml:lang="en">Buy Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/City -->
+
+
+    <owl:Class rdf:about="http://schema.org/City">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Place"/>
+        <rdfs:label xml:lang="en">City</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/CommunicateAction -->
+
+
+    <owl:Class rdf:about="http://schema.org/CommunicateAction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Action"/>
+        <rdfs:label xml:lang="en">Communicate Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/ConsumeAction -->
+
+
+    <owl:Class rdf:about="http://schema.org/ConsumeAction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Action"/>
+        <rdfs:label xml:lang="en">Consume Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Continent -->
+
+
+    <owl:Class rdf:about="http://schema.org/Continent">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Place"/>
+        <rdfs:label xml:lang="en">Continent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Country -->
+
+
+    <owl:Class rdf:about="http://schema.org/Country">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Place"/>
+        <rdfs:label xml:lang="en">Country</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/CreateAction -->
+
+
+    <owl:Class rdf:about="http://schema.org/CreateAction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Action"/>
+        <rdfs:label xml:lang="en">Create Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/CreativeWork -->
+
+
+    <owl:Class rdf:about="http://schema.org/CreativeWork">
+        <rdfs:label xml:lang="en">Creative Work</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/DayOfWeek -->
+
+
+    <owl:Class rdf:about="http://schema.org/DayOfWeek">
+        <rdfs:label xml:lang="en">Day of Week</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/DeleteAction -->
+
+
+    <owl:Class rdf:about="http://schema.org/DeleteAction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Action"/>
+        <rdfs:label xml:lang="en">Delete Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/EducationalOrganization -->
+
+
+    <owl:Class rdf:about="http://schema.org/EducationalOrganization">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Organization"/>
+        <rdfs:label xml:lang="en">Educational Organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Event -->
+
+
+    <owl:Class rdf:about="http://schema.org/Event">
+        <rdfs:label xml:lang="en">Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/GenderType -->
+
+
+    <owl:Class rdf:about="http://schema.org/GenderType">
+        <rdfs:label xml:lang="en">Gender Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/GovernmentOrganization -->
+
+
+    <owl:Class rdf:about="http://schema.org/GovernmentOrganization">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Organization"/>
+        <rdfs:label xml:lang="en">Government Organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/InteractAction -->
+
+
+    <owl:Class rdf:about="http://schema.org/InteractAction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Action"/>
+        <rdfs:label xml:lang="en">Interact Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Language -->
+
+
+    <owl:Class rdf:about="http://schema.org/Language">
+        <rdfs:label xml:lang="en">Language</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/MedicalCondition -->
+
+
+    <owl:Class rdf:about="http://schema.org/MedicalCondition">
+        <rdfs:label xml:lang="en">Medical Condition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/MedicalOrganization -->
+
+
+    <owl:Class rdf:about="http://schema.org/MedicalOrganization">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Organization"/>
+        <rdfs:label xml:lang="en">Medical Organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/MoveAction -->
+
+
+    <owl:Class rdf:about="http://schema.org/MoveAction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Action"/>
+        <rdfs:label xml:lang="en">Move Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Occupation -->
+
+
+    <owl:Class rdf:about="http://schema.org/Occupation">
+        <rdfs:label xml:lang="en">Occupation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Organization -->
+
+
+    <owl:Class rdf:about="http://schema.org/Organization">
+        <rdfs:label xml:lang="en">Organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/OrganizeAction -->
+
+
+    <owl:Class rdf:about="http://schema.org/OrganizeAction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Action"/>
+        <rdfs:label xml:lang="en">Organize Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/PayAction -->
+
+
+    <owl:Class rdf:about="http://schema.org/PayAction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/TradeAction"/>
+        <rdfs:label xml:lang="en">Pay Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Person -->
+
+
+    <owl:Class rdf:about="http://schema.org/Person">
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Place -->
+
+
+    <owl:Class rdf:about="http://schema.org/Place">
+        <rdfs:label xml:lang="en">Place</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/PlayAction -->
+
+
+    <owl:Class rdf:about="http://schema.org/PlayAction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Action"/>
+        <rdfs:label xml:lang="en">Play Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Product -->
+
+
+    <owl:Class rdf:about="http://schema.org/Product">
+        <rdfs:label xml:lang="en">Product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/ReadAction -->
+
+
+    <owl:Class rdf:about="http://schema.org/ReadAction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Action"/>
+        <rdfs:label xml:lang="en">Read Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/RepairAction -->
+
+
+    <owl:Class rdf:about="http://schema.org/RepairAction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Action"/>
+        <rdfs:label xml:lang="en">Repair Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/ReviewAction -->
+
+
+    <owl:Class rdf:about="http://schema.org/ReviewAction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/AssessAction"/>
+        <rdfs:label xml:lang="en">Review Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Schedule -->
+
+
+    <owl:Class rdf:about="http://schema.org/Schedule">
+        <rdfs:comment xml:lang="en">A schedule defines the recurrence pattern for events or activities.</rdfs:comment>
+        <rdfs:label xml:lang="en">Schedule</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/SearchAction -->
+
+
+    <owl:Class rdf:about="http://schema.org/SearchAction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Action"/>
+        <rdfs:label xml:lang="en">Search Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/SocialEvent -->
+
+
+    <owl:Class rdf:about="http://schema.org/SocialEvent">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Event"/>
+        <rdfs:label xml:lang="en">Social Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/State -->
+
+
+    <owl:Class rdf:about="http://schema.org/State">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Place"/>
+        <rdfs:label xml:lang="en">State</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/TouristAttraction -->
+
+
+    <owl:Class rdf:about="http://schema.org/TouristAttraction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Place"/>
+        <rdfs:label xml:lang="en">Tourist Attraction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/TradeAction -->
+
+
+    <owl:Class rdf:about="http://schema.org/TradeAction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Action"/>
+        <rdfs:label xml:lang="en">Trade Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/TransferAction -->
+
+
+    <owl:Class rdf:about="http://schema.org/TransferAction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Action"/>
+        <rdfs:label xml:lang="en">Transfer Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/TravelAction -->
+
+
+    <owl:Class rdf:about="http://schema.org/TravelAction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/MoveAction"/>
+        <rdfs:label xml:lang="en">Travel Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/UpdateAction -->
+
+
+    <owl:Class rdf:about="http://schema.org/UpdateAction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Action"/>
+        <rdfs:label xml:lang="en">Update Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/UseAction -->
+
+
+    <owl:Class rdf:about="http://schema.org/UseAction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/ConsumeAction"/>
+        <rdfs:label xml:lang="en">Use Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Vehicle -->
+
+
+    <owl:Class rdf:about="http://schema.org/Vehicle">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Product"/>
+        <rdfs:label xml:lang="en">Vehicle</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/WriteAction -->
+
+
+    <owl:Class rdf:about="http://schema.org/WriteAction">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Action"/>
+        <rdfs:label xml:lang="en">Write Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept">
+        <rdfs:label xml:lang="en">Concept</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#ConceptScheme -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+        <rdfs:label xml:lang="en">Concept Scheme</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Entity -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Entity">
+        <rdfs:label xml:lang="en">Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Agent -->
+
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent">
+        <rdfs:label xml:lang="en">Agent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#Activity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#Activity">
+        <rdfs:label xml:lang="en">Activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#AlcoholicDrink -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#AlcoholicDrink">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#DrinkableFood"/>
+        <rdfs:label xml:lang="en">Alcoholic Drink</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#AlternativeMedicine -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#AlternativeMedicine">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/opencare#TreatmentProcedure"/>
+        <rdfs:label xml:lang="en">Alternative Medicine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#BachelorsDegree -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#BachelorsDegree">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/resume-rdf/cv.rdfs#Education"/>
+        <rdfs:label xml:lang="en">Bachelor&apos;s Degree</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#Breakfast -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#Breakfast">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#Meal"/>
+        <rdfs:label xml:lang="en">Breakfast</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#Brunch -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#Brunch">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#Meal"/>
+        <rdfs:label xml:lang="en">Brunch</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#CausalType -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#CausalType">
+        <rdfs:label xml:lang="en">Causal Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#CommercialOrganization -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#CommercialOrganization">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Organization"/>
+        <rdfs:label xml:lang="en">Commercial Organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#CreativeActivity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#CreativeActivity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#Activity"/>
+        <rdfs:label xml:lang="en">Creative Activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#DailyLivingActivity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#DailyLivingActivity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#Activity"/>
+        <rdfs:label xml:lang="en">Daily Living Activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#DailyRoutine -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#DailyRoutine">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#Habit"/>
+        <rdfs:label xml:lang="en">Daily Routine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#Dinner -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#Dinner">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#Meal"/>
+        <rdfs:label xml:lang="en">Dinner</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#DoctoralDegree -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#DoctoralDegree">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/resume-rdf/cv.rdfs#Education"/>
+        <rdfs:label xml:lang="en">Doctoral Degree</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#DressingHabit -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#DressingHabit">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#Habit"/>
+        <rdfs:label xml:lang="en">Dressing Habit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#DrinkableFood -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#DrinkableFood">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#FoodItem"/>
+        <rdfs:label xml:lang="en">Drinkable Food</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#EdibleFood -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#EdibleFood">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#FoodItem"/>
+        <rdfs:label xml:lang="en">Edible Food</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#EthnicGroup -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#EthnicGroup">
+        <rdfs:label xml:lang="en">Ethnic Group</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#EveningSnack -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#EveningSnack">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#Meal"/>
+        <rdfs:label xml:lang="en">Evening Snack</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#Food -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#Food">
+        <rdfs:label xml:lang="en">Food</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#FoodHabit -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#FoodHabit">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#Habit"/>
+        <rdfs:label xml:lang="en">Food Habit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#FoodItem -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#FoodItem">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#Food"/>
+        <rdfs:label xml:lang="en">Food Item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#Habit -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#Habit">
+        <rdfs:label xml:lang="en">Habit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#HonoraryDegree -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#HonoraryDegree">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/resume-rdf/cv.rdfs#Education"/>
+        <rdfs:label xml:lang="en">Honorary Degree</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#Injury -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#Injury">
+        <rdfs:subClassOf rdf:resource="http://schema.org/MedicalCondition"/>
+        <rdfs:label xml:lang="en">Injury</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#Locality -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#Locality">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Place"/>
+        <rdfs:label xml:lang="en">Locality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#Lunch -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#Lunch">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#Meal"/>
+        <rdfs:label xml:lang="en">Lunch</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#Man -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#Man">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="en">Man</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#MastersDegree -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#MastersDegree">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/resume-rdf/cv.rdfs#Education"/>
+        <rdfs:label xml:lang="en">Master&apos;s Degree</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#Meal -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#Meal">
+        <rdfs:label xml:lang="en">Meal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#NonAlcoholicDrink -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#NonAlcoholicDrink">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#DrinkableFood"/>
+        <rdfs:label xml:lang="en">Non-Alcoholic Drink</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#OccupationalActivity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#OccupationalActivity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#Activity"/>
+        <rdfs:label xml:lang="en">Occupational Activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#PersonalityTrait -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#PersonalityTrait">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#Trait"/>
+        <rdfs:label xml:lang="en">Personality Trait</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#Pharmacotherapy -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#Pharmacotherapy">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/opencare#TreatmentProcedure"/>
+        <rdfs:label xml:lang="en">Pharmacotherapy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#PhysicalActivity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#PhysicalActivity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#Activity"/>
+        <rdfs:label xml:lang="en">Physical Activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#PhysicalAppearance -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#PhysicalAppearance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#Trait"/>
+        <rdfs:label xml:lang="en">Physical Appearance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#PhysicalTrait -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#PhysicalTrait">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#Trait"/>
+        <rdfs:label xml:lang="en">Physical Trait</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#ProfessionalDegree -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#ProfessionalDegree">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/resume-rdf/cv.rdfs#Education"/>
+        <rdfs:label xml:lang="en">Professional Degree</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#RecreationalActivity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#RecreationalActivity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#Activity"/>
+        <rdfs:label xml:lang="en">Recreational Activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#Religion -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#Religion">
+        <rdfs:label xml:lang="en">Religion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#ReligiousActivity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#ReligiousActivity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#Activity"/>
+        <rdfs:label xml:lang="en">Religious Activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#Residence -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#Residence">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Place"/>
+        <rdfs:label xml:lang="en">Residence</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#SpecialDish -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#SpecialDish">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/ontobio#Meal"/>
+        <rdfs:label xml:lang="en">Special Dish</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#Trait -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#Trait">
+        <rdfs:label xml:lang="en">Trait</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#Travel -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#Travel">
+        <rdfs:label xml:lang="en">Travel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#TravelPurpose -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#TravelPurpose">
+        <rdfs:label xml:lang="en">Travel Purpose</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#Village -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#Village">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Place"/>
+        <rdfs:label xml:lang="en">Village</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/ontobio#Woman -->
+
+
+    <owl:Class rdf:about="https://w3id.org/ontobio#Woman">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="en">Woman</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/opencare#AnatomicalRegion -->
+
+
+    <owl:Class rdf:about="https://w3id.org/opencare#AnatomicalRegion">
+        <rdfs:label xml:lang="en">Anatomical Region</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/opencare#DentalProcedure -->
+
+
+    <owl:Class rdf:about="https://w3id.org/opencare#DentalProcedure">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/opencare#TreatmentProcedure"/>
+        <rdfs:label xml:lang="en">Dental Procedure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/opencare#Disease -->
+
+
+    <owl:Class rdf:about="https://w3id.org/opencare#Disease">
+        <rdfs:subClassOf rdf:resource="http://schema.org/MedicalCondition"/>
+        <rdfs:label xml:lang="en">Disease</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/opencare#HealthRecord -->
+
+
+    <owl:Class rdf:about="https://w3id.org/opencare#HealthRecord">
+        <rdfs:label xml:lang="en">Health Record</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/opencare#Surgery -->
+
+
+    <owl:Class rdf:about="https://w3id.org/opencare#Surgery">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/opencare#TreatmentProcedure"/>
+        <rdfs:label xml:lang="en">Surgery</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/opencare#Symptom -->
+
+
+    <owl:Class rdf:about="https://w3id.org/opencare#Symptom">
+        <rdfs:label xml:lang="en">Symptom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/opencare#TreatmentProcedure -->
+
+
+    <owl:Class rdf:about="https://w3id.org/opencare#TreatmentProcedure">
+        <rdfs:label xml:lang="en">Treatment Procedure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/pcm#Clothing -->
+
+
+    <owl:Class rdf:about="https://w3id.org/pcm#Clothing">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Product"/>
+        <rdfs:comment xml:lang="en">A wearable garment or accessory.</rdfs:comment>
+        <rdfs:label xml:lang="en">Clothing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/pcm#Collection -->
+
+
+    <owl:Class rdf:about="https://w3id.org/pcm#Collection">
+        <rdfs:comment xml:lang="en">A personal collection of items (e.g. coins, postcards, autographs).</rdfs:comment>
+        <rdfs:label xml:lang="en">Collection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/pcm#Pet -->
+
+
+    <owl:Class rdf:about="https://w3id.org/pcm#Pet">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:comment xml:lang="en">A domestic animal kept for companionship.</rdfs:comment>
+        <rdfs:label xml:lang="en">Pet</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/pcm#Plant -->
+
+
+    <owl:Class rdf:about="https://w3id.org/pcm#Plant">
+        <rdfs:comment xml:lang="en">A plant grown or maintained by a person.</rdfs:comment>
+        <rdfs:label xml:lang="en">Plant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/pcm#Preference -->
+
+
+    <owl:Class rdf:about="https://w3id.org/pcm#Preference">
+        <rdfs:comment xml:lang="en">A personal preference expressed by a person.</rdfs:comment>
+        <rdfs:label xml:lang="en">Preference</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/pcm#ProblemEvent -->
+
+
+    <owl:Class rdf:about="https://w3id.org/pcm#ProblemEvent">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Event"/>
+        <rdfs:comment xml:lang="en">A problem or issue that occurred, affecting an entity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Problem Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/pcm#ServiceEvent -->
+
+
+    <owl:Class rdf:about="https://w3id.org/pcm#ServiceEvent">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Event"/>
+        <rdfs:comment xml:lang="en">A service interaction such as repair, maintenance, or professional service.</rdfs:comment>
+        <rdfs:label xml:lang="en">Service Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/pcm#SocialMediaAccount -->
+
+
+    <owl:Class rdf:about="https://w3id.org/pcm#SocialMediaAccount">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <rdfs:comment xml:lang="en">A user account on a social media platform.</rdfs:comment>
+        <rdfs:label xml:lang="en">Social Media Account</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://schema.org/ActiveActionStatus -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.org/ActiveActionStatus">
+        <rdf:type rdf:resource="http://schema.org/ActionStatusType"/>
+        <rdfs:label xml:lang="en">Active</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.org/CompletedActionStatus -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.org/CompletedActionStatus">
+        <rdf:type rdf:resource="http://schema.org/ActionStatusType"/>
+        <rdfs:label xml:lang="en">Completed</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.org/PotentialActionStatus -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.org/PotentialActionStatus">
+        <rdf:type rdf:resource="http://schema.org/ActionStatusType"/>
+        <rdfs:label xml:lang="en">Potential</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/pcm -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/pcm">
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-05-10</terms:created>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://schema.org/actionStatus">
+        <rdfs:label xml:lang="en">action status</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/agent">
+        <rdfs:label xml:lang="en">agent</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/alternateName">
+        <rdfs:label xml:lang="en">alternate name</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/associatedAnatomy">
+        <rdfs:label xml:lang="en">associated anatomy</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/attendee">
+        <rdfs:label xml:lang="en">attendee</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/brand">
+        <rdfs:label xml:lang="en">brand</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/color">
+        <rdfs:label xml:lang="en">color</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/containedInPlace">
+        <rdfs:label xml:lang="en">contained in place</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/containsPlace">
+        <rdfs:label xml:lang="en">contains place</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/description">
+        <rdfs:label xml:lang="en">description</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/duration">
+        <rdfs:comment xml:lang="en">The duration of each occurrence, in ISO 8601 format.</rdfs:comment>
+        <rdfs:label xml:lang="en">duration</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/endDate">
+        <rdfs:label xml:lang="en">end date</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/estimatedSalary">
+        <rdfs:label xml:lang="en">estimated salary</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/eventSchedule">
+        <rdfs:comment xml:lang="en">Associates an Event, Habit, or Activity with a recurring Schedule.</rdfs:comment>
+        <rdfs:label xml:lang="en">event schedule</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/identifier">
+        <rdfs:comment xml:lang="en">Any kind of identifier (e.g. social media handle, ISBN, account ID).</rdfs:comment>
+        <rdfs:label xml:lang="en">identifier</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/instrument">
+        <rdfs:label xml:lang="en">instrument</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/jobTitle">
+        <rdfs:label xml:lang="en">job title</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/location">
+        <rdfs:label xml:lang="en">location</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/member">
+        <rdfs:label xml:lang="en">member</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/memberOf">
+        <rdfs:label xml:lang="en">member of</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/model">
+        <rdfs:label xml:lang="en">model</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/name">
+        <rdfs:label xml:lang="en">name</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/object">
+        <rdfs:label xml:lang="en">object</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/organizer">
+        <rdfs:label xml:lang="en">organizer</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/owns">
+        <rdfs:label xml:lang="en">owns</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/participant">
+        <rdfs:label xml:lang="en">participant</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/price">
+        <rdfs:label xml:lang="en">price</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/priceCurrency">
+        <rdfs:label xml:lang="en">price currency</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/result">
+        <rdfs:label xml:lang="en">result</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/startDate">
+        <rdfs:label xml:lang="en">start date</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/streetAddress">
+        <rdfs:label xml:lang="en">street address</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/telephone">
+        <rdfs:comment xml:lang="en">A telephone number.</rdfs:comment>
+        <rdfs:label xml:lang="en">telephone</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
