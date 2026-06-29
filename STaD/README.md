@@ -4,7 +4,7 @@ TL;DR: Scaffolding step by step reveals reasoning gaps in LLMs that aggregate be
 
 **STaD** (Scaffolded Task Design) is a framework for generating scaffolded variations of multi-step reasoning tasks to enable systematic LLM debugging, evaluation, and training.
 
-[**Code**](https://github.com/ibm-granite/granite.debug-tools/tree/main/STaD) | [**Dataset**](https://huggingface.co/datasets/ibm-research/STaD) | [**Paper**](https://arxiv.org/pdf/2604.18177)
+[**Code**](https://github.com/ibm-granite/granite.debug-tools/tree/main/STaD) | [**Dataset**](https://huggingface.co/datasets/ibm-research/STaD) | [**Paper**](https://aclanthology.org/2026.findings-acl.1977/)
 
 ## News
 
@@ -279,13 +279,11 @@ If you use STaD in your research, please cite:
 
 ```bibtex
 @inproceedings{an2026stad,
-  title     = {STaD: Scaffolded Task Design for Identifying Compositional Skill Gaps in LLMs},
-  author    = {An, Sungeun and Kadhe, Swanand Ravindra and Thakur, Shailja and DeLuca, Chad and Patel, Hima},
-  year      = {2026},
-  eprint    = {2604.18177},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CL},
-  url={https://arxiv.org/abs/2604.18177}
+  title={STaD: Scaffolded Task Design for Identifying Compositional Skill Gaps in LLMs},
+  author={An, Sungeun and Kadhe, Swanand Ravindra and Thakur, Shailja and DeLuca, Chad and Patel, Hima},
+  booktitle={Findings of the Association for Computational Linguistics: ACL 2026},
+  pages={39675--39705},
+  year={2026}
 }
 
 ```
