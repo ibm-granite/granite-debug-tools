@@ -78,7 +78,7 @@ GEMINI_API_KEY=your-gemini-key
 
 ## Quick Start
 
-### Option A: Test Your Model on Existing Scaffolded Benchmarks
+### Test Your Model on Existing Scaffolded Benchmarks
 
 If you want to evaluate a model on pre-generated scaffolded tasks, start by creating a debugging configuration file (for example, `config_debugging.json`):
 
@@ -94,28 +94,19 @@ If you want to evaluate a model on pre-generated scaffolded tasks, start by crea
 
 #### Available Scaffolded Benchmarks
 
-Currently, three scaffolded benchmarks are available in the `data/` directory:
+Currently, three scaffolded benchmarks are available on [**Hugging Face**](https://huggingface.co/datasets/ibm-research/STaD)
 
 1. **ToT (Test of Time) Arithmetic**  
    Evaluates temporal reasoning involving arithmetic operations on times and durations  
    (Fatemi et al., 2024).  
-   **1.45K** scaffolded tasks.
 
 2. **GSM8K (Grade School Math 8K)**  
    Grade-school level math word problems  
    (Cobbe et al., 2021).  
-   **1.17K** scaffolded tasks.
 
 3. **Math-Hard**  
    Hard problems drawn from mathematics competitions, retaining only Level-5 questions  
    (Hendrycks et al., 2021).  
-   **773** scaffolded tasks.
-
-To test on a specific benchmark, set `input_file` accordingly, for example:
-
-- `data/tot_arithmetic_scaffolded.jsonl`
-- `data/gsm8k_scaffolded.jsonl`
-- `data/math_hard_scaffolded.jsonl`
 
 #### Run the Evaluation
 
@@ -124,7 +115,7 @@ python scripts/test_variations.py --config config_debugging.json
 ```
 
 
-## Option B: Generate Scaffolded Tasks from Your Own Dataset
+## Generate Scaffolded Tasks from Your Own Dataset
 
 ### 1. Prepare Your Dataset
 
