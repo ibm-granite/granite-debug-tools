@@ -126,8 +126,8 @@ Your task is to break down the instruction into explicit, step-by-step sequentia
 
 Rules:
 - Each segment must represent a concrete reasoning or computational action.
-- Each segment must yield a concrete intermediate result.
 - Each segment must be non-overlapping and cover all parts of the instruction.
+- Each segment must yield a concrete and distinct intermediate result.
 - Each segment must represent a single unit of instruction. If a step contains multiple actions (e.g., "add and divide"), split it into separate segments.
 - Each segment must directly involve computation or logical derivation.
 - Each segment only describes the action not the solution.
