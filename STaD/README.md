@@ -80,13 +80,13 @@ GEMINI_API_KEY=your-gemini-key
 
 The `main` branch is actively maintained and may differ from the code used in the paper. To reproduce the results, check out the frozen snapshot tag:
 ```bash
-    git checkout stad-acl_2026
-    cd STaD
+git checkout stad-acl_2026
+cd STaD
 ```
 Pair this code with the complete benchmark on Hugging Face:
 ```bash
-    from datasets import load_dataset
-    ds = load_dataset("ibm-research/STaD", "acl_2026")   
+from datasets import load_dataset
+ds = load_dataset("ibm-research/STaD", "acl_2026")   
 ```
 
 ## Quick Start
