@@ -76,6 +76,19 @@ OPENAI_API_KEY=your-openai-key
 GEMINI_API_KEY=your-gemini-key
 ```
 
+## Reproducing the ACL 2026 Paper
+
+The `main` branch is actively maintained and may differ from the code used in the paper. To reproduce the results, check out the frozen snapshot tag:
+```bash
+    git checkout stad-acl_2026
+    cd STaD
+```
+Pair this code with the complete benchmark on Hugging Face:
+```bash
+    from datasets import load_dataset
+    ds = load_dataset("ibm-research/STaD", "acl_2026")   
+```
+
 ## Quick Start
 
 ### Test Your Model on Existing Scaffolded Benchmarks
@@ -106,7 +119,13 @@ Currently, three scaffolded benchmarks are available on [**Hugging Face**](https
 
 3. **Math-Hard**  
    Hard problems drawn from mathematics competitions, retaining only Level-5 questions  
-   (Hendrycks et al., 2021).  
+   (Hendrycks et al., 2021).
+
+
+```bash
+    from datasets import load_dataset
+    ds = load_dataset("ibm-research/STaD")  
+```
 
 #### Run the Evaluation
 
