@@ -13,6 +13,7 @@ These tools help identify, evaluate, and resolve issues across fine-tuning workf
 | Design scaffolded tasks to diagnose which skill-level capability is missing | [**STaD**](./STaD/) |
 | Benchmark LLM serving endpoints and local inference with an MCP-based tool | [**perfbench**](./perfbench/) |
 | Validate model behavior across inference engines (vLLM, llama.cpp, Ollama) | [**runtimes-validator**](./runtimes-validator/) |
+| Analyze LLM uncertainty through information metrics (entropy, perplexity, etc) | [**LogitScope**](./logitscope/) |
 
 ### STaD - Scaffolded Task Design
 
@@ -31,6 +32,12 @@ Use perfbench when you need to benchmark LLM serving endpoints or local inferenc
 [runtimes-validator](./runtimes-validator/) is a unified validation framework for running model checks across inference engines (vLLM, llama.cpp, Ollama). It provides a CLI (`runtimes-validator`) to run automated validation tests against Granite models deployed on different backends, supporting both managed (framework starts/stops the engine) and external (connect to a running engine) execution modes.
 
 Use runtimes-validator when you need to validate that a Granite model behaves correctly across different inference engines.
+
+### LogitScope
+
+[LogitScope](./logitscope/) is a Python framework for analyzing large language models through information metrics computed from token probability distributions. By examining how models distribute probability mass across vocabulary at each position, LogitScope provides objective, quantitative insights into model behavior, uncertainty, and decision-making without relying on semantic interpretation.
+
+Use LogitScope for debugging hallucinations, optimizing prompts, evaluating fine-tuning results, and understanding model behavior quantitatively.
 
 ## Coming Soon
 

@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "logitscope"
+version = "0.1.0"
+description = "Framework for Debugging and Probing Large Language Models"
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Intended Audience :: Science/Research",
+    "Development Status :: 4 - Beta",
+]
+dependencies = [
+    "torch>=2.7.0",
+    "transformers>=4.51.3",
+    "numpy>=1.17.0",
+]
+
+[project.optional-dependencies]
+ui = [
+    "uvicorn[standard]>=0.34.3",
+    "fastapi>=0.115.13",
+]
+dev = [
+    "ruff>=0.8.0",
+]
+
+[project.scripts]
+logitscope = "logitscope.ui.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["logitscope*"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = [
+    "N812", # Allow 'lowercase as UPPERCASE'
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.ruff.lint.isort]
+known-first-party = ["logitscope"]
