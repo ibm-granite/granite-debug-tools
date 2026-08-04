@@ -25,14 +25,27 @@ This enables debugging hallucinations, optimizing prompts, evaluating fine-tunin
 
 ## Installation
 
+### Prerequisites
+
+- Python 3.11+
+- [uv](https://docs.astral.sh/uv/) (recommended)
+
+```bash
+# clone repo
+git clone https://github.com/ibm-granite/granite.debug-tools
+cd granite.debug-tools/logitscope
+
+# create and activate uv venv
+uv venv --python 3.11
+source .venv/bin/activate
+```
+
 ### Basic Installation (Python API only)
 
 For programmatic use of LogitScope without the web UI:
 
 ```bash
-git clone https://github.ibm.com/Granite-debug/logitscope.git
-cd logitscope
-pip install -e .
+uv pip install -e .
 ```
 
 ### Full Installation (with Web UI)
@@ -40,7 +53,7 @@ pip install -e .
 To use the interactive web interface:
 
 ```bash
-pip install -e ".[ui]"
+uv pip install -e ".[ui]"
 ```
 
 ### Development Installation
@@ -48,7 +61,7 @@ pip install -e ".[ui]"
 For contributing to LogitScope:
 
 ```bash
-pip install -e ".[ui,dev]"
+uv pip install -e ".[ui,dev]"
 ```
 
 ### Requirements
@@ -116,7 +129,7 @@ View the [examples/](examples/) directory for more examples on how to use the fr
 
 ### Interactive Web UI
 
-**Note:** The web UI requires the optional UI dependencies. Install with `pip install -e ".[ui]"` if not already installed.
+**Note:** The web UI requires the optional UI dependencies. Install with `uv pip install -e ".[ui]"` if not already installed.
 
 Launch the web interface for visual exploration and real-time analysis:
 
@@ -263,7 +276,7 @@ LogitScope uses modern Python tooling for development:
 
 ```bash
 # Install with UI and dev dependencies
-pip install -e ".[ui,dev]"
+uv pip install -e ".[ui,dev]"
 
 # Format code
 ruff format .
