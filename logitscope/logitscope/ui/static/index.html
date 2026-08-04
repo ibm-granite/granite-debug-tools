@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogitScope</title>
+
+    <link rel="icon" type="image/x-icon" href="static/img/icon.png">
+
+    <!-- Stylesheets-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/carbon-components/10.58.0/css/carbon-components.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>LogitScope</h1>
+    </header>
+
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">Metrics</div>
+            <div class="sidebar-content">
+                <!-- Model Info -->
+                <div class="panel-section">
+                    <div class="model-info">
+                        <h5 class="bx--label model-info">MODEL</h5>
+                        <p class="bx--dropdown-text model-name" id="currentModel">GPT-2 Base</p>
+                    </div>
+                </div>
+
+                <!-- Live Metrics Panel -->
+                <div class="panel-section">
+                    <div class="model-info">
+                        <h5 class="bx--label model-info">LIVE STATISTICS</h5>
+                        <div class="live-stats">
+                            <div class="stat-row">
+                                <span>Status:</span>
+                                <span class="stat-value" id="analysis-status">Ready</span>
+                            </div>
+                            <div class="stat-row">
+                                <span>Total Tokens:</span>
+                                <span class="stat-value" id="live-token-count">0</span>
+                            </div>
+                            <div class="stat-row">
+                                <span>Characters:</span>
+                                <span class="stat-value" id="live-char-count">0</span>
+                            </div>
+                            <div class="stat-row">
+                                <span>Avg Entropy:</span>
+                                <span class="stat-value" id="live-avg-entropy">0.000</span>
+                            </div>
+                            <div class="stat-row">
+                                <span>Avg Varentropy:</span>
+                                <span class="stat-value" id="live-avg-varentropy">0.000</span>
+                            </div>
+                            <div class="stat-row">
+                                <span>Avg Skewentropy:</span>
+                                <span class="stat-value" id="live-avg-skewentropy">0.000</span>
+                            </div>
+                            <div class="stat-row">
+                                <span>Avg Perplexity:</span>
+                                <span class="stat-value" id="live-avg-perplexity">0.000</span>
+                            </div>
+                            <div class="stat-row">
+                                <span>Avg Probability:</span>
+                                <span class="stat-value" id="live-avg-probability">0.000</span>
+                            </div>
+                            <div class="stat-row">
+                                <span>Avg Log Probability:</span>
+                                <span class="stat-value" id="live-avg-log-prob">0.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metrics Toggle -->
+                <div class="panel-section">
+                    <h5 class="bx--label model-info">METRICS TOGGLE</h5>
+                    <div class="metrics-toggle">
+                        <div class="bx--form-item bx--checkbox-wrapper">
+                            <input id="entropy-toggle" class="bx--checkbox" type="checkbox" value name="entropy-toggle"
+                                checked>
+                            <label for="entropy-toggle" class="bx--checkbox-label">
+                                <span class="bx--checkbox-label-text">Entropy</span>
+                            </label>
+                        </div>
+                        <div class="bx--form-item bx--checkbox-wrapper">
+                            <input id="varentropy-toggle" class="bx--checkbox" type="checkbox" value
+                                name="varentropy-toggle">
+                            <label for="varentropy-toggle" class="bx--checkbox-label">
+                                <span class="bx--checkbox-label-text">Varentropy</span>
+                            </label>
+                        </div>
+                        <div class="bx--form-item bx--checkbox-wrapper">
+                            <input id="skewentropy-toggle" class="bx--checkbox" type="checkbox" value
+                                name="skewentropy-toggle">
+                            <label for="skewentropy-toggle" class="bx--checkbox-label">
+                                <span class="bx--checkbox-label-text">Skewentropy</span>
+                            </label>
+                        </div>
+                        <div class="bx--form-item bx--checkbox-wrapper">
+                            <input id="perplexity-toggle" class="bx--checkbox" type="checkbox" value
+                                name="perplexity-toggle">
+                            <label for="perplexity-toggle" class="bx--checkbox-label">
+                                <span class="bx--checkbox-label-text">Perplexity</span>
+                            </label>
+                        </div>
+                        <div class="bx--form-item bx--checkbox-wrapper">
+                            <input id="prob-toggle" class="bx--checkbox" type="checkbox" value name="prob-toggle">
+                            <label for="prob-toggle" class="bx--checkbox-label">
+                                <span class="bx--checkbox-label-text">Probability</span>
+                            </label>
+                        </div>
+                        <div class="bx--form-item bx--checkbox-wrapper">
+                            <input id="logprob-toggle" class="bx--checkbox" type="checkbox" value name="logprob-toggle">
+                            <label for="logprob-toggle" class="bx--checkbox-label">
+                                <span class="bx--checkbox-label-text">Log Probability</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Legend for Metrics -->
+                <div class="panel-section">
+                    <h5 class="bx--label model-info">ACTIVE METRIC</h5>
+                    <div class="metrics-legend">
+                        <div class="legend-item" data-metric="entropy">
+                            <div class="legend-title">Entropy (Information Content)</div>
+                            <div class="color-range">
+                                <span class="color-sample intensity-very-low">Low</span>
+                                <span class="color-sample intensity-low"></span>
+                                <span class="color-sample intensity-medium"></span>
+                                <span class="color-sample intensity-high"></span>
+                                <span class="color-sample intensity-very-high">High</span>
+                            </div>
+                        </div>
+                        <div class="legend-item" data-metric="varentropy">
+                            <div class="legend-title">Varentropy (Uncertainty)</div>
+                            <div class="color-range">
+                                <span class="color-sample intensity-very-low">Low</span>
+                                <span class="color-sample intensity-low"></span>
+                                <span class="color-sample intensity-medium"></span>
+                                <span class="color-sample intensity-high"></span>
+                                <span class="color-sample intensity-very-high">High</span>
+                            </div>
+                        </div>
+                        <div class="legend-item" data-metric="skewentropy">
+                            <div class="legend-title">Skewentropy (Asymmetry)</div>
+                            <div class="color-range">
+                                <span class="color-sample intensity-very-low">Low</span>
+                                <span class="color-sample intensity-low"></span>
+                                <span class="color-sample intensity-medium"></span>
+                                <span class="color-sample intensity-high"></span>
+                                <span class="color-sample intensity-very-high">High</span>
+                            </div>
+                        </div>
+                        <div class="legend-item" data-metric="perplexity">
+                            <div class="legend-title">Perplexity (Predictability)</div>
+                            <div class="color-range">
+                                <span class="color-sample intensity-very-low">Low</span>
+                                <span class="color-sample intensity-low"></span>
+                                <span class="color-sample intensity-medium"></span>
+                                <span class="color-sample intensity-high"></span>
+                                <span class="color-sample intensity-very-high">High</span>
+                            </div>
+                        </div>
+                        <div class="legend-item" data-metric="prob">
+                            <div class="legend-title">Probability (Confidence)</div>
+                            <div class="color-range">
+                                <span class="color-sample intensity-very-low">Low</span>
+                                <span class="color-sample intensity-low"></span>
+                                <span class="color-sample intensity-medium"></span>
+                                <span class="color-sample intensity-high"></span>
+                                <span class="color-sample intensity-very-high">High</span>
+                            </div>
+                        </div>
+                        <div class="legend-item" data-metric="logprob">
+                            <div class="legend-title">Log Probability</div>
+                            <div class="color-range">
+                                <span class="color-sample intensity-very-low">Low</span>
+                                <span class="color-sample intensity-low"></span>
+                                <span class="color-sample intensity-medium"></span>
+                                <span class="color-sample intensity-high"></span>
+                                <span class="color-sample intensity-very-high">High</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Center Panel with Editor and Bottom Panel -->
+        <div class="center-panel">
+            <div class="canvas-container">
+                <div class="canvas-toolbar">
+                    <button class="icon-button" id="undoButton" title="Undo">
+                        <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor">
+                            <path
+                                d="M18 28A12 12 0 1 0 6 16v6.2l-3.6-3.6L1 20l6 6 6-6-1.4-1.4L8 22.2V16a10 10 0 1 1 10 10Z" />
+                        </svg>
+                    </button>
+                    <button class="icon-button" id="redoButton" title="Redo">
+                        <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor">
+                            <path
+                                d="M14 28A12 12 0 1 1 26 16v6.2l3.6-3.6L31 20l-6 6-6-6 1.4-1.4L24 22.2V16a10 10 0 1 0-10 10Z" />
+                        </svg>
+                    </button>
+                    <button class="clear-button" id="clearButton">Clear</button>
+                </div>
+                <div class="canvas">
+                    <div class="token-canvas-container">
+                        <div class="token-display" id="tokenDisplay"></div>
+                        <textarea class="canvas-textarea" id="canvasTextArea"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Panel -->
+            <div class="bottom-panel" id="bottomPanel">
+                <div class="resize-handle-horizontal" id="resizeHandle"></div>
+                <div class="bottom-panel-header">
+                    <div class="bottom-panel-tab active">Explorer</div>
+                    <div class="bottom-panel-tab">Distributions</div>
+                </div>
+                <div class="bottom-panel-content">
+                    <!-- Token Explorer -->
+                    <div class="token-explorer" id="tokenExplorer" style="display: block;">
+                        <div class="explorer-main-content">
+                            <div class="explorer-left-panel">
+                                <div class="token-explorer-header">
+                                    <div class="token-explorer-title">Token Explorer</div>
+                                    <div class="scroll-controls">
+                                        <button class="scroll-btn" id="scroll-left-btn" title="Scroll left">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                                <path d="m5.8 8l4.6-4.6L9.6 2.6L4.2 8l5.4 5.4.8-.8L5.8 8z" />
+                                            </svg>
+                                        </button>
+                                        <button class="scroll-btn" id="scroll-right-btn" title="Scroll right">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                                <path d="m10.2 8L5.6 3.4l.8-.8L11.8 8l-5.4 5.4-.8-.8L10.2 8z" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="token-list-container">
+                                    <div class="token-list" id="token-list">
+                                        <!-- Token cards will be dynamically generated here -->
+                                        <div class="no-tokens-message">
+                                            <p>Start typing to see token analysis</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Distributions Tab Content -->
+                    <div class="distributions-content" id="distributionsContent" style="display: none;">
+                        <div class="metrics-plots-container">
+                            <div class="plot-item" id="entropy-plot">
+                                <h4 class="plot-title">Entropy Distribution</h4>
+                                <canvas class="plot-canvas" width="800" height="560"></canvas>
+                            </div>
+                            <div class="plot-item" id="varentropy-plot">
+                                <h4 class="plot-title">Varentropy Distribution</h4>
+                                <canvas class="plot-canvas" width="800" height="560"></canvas>
+                            </div>
+                            <div class="plot-item" id="skewentropy-plot">
+                                <h4 class="plot-title">Skewentropy Distribution</h4>
+                                <canvas class="plot-canvas" width="800" height="560"></canvas>
+                            </div>
+                            <div class="plot-item" id="perplexity-plot">
+                                <h4 class="plot-title">Perplexity Distribution</h4>
+                                <canvas class="plot-canvas" width="800" height="560"></canvas>
+                            </div>
+                            <div class="plot-item" id="probability-plot">
+                                <h4 class="plot-title">Probability Distribution</h4>
+                                <canvas class="plot-canvas" width="800" height="560"></canvas>
+                            </div>
+                            <div class="plot-item" id="logprob-plot">
+                                <h4 class="plot-title">Log Probability Distribution</h4>
+                                <canvas class="plot-canvas" width="800" height="560"></canvas>
+                            </div>
+                            <div class="plot-item scatter-plot" id="entropy-varentropy-scatter">
+                                <h4 class="plot-title">Entropy vs Varentropy</h4>
+                                <canvas class="plot-canvas" width="800" height="560"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="sidebar sidebar-right">
+            <div class="token-explorer-header">
+                <div class="token-explorer-title">Token Candidates</div>
+            </div>
+            <div class="token-candidates-panel" id="candidates-panel">
+                <div class="candidates-header">
+                    <div class="candidates-controls">
+                        <span class="position-label">Position: <span
+                                id="candidate-position">-</span></span>
+                        <span class="k-control">K: <input type="number" id="k-value-input"
+                                value="10" min="1" max="50" class="k-input"></span>
+                    </div>
+                </div>
+                <div class="candidates-list" id="candidates-list">
+                    <!-- Candidate tokens will be shown here -->
+                    <div class="no-selection-message">
+                        <p>Select a token to view top-k candidates</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="static/js/logitscope.js"></script>
+</body>
+
+</html>
