@@ -28,8 +28,11 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          TAG=$(gh release view --repo ggml-org/llama.cpp --json tagName --jq '.tagName')
-          ASSET_URL=$(gh release view --repo ggml-org/llama.cpp --json assets --jq '.assets[] | select(.name | test("bin-ubuntu-x64\\.tar\\.gz$")) | .url')
+          # llama.cpp build releases are pre-releases; `gh release view` with no tag
+          # returns the latest stable one (v0.2.0 ships no binaries), so list instead.
+          TAG=$(gh release list --repo ggml-org/llama.cpp --limit 1 --json tagName --jq '.[0].tagName')
+          ASSET_URL=$(gh release view "$TAG" --repo ggml-org/llama.cpp --json assets --jq '.assets[] | select(.name | test("bin-ubuntu-x64\\.tar\\.gz$")) | .url')
+          [ -n "$ASSET_URL" ] || { echo "::error::no bin-ubuntu-x64.tar.gz asset in llama.cpp release $TAG"; exit 1; }
           curl -fsSL -L -o llama.tar.gz "$ASSET_URL"
           tar -xzf llama.tar.gz
           sudo mv llama-*/ /opt/llama-cpp/
